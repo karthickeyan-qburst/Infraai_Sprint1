@@ -1,8 +1,7 @@
-import logo from "./logo.svg";
-import "./App.css";
+import * as React from "react";
 
 function App() {
-  return <div className="App">Loading page</div>;
+  return <>Home Page</>;
 }
 
 export default App;
