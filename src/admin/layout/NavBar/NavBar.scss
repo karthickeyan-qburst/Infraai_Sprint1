@@ -1,0 +1,55 @@
+.navbar__container{
+    position: fixed !important;
+}
+
+.navbar__listitem-text .MuiTypography-root {
+    font-family: 'Work Sans', sans-serif !important;
+    font-size: 14px !important;
+}
+
+.navbar__drawer{
+    background-color: #131E27;
+    height: 100%;
+    overflow: hidden;
+}
+
+.navbar__list{
+    color: white;
+}
+
+.navbar__listitem{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.navbar__listitem-icon{
+    color: white !important;
+    display: block !important;
+    text-align: center !important; 
+}
+
+.navbar__listitem-text{
+    display: inline-block; 
+    vertical-align: middle;
+}
+
+.navbar__listitem:hover{
+    background-color: #807a79;
+    color: #FFDA6A;
+}
+
+.navbar__listitem:hover .navbar__listitem-icon{
+    color: #FFDA6A !important;
+}
+
+.navbar__divider{
+    border-bottom: 1px solid grey;
+    width: 115px;
+}
+
+.MuiDrawer-paper{
+    box-sizing: border-box;
+    width: 114px;
+}
+
