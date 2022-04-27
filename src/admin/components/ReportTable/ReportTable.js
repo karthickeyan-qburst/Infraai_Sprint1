@@ -13,49 +13,40 @@ import {
 
 import "./ReportTable.scss";
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread", 356, 16.0, 49, 3.9),
-];
-
 function ReportTable() {
   return (
-    <TableContainer component={Paper} className="reporttable__container">
+    <TableContainer
+      component={Paper}
+      className="reporttable__container"
+    >
       <Table>
-        <TableHead className="reporttable__header">
+        <TableHead className="reporttable__header" sx={{ '&:first-child td, &:first-child th': { border:0 }}}>
           <TableRow>
             <TableCell className="reporttable__header-heading">
               Asset Item
             </TableCell>
             <TableCell className="reporttable__header-heading" align="center">
-              Number of Assets Items Identified
+              Number of Assets <br/>Items Identified
             </TableCell>
             <TableCell className="reporttable__header-heading" align="center">
-              Number of Passing Assets Items
+              Number of Passing <br/> Assets Items
             </TableCell>
             <TableCell className="reporttable__header-heading" align="center">
-              Asset Items Weighting
+              Asset Items <br /> Weighting
             </TableCell>
             <TableCell className="reporttable__header-heading" align="center">
-              Total Possible Score
+              Total Possible <br />Score
             </TableCell>
             <TableCell className="reporttable__header-heading" align="center">
-              Actual Asset Item Score
+              Actual Asset<br /> Item Score
             </TableCell>
             <TableCell className="reporttable__header-heading" align="center">
-              Actual Rating for Asset Items
+              Actual Rating for <br /> Asset Items
             </TableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
-          <TableRow className="reporttable__data" key="{row.name}">
+        <TableBody >
+          <TableRow className="reporttable__data" key="{row.name}"  >
             <TableCell component="th" scope="row">
               Pipers & Culvert &#60;36 sq ft
             </TableCell>
@@ -67,9 +58,7 @@ function ReportTable() {
             <TableCell align="center">82.5%</TableCell>
           </TableRow>
 
-         
-
-          <TableRow key="{row.name}">
+          <TableRow key="{row.name}" className="reporttable__data" >
             <TableCell component="th" scope="row">
               Pipers & Culvert &#62;36 sq ft
             </TableCell>
@@ -81,9 +70,7 @@ function ReportTable() {
             <TableCell align="center">82.5%</TableCell>
           </TableRow>
 
-         
-
-          <TableRow key="{row.name}">
+          <TableRow key="{row.name}" className="reporttable__data" >
             <TableCell component="th" scope="row">
               Paved Ditches
             </TableCell>
@@ -95,9 +82,7 @@ function ReportTable() {
             <TableCell align="center">82.5%</TableCell>
           </TableRow>
 
-         
-
-          <TableRow key="{row.name}">
+          <TableRow key="{row.name}" className="reporttable__data">
             <TableCell component="th" scope="row">
               Pipers & Culvert &#62;36 sq ft
             </TableCell>
@@ -111,43 +96,39 @@ function ReportTable() {
 
           <TableRow key="{row.name}" className="reporttable__footer-data">
             <TableCell component="th" scope="row" colSpan={4}>
-             TOTAL SCORE:
+              TOTAL SCORE:
             </TableCell>
-            <TableCell align="center">4152.90</TableCell>
-            <TableCell align="center" >3588.70</TableCell>
+            <TableCell align="center" className="reporttable__footer-data-bold">4152.90</TableCell>
+            <TableCell align="center" className="reporttable__footer-data-bold">3588.70</TableCell>
             <TableCell></TableCell>
           </TableRow>
 
           <TableRow key="{row.name}" className="reporttable__footer-data">
             <TableCell component="th" scope="row" colSpan={4}>
-             Required Rating for Drainage Asset Group:
+              Required Rating for Drainage Asset Group:
             </TableCell>
-            <TableCell align="center">80.0%</TableCell>
-            <TableCell></TableCell>
-            <TableCell></TableCell>
-          </TableRow>
-
-          <TableRow key="{row.name}" className="reporttable__footer-data">
-            <TableCell component="th" scope="row" colSpan={4}>
-             Asset Group Rating
-            </TableCell>
-            <TableCell align="center" >86.4%</TableCell>
+            <TableCell align="center" className="reporttable__footer-data-bold">80.0%</TableCell>
             <TableCell></TableCell>
             <TableCell></TableCell>
           </TableRow>
 
           <TableRow key="{row.name}" className="reporttable__footer-data">
             <TableCell component="th" scope="row" colSpan={4}>
-             Total MRP Non-Performance Deduction Amount:
+              Asset Group Rating
             </TableCell>
-            <TableCell align="center" >$0.00</TableCell>
+            <TableCell align="center" className="reporttable__footer-data-bold">86.4%</TableCell>
             <TableCell></TableCell>
             <TableCell></TableCell>
           </TableRow>
 
-          
-
-
+          <TableRow key="{row.name}" className="reporttable__footer-data">
+            <TableCell component="th" scope="row" colSpan={4}>
+              Total MRP Non-Performance Deduction Amount:
+            </TableCell>
+            <TableCell align="center" className="reporttable__footer-data-bold">$0.00</TableCell>
+            <TableCell></TableCell>
+            <TableCell></TableCell>
+          </TableRow>
         </TableBody>
       </Table>
     </TableContainer>
