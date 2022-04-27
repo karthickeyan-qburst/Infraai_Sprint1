@@ -1,0 +1,33 @@
+@import "../../styles/breakpoints";
+
+.reporttable__container {
+  margin-top: 4rem !important;
+  margin-left: 2rem !important;
+  margin-right: 1px !important;
+  margin-bottom: 1rem !important;
+  max-width: 97%;
+}
+
+.reporttable__header {
+  background-color: #f0f0f0 !important;
+  border-radius: 10px 10px 0px 0px !important;
+}
+
+.reporttable__header-heading {
+  font-family: "Work Sans", sans-serif !important;
+  font-style: normal;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  color: #666666 !important;
+  overflow-wrap: break-word !important;
+  width: 0.2rem !important;
+}
+
+.reporttable__border {
+  margin-right: 2% !important;
+  width: 100%;
+}
+
+.reporttable__footer-data {
+  background-color: #ffda6a;
+}
