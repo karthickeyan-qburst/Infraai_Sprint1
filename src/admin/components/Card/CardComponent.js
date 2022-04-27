@@ -5,6 +5,7 @@ import Content from "../CardContents/Content";
 import MiniCard from "../MiniCard/MiniCard";
 
 import "./Card.scss";
+import MarketPlaceCard from "../MarketPlaceCard/MarketPlaceCard";
 
 function CardComponent() {
   return (
@@ -26,6 +27,9 @@ function CardComponent() {
             <Typography component="div" className="card__content-outline">
               <Content />
             </Typography>
+            <Typography component="div" className="card__content-outline">
+              <MarketPlaceCard />
+            </Typography>
             <Typography component="div" className="card__content-minicard" sx={{border: 1}}>
               <Box className="card__content-minicard-data-1">
                 <Typography component='div' className="year1">2012</Typography>
@@ -36,7 +40,6 @@ function CardComponent() {
               <MiniCard />
               <MiniCard />
               </Box>
-              
             </Typography>
           </CardContent>
         </Card>
