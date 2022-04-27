@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 
 import Content from "../CardContents/Content";
 import MiniCard from "../MiniCard/MiniCard";
@@ -26,19 +26,17 @@ function CardComponent() {
             <Typography component="div" className="card__content-outline">
               <Content />
             </Typography>
-            <Typography component="div" className="card__content-minicard">
+            <Typography component="div" className="card__content-minicard" sx={{border: 1}}>
+              <Box className="card__content-minicard-data-1">
+                <Typography component='div' className="year1">2012</Typography>
+                <Typography component='div' className="year1">2020</Typography>
+              </Box>
+              <Box className="card__content-minicard-data">
               <MiniCard />
               <MiniCard />
               <MiniCard />
-              <div
-                style={{
-                  widht: "50px",
-                  height: "50px",
-                  border: "5px solid yellow",
-                }}
-              >
-                kjdfvjn
-              </div>
+              </Box>
+              
             </Typography>
           </CardContent>
         </Card>
