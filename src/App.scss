@@ -1,3 +1,5 @@
+@import "./admin/styles/breakpoints";
+
 body {
   margin: 0px;
 }
@@ -6,8 +8,9 @@ body {
 .parent-container {
   display: flex;
   background-color: #e5e5e5;
-  height: 100vh;
+  height: 100vh !important;
 }
+
 .infai_fill_width {
   /* background: red; */
   margin-left: 115px;
@@ -16,9 +19,16 @@ body {
 }
 
 .infai_fill_width_grid {
-  margin-left: 115px !important;
-  margin-top: 60px !important;
+  margin-top: 62px !important;
   width: 100%;
+
+  @include xs {
+    margin-left: 10px !important; 
+  }
+
+  @include sm {
+      margin-left: 115px !important; 
+  }
 }
 /* Style for tab */
 .MuiTab-root {

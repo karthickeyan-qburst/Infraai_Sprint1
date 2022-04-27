@@ -18,7 +18,7 @@ function Home() {
     <>
       <Grid
         container
-        className={"infai_fill_width_grid"}
+       
         columns={{ xs: 4, sm: 8, md: 12 }}
         spacing={0.5}
         alignContent="flex-start"

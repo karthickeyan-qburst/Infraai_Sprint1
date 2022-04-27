@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Box, Container } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 
 import Header from "./admin/layout/Header/Header";
 import CardComponent from "./admin/components/Card/CardComponent";
@@ -18,6 +18,8 @@ function App() {
           <Box className="parent-container">
             <Header />
             {/*  <CardComponent /> */}
+            <Box className="infai_fill_width_grid ">
+              
             <Routes>
               <Route exact path="/home" element={<Home />} />
               <Route exact path="/myprojects" element={<Myprojects />} />
@@ -25,6 +27,7 @@ function App() {
               <Route exact path="/intel/:id" element={<CardComponent />} />
               <Route exact path="/vision/:id" element={<CardComponent />} />
             </Routes>
+              </Box>
           </Box>
         </Suspense>
       </Router>
