@@ -45,6 +45,7 @@ function NavBar({ mobileOpen, handleDrawerToggle, ...props }) {
               ""
             ) : (
               <ListItem
+                key={index}
                 button
                 className="navbar__listitem"
                 onClick={routeChange.bind(this, route.path)}
@@ -53,6 +54,7 @@ function NavBar({ mobileOpen, handleDrawerToggle, ...props }) {
                   <InboxIcon />
                 </ListItemIcon>
                 <ListItemText
+                  key={index}
                   primary={route.name}
                   className="navbar__listitem-text"
                 />
