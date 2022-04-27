@@ -36,7 +36,7 @@ const columns = [
 export default function Myprojects() {
 
   const [tableController, settableController] = useState({
-    filters: { sortBy: '', state: '', district: '', expiresOn: { startDate: null, endDate: null } },
+    filters: { state: '', district: '', expiresOn: { startDate: null, endDate: null } },
     sort: { orderBy: 'id', order: 'desc' },
     pagination: { totalCount: data.length, rowsPerPage: 10, page: 0 }
   });

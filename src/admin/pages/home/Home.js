@@ -5,13 +5,15 @@ import Grid from "@mui/material/Grid";
 import TabNav from "../../components/Tabs/TabNav";
 import Marketplace from "../maketplace/Marketplace";
 import Myprojects from "../myprojects/Myprojects";
+import ConditionalReport from "../order/conditionalReport/ConditionalReport";
+import ReportTable from "../../components/ReportTable/ReportTable";
 
 function Home() {
   const data = [
-    { name: "Project", value: "1", element: "Table Component" },
+    { name: "Project", value: "1", element: <Myprojects /> },
     { name: "My Project", value: "2", element: <Myprojects /> },
-    { name: "My Data  ", value: "3", element: <Marketplace /> },
-    { name: "Messages", value: "4", element: "Page skipped" },
+    { name: "My Data  ", value: "3", element: <ReportTable /> },
+    { name: "Messages", value: "4", element: <ConditionalReport /> },
   ];
   return (
     <>

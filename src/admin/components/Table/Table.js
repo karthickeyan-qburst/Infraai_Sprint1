@@ -176,8 +176,8 @@ const EnhancedTableToolbar = (props) => {
         {title}
       </Typography>
 
-      <Box style={{ width: '50%', display: 'flex', flexFlow: "row wrap" }}>
-        <FormControl sx={{ m: 2, minWidth: 130 }} size="small">
+      <Box style={{display: 'flex', flexFlow: "row wrap" }}>
+        {/* <FormControl sx={{ m: 2, minWidth: 130 }} size="small">
           <InputLabel id="demo-select-small">
             <Box sx={{ display: "flex", gap: 1 }}>
               <FilterListIcon />
@@ -194,11 +194,12 @@ const EnhancedTableToolbar = (props) => {
             </Box>}
             onChange={(e) => handleTableControllerChange('filters', { sortBy: e.target.value })}
           >
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
+            <MenuItem value={'Florida'}>Florida</MenuItem>
+            <MenuItem value={'New York'}>New York</MenuItem>
+            <MenuItem value={'Texas'}>Texas</MenuItem>
+            <MenuItem value={'Virginia'}>Virginia</MenuItem>
           </Select>
-        </FormControl>
+        </FormControl> */}
         <FormControl sx={{ m: 2, minWidth: 120 }} size="small">
           <InputLabel id="demo-select-small">
             <Box sx={{ display: "flex", gap: 1 }}>
@@ -216,9 +217,10 @@ const EnhancedTableToolbar = (props) => {
             </Box>}
             onChange={(e) => handleTableControllerChange('filters', { state: e.target.value })}
           >
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
+            <MenuItem value={'Florida'}>Florida</MenuItem>
+            <MenuItem value={'New York'}>New York</MenuItem>
+            <MenuItem value={'Texas'}>Texas</MenuItem>
+            <MenuItem value={'Virginia'}>Virginia</MenuItem>
           </Select>
         </FormControl>
         <FormControl sx={{ m: 2, minWidth: 130 }} size="small">
@@ -238,9 +240,10 @@ const EnhancedTableToolbar = (props) => {
             </Box>}
             onChange={(e) => handleTableControllerChange('filters', { district: e.target.value })}
           >
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
+            <MenuItem value={'Florida'}>Florida</MenuItem>
+            <MenuItem value={'New York'}>New York</MenuItem>
+            <MenuItem value={'Texas'}>Texas</MenuItem>
+            <MenuItem value={'Virginia'}>Virginia</MenuItem>
           </Select>
         </FormControl>
         {/* <DateRange
@@ -408,8 +411,13 @@ export default function EnhancedTable({ title, rows, columns, totalCount, tableC
                           }}
                         >
                           <MenuItem onClick={(e) => { e.stopPropagation(); handleClose(e) }}>View Details</MenuItem>
+                          <MenuItem onClick={(e) => { e.stopPropagation(); handleClose(e) }}>Order Inventory</MenuItem>
                           <MenuItem onClick={(e) => { e.stopPropagation(); handleClose(e) }}>View Inventory</MenuItem>
+                          <MenuItem onClick={(e) => { e.stopPropagation(); handleClose(e) }}>Order Condition Report</MenuItem>
                           <MenuItem onClick={(e) => { e.stopPropagation(); handleClose(e) }}>View Condition Report</MenuItem>
+                          <MenuItem onClick={(e) => { e.stopPropagation(); handleClose(e) }}>Notifications</MenuItem>
+                          <MenuItem onClick={(e) => { e.stopPropagation(); handleClose(e) }}>RFP Release</MenuItem>
+                          <MenuItem onClick={(e) => { e.stopPropagation(); handleClose(e) }}>Award Information</MenuItem>
                         </Menu>
                       </TableCell>
                     </TableRow>
