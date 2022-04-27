@@ -2,8 +2,25 @@ body {
   margin: 0px;
 }
 
-.parent-container{
+/* Style for container */
+.parent-container {
   display: flex;
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
   height: 100vh;
+}
+.infai_fill_width {
+  /* background: red; */
+  margin-left: 115px;
+  margin-top: 65px;
+  width: 100%;
+}
+
+.infai_fill_width_grid {
+  margin-left: 115px !important;
+  margin-top: 60px !important;
+  width: 100%;
+}
+/* Style for tab */
+.MuiTab-root {
+  text-transform: unset !important;
 }

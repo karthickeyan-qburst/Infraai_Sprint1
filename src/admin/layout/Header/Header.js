@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
-import { Box, AppBar, Toolbar, IconButton, Typography, Menu, MenuItem } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import { AccountCircle } from '@mui/icons-material';
-import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
+import React, { useState } from "react";
+import {
+  Box,
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  Menu,
+  MenuItem,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { AccountCircle } from "@mui/icons-material";
+import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
 
-import NavBar from '../NavBar/NavBar';
+import NavBar from "../NavBar/NavBar";
 
-import './Header.scss';
+import "./Header.scss";
 
 function Header({ drawerWidth }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -27,27 +35,35 @@ function Header({ drawerWidth }) {
 
   return (
     <>
-      <AppBar elevation={0}
-        className='header__appbar' 
-      >
+      <AppBar elevation={0} className="header__appbar">
         <Toolbar>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            className='header__menuicon'
-            sx={{ display: { sm: 'none' } }}
+            className="header__menuicon"
+            sx={{ display: { sm: "none" } }}
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div" className='header__logo'>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            className="header__logo"
+          >
             infra ai
           </Typography>
-          <IconButton size="large" className='header__user-icon'>
+          <IconButton size="large" className="header__user-icon">
             <AccountCircle />
           </IconButton>
-          <Typography variant='p' noWrap component="div" className='header__user'>
+          <Typography
+            variant="p"
+            noWrap
+            component="div"
+            className="header__user"
+          >
             Super User
           </Typography>
           <IconButton size="large" onClick={handleMenu}>
@@ -56,13 +72,13 @@ function Header({ drawerWidth }) {
           <Menu
             anchorEl={anchorEl}
             anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
+              vertical: "top",
+              horizontal: "right",
             }}
             keepMounted
             transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
+              vertical: "top",
+              horizontal: "right",
             }}
             open={Boolean(anchorEl)}
             onClose={handleClose}
@@ -73,12 +89,14 @@ function Header({ drawerWidth }) {
         </Toolbar>
       </AppBar>
 
-      <Box component="div" mt={8} >
-        <NavBar mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} />
+      <Box component="div" mt={8}>
+        <NavBar
+          mobileOpen={mobileOpen}
+          handleDrawerToggle={handleDrawerToggle}
+        />
       </Box>
     </>
-
-  )
+  );
 }
 
-export default Header
+export default Header;
