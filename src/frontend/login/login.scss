@@ -1,0 +1,28 @@
+.iai_container{
+    min-width: 495px;
+    height: 315px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    
+    .iai_title{
+        font-weight: 600;
+    }
+
+    .iai_margin{
+        margin-top: 20px;
+        .iai_span{
+            float: right;
+            padding: 10px;
+        }
+    }
+    .iai_field{
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+    .iai_button{
+        height: 45px;
+        background-color: #FFDA6A;
+        color: #000
+    }
+}
