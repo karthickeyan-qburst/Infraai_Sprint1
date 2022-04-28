@@ -1,17 +1,14 @@
-import React, { Suspense, lazy } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Box } from "@mui/material";
+import React, { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Box } from '@mui/material';
 
-import Header from "./admin/layout/Header/Header";
-import "./App.scss";
-
-const Home = lazy(() => import("./admin/pages/home/Home"));
-const Marketplace = lazy(() => import("./admin/pages/maketplace/Marketplace"));
-const Myprojects = lazy(() => import("./admin/pages/myprojects/Myprojects"));
-const Intel = lazy(() => import("./admin/pages/intel/Intel"));
-const ProjectMap = lazy(() =>
-  import("./admin/pages/vision/projectMap/ProjectMap")
-);
+import Header from './admin/layout/Header/Header';
+import './App.scss';
+const Home = lazy(() => import('./admin/pages/home/Home'));
+const Marketplace = lazy(() => import('./admin/pages/maketplace/Marketplace'));
+const Myprojects = lazy(() => import('./admin/pages/myprojects/Myprojects'));
+const Intel = lazy(() => import('./admin/pages/intel/Intel'));
+const ProjectMap = lazy(() => import('./admin/pages/vision/projectMap/ProjectMap'));
 
 function App() {
   return (
