@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   MapContainer,
   TileLayer,
-  //   Marker,
-  //   Popup,
+  Popup,
   Polyline,
   FeatureGroup,
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import Card from "@material-ui/core/Card";
+import { Button, Typography, Card } from "@mui/material";
+
 import "./Map.scss";
 import L from "leaflet";
 
@@ -124,14 +124,21 @@ const Map = ({ style, zoom, position }) => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {/* <Marker position={center}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker> */}
         <FeatureGroup>
           {positionData && positionData.length && (
-            <Polyline positions={positionData} color="#4F7ECB" weight={5} />
+            <Polyline positions={positionData} color="#4F7ECB" weight={5}>
+              <Popup>
+                <Button>
+                  <Typography>View Footage</Typography>
+                </Button>
+                <Button>
+                  <Typography>View Inventory Report</Typography>
+                </Button>
+                <Button>
+                  <Typography>View Condition Report</Typography>
+                </Button>
+              </Popup>
+            </Polyline>
           )}
         </FeatureGroup>
       </MapContainer>
