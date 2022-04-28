@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-filename-extension */
@@ -11,6 +12,7 @@ import L from 'leaflet';
 
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+import { useNavigate } from 'react-router-dom';
 
 const DefaultIcon = L.icon({
   iconUrl: icon,
@@ -19,7 +21,7 @@ const DefaultIcon = L.icon({
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
-function Map({ style, zoom, position }) {
+function Map({ style, zoom, position, popUpRoutes }) {
   const [positionData, setPositionData] = useState(
     position || [
       [56.6758328268945, -4.03601769647726],
@@ -107,6 +109,11 @@ function Map({ style, zoom, position }) {
   const [center, setCenter] = useState(positionData[Math.round((positionData.length - 1) / 2)]);
 
   const [zoomLevel, setZoomLevel] = useState(zoom || 13);
+
+  const navigate = useNavigate();
+  const routeChange = (routeName) => {
+    navigate(routeName);
+  };
   return (
     <Card className="map" style={style} id="mapContainer">
       <MapContainer
@@ -120,18 +127,19 @@ function Map({ style, zoom, position }) {
         />
         <FeatureGroup>
           {positionData && positionData.length && (
-            <Polyline positions={positionData} color="#4F7ECB" weight={5}>
-              <Popup>
-                <Button>
-                  <Typography>View Footage</Typography>
-                </Button>
-                <Button>
-                  <Typography>View Inventory Report</Typography>
-                </Button>
-                <Button>
-                  <Typography>View Condition Report</Typography>
-                </Button>
-              </Popup>
+            <Polyline positions={positionData} color="#4F7ECB" weight={7}>
+              {popUpRoutes && popUpRoutes.length && (
+                <Popup className="popup">
+                  {popUpRoutes.map((route, i) => (
+                    <Button
+                      onClick={() => routeChange(route.path)}
+                      key={route.name + i}
+                      className="popup__button">
+                      <Typography lineHeight={0}>{route.name}</Typography>
+                    </Button>
+                  ))}
+                </Popup>
+              )}
             </Polyline>
           )}
         </FeatureGroup>

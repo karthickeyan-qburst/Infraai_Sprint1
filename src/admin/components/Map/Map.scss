@@ -7,3 +7,45 @@
 .leaflet-container {
   height: 100% !important;
 }
+
+.leaflet-popup-content-wrapper {
+  background: #131e27;
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden !important;
+  &__button {
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0rem 1rem !important;
+    text-transform: inherit;
+    transition: all 0.2s ease-in-out;
+    justify-content: flex-start;
+    &:hover {
+      background: #4a4744;
+      color: #fff;
+    }
+  }
+
+  &__button:first-child {
+    border-radius: 12px 12px 0 0;
+  }
+
+  &__button:last-child {
+    border-radius: 0 0 12px 12px;
+  }
+}
+
+// Package Classes
+.leaflet-popup-tip {
+  display: none;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  max-width: 200px;
+}
