@@ -1,28 +1,25 @@
-import React, { useState } from "react";
-import {
-  MapContainer,
-  TileLayer,
-  Popup,
-  Polyline,
-  FeatureGroup,
-} from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import { Button, Typography, Card } from "@mui/material";
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/jsx-filename-extension */
+import React, { useState } from 'react';
+import { MapContainer, TileLayer, Popup, Polyline, FeatureGroup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import { Button, Typography, Card } from '@mui/material';
 
-import "./Map.scss";
-import L from "leaflet";
+import './Map.scss';
+import L from 'leaflet';
 
-import icon from "leaflet/dist/images/marker-icon.png";
-import iconShadow from "leaflet/dist/images/marker-shadow.png";
+import icon from 'leaflet/dist/images/marker-icon.png';
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
-let DefaultIcon = L.icon({
+const DefaultIcon = L.icon({
   iconUrl: icon,
-  shadowUrl: iconShadow,
+  shadowUrl: iconShadow
 });
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
-const Map = ({ style, zoom, position }) => {
+function Map({ style, zoom, position }) {
   const [positionData, setPositionData] = useState(
     position || [
       [56.6758328268945, -4.03601769647726],
@@ -104,22 +101,19 @@ const Map = ({ style, zoom, position }) => {
       [56.670828333406, -4.0392095110979],
       [56.6735601676694, -4.03613175205858],
       [56.6753837567767, -4.03583839065357],
-      [56.675826302125, -4.03603203579921],
+      [56.675826302125, -4.03603203579921]
     ]
   );
-  const [center, setCenter] = useState(
-    positionData[Math.round((positionData.length - 1) / 2)]
-  );
+  const [center, setCenter] = useState(positionData[Math.round((positionData.length - 1) / 2)]);
 
   const [zoomLevel, setZoomLevel] = useState(zoom || 13);
   return (
     <Card className="map" style={style} id="mapContainer">
       <MapContainer
-        style={{ height: "100%", minHeight: "100%" }}
+        style={{ height: '100%', minHeight: '100%' }}
         center={center}
         zoom={zoomLevel}
-        scrollWheelZoom={true}
-      >
+        scrollWheelZoom>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -144,6 +138,6 @@ const Map = ({ style, zoom, position }) => {
       </MapContainer>
     </Card>
   );
-};
+}
 
 export default Map;
