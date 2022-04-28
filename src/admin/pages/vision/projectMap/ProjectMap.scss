@@ -1,0 +1,13 @@
+.visionMap {
+  margin: 1.5rem;
+  width: calc(100% - 3rem);
+  max-height: 100%;
+}
+
+.visionMap__header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
