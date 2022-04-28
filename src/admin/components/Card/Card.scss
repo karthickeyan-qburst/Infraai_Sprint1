@@ -1,4 +1,4 @@
-@import "../../styles/_breakpoints";
+@import "../../styles/breakpoints";
 
 .infai_fill_width_grid {
   margin-top: 60px !important;
@@ -21,10 +21,18 @@
   @include xs {
     /*  margin-left: 10px; */
   }
-
+  //for devices above 600px
   @include sm {
-    /*  margin-left: 118px; */
+    margin-left: -1.4rem; 
+    margin-right: -1.6rem;
   }
+  //for mobile device below 600px
+  @include xs-max-width{
+    margin-left: -1.2rem;
+    margin-right: -1.4rem;
+  }
+
+ 
 }
 
 .MuiCardContent-root {
@@ -41,9 +49,12 @@
 
 .card__heading {
   padding-left: 1rem;
-  font-weight: bold !important;
+  font-weight: 600 !important;
   font-family: "Work Sans", sans-serif !important;
   font-size: 24px;
+  line-height: 28px;
+  color:#222834;
+  padding-bottom: 0.5rem;
 }
 
 .card__subheading-outline {

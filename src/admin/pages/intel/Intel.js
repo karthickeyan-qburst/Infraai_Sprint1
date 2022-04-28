@@ -1,5 +1,6 @@
 import { Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import WestIcon from '@mui/icons-material/West';
 import React from "react";
 
 import Summary from "./summary/Summary";
@@ -10,6 +11,8 @@ import Analysis from "./analysis/Analysis";
 import Contact from "./contacts/Contact";
 import Marketplace from "./../maketplace/Marketplace";
 import TabNav from "./../../components/Tabs/TabNav";
+
+import './Intel.scss';
 
 export default function Intel() {
   const data = [
@@ -29,18 +32,19 @@ export default function Intel() {
         spacing={0.5}
         alignContent="flex-start"
       >
-        <Grid className={"infai_inner_content"} item xs={6} md={8}>
+        <Grid className="infai_inner_content" item xs={6} md={8}>
+          <WestIcon />
           <Typography variant="h5" component="div" className="card__heading">
-            Intel Page
+            INTEL
           </Typography>
         </Grid>
-        <Grid className={"infai_inner_content"} item xs={6} md={4}>
+        {/* <Grid className={"infai_inner_content"} item xs={6} md={4}>
           {" "}
           Search Icon
-        </Grid>
+        </Grid> */}
         <Grid item xs={12} md={12}>
-          <Box sx={{ width: "100%", typography: "body1" }}>
-            <TabNav tabData={data} />
+          <Box className="intel__tab-container" >
+            <TabNav  tabData={data} />
           </Box>
         </Grid>
       </Grid>

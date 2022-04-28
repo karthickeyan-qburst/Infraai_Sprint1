@@ -15,19 +15,18 @@ function CardComponent() {
           <CardContent>
             <Typography
               gutterBottom
-              variant="h5"
               component="div"
               className="card__heading"
             >
               Description
             </Typography>
             <Typography component="div" className="card__subheading-outline">
-              Hello
+              Project Details
             </Typography>
             <Typography component="div" className="card__content-outline">
               <Content />
             </Typography>
-            <Typography component="div" className="card__content-outline">
+            {/* <Typography component="div" className="card__content-outline">
               <MarketPlaceCard />
             </Typography>
             <Typography component="div" className="card__content-minicard" sx={{border: 1}}>
@@ -40,7 +39,7 @@ function CardComponent() {
               <MiniCard />
               <MiniCard />
               </Box>
-            </Typography>
+            </Typography> */}
           </CardContent>
         </Card>
       </Box>

@@ -9,6 +9,15 @@ body {
   display: flex;
   background-color: #e5e5e5;
   height: 100vh !important;
+
+  //for mobile device below 600px
+  @include xs-max-width {
+    width: 100vh;
+    padding-right: 2.5rem !important;
+    overflow: auto;
+    height: calc(100vh);
+    height: 1500px !important;
+  }
 }
 
 .infai_fill_width {
@@ -22,12 +31,14 @@ body {
   margin-top: 62px !important;
   width: 100%;
 
+  //for devices till 600px
   @include xs {
-    margin-left: 10px !important; 
+    margin-left: 10px !important;
   }
 
+  //for devices above 600px
   @include sm {
-      margin-left: 115px !important; 
+    margin-left: 115px !important;
   }
 }
 /* Style for tab */
