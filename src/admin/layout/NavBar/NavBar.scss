@@ -31,20 +31,18 @@
 
 .navbar__listitem .Mui-selected{
     background-color: #FFDA6A !important;
-    padding-right: 0.2rem !important;
-    padding-left: 0.2rem !important;
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
     padding-top: 0.7rem !important;
     padding-bottom: 0.5rem !important;
     color:  black !important;
-    border-radius: 5px;
+    border-radius: 10px;
 
 }
 
 .navbar__listitem .Mui-selected .navbar__listitem-icon{
     color: black !important;
 }
-
-
 
 .navbar__listitem-icon{
     color: white !important;
@@ -62,9 +60,9 @@
     color: #FFDA6A;
 }
 
-.navbar__listitem:hover .navbar__listitem-icon{
-    color: #FFDA6A !important;
-}
+// .navbar__listitem:hover .navbar__listitem-icon{
+//     color: #FFDA6A !important;
+// }
 
 .navbar__divider{
     border-bottom: 1px solid grey;
