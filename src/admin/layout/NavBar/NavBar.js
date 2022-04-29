@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Drawer,
   Toolbar,
@@ -6,6 +6,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  MenuItem,
   Box,
 } from "@mui/material";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
@@ -15,6 +16,7 @@ import "./NavBar.scss";
 import routes from "./../../../route/route";
 
 function NavBar({ mobileOpen, handleDrawerToggle, ...props }) {
+  const [ selected, setSelected ] = useState(null);
   const { window } = props;
   let navigate = useNavigate();
   let location = useLocation();
@@ -26,9 +28,11 @@ function NavBar({ mobileOpen, handleDrawerToggle, ...props }) {
     showSubMenu = true;
   }
 
+
   const container =
     window !== undefined ? () => window().document.body : undefined;
-  const routeChange = (routeName) => {
+  const routeChange = (routeName, index) => {
+    setSelected(index);
     navigate(routeName);
   };
 
@@ -44,22 +48,26 @@ function NavBar({ mobileOpen, handleDrawerToggle, ...props }) {
             {route.menutype === "sub" && showSubMenu === false ? (
               ""
             ) : (
-              <ListItem
-                key={index}
-                button
-                className="navbar__listitem"
-                onClick={routeChange.bind(this, route.path)}
-              >
-                <ListItemIcon className="navbar__listitem-icon">
-                  <InboxIcon />
-                </ListItemIcon>
-                <ListItemText
+              <>
+                <ListItem
                   key={index}
-                  primary={route.name}
-                  className="navbar__listitem-text"
-                />
+                  button
+                  className="navbar__listitem"
+                  onClick={routeChange.bind(this, route.path, index)}
+                >
+                  <MenuItem button  selected={selected === index}>
+                  <ListItemIcon className = {`navbar__listitem-icon `}>
+                    <InboxIcon />
+                  </ListItemIcon>
+                  </MenuItem>
+                    <ListItemText
+                      key={index}
+                      primary={route.name}
+                      className="navbar__listitem-text"
+                    />
+                </ListItem>
                 <div className="navbar__divider" />
-              </ListItem>
+              </>
             )}
           </>
         ))}

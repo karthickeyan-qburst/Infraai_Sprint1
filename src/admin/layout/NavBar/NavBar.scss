@@ -21,7 +21,30 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    padding-top: 1.1rem !important;
+    padding-bottom: .8rem !important;
 }
+
+.navbar__listitem:first-child{
+    margin-top: -0.6rem !important;
+}
+
+.navbar__listitem .Mui-selected{
+    background-color: #FFDA6A !important;
+    padding-right: 0.2rem !important;
+    padding-left: 0.2rem !important;
+    padding-top: 0.7rem !important;
+    padding-bottom: 0.5rem !important;
+    color:  black !important;
+    border-radius: 5px;
+
+}
+
+.navbar__listitem .Mui-selected .navbar__listitem-icon{
+    color: black !important;
+}
+
+
 
 .navbar__listitem-icon{
     color: white !important;

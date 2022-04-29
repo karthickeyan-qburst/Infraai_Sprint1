@@ -18,6 +18,11 @@ body {
     height: calc(100vh);
     height: 1500px !important;
   }
+
+  @include xl-max-width{
+    width: 100vh;
+    height: 2200px !important;
+  }
 }
 
 .infai_fill_width {
