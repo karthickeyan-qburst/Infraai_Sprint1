@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import { Box, Card, CardContent, Typography, Grid } from "@mui/material";
 
 import Content from "../CardContents/Content";
 import MiniCard from "../MiniCard/MiniCard";
@@ -32,7 +32,7 @@ function CardComponent(props) {
                 className="card__content-minicard"
                 sx={{ border: 1 }}
               >
-                <Box classOkayName="card__content-minicard-data-1">
+                <Box className="card__content-minicard-data-1">
                   <Typography component="div" className="year1">
                     2012
                   </Typography>
@@ -50,11 +50,17 @@ function CardComponent(props) {
           </Typography>
 
           {marketPlace && (
-            <Box className="infai_marketplace">
-              <MarketPlaceCard />
-              <MarketPlaceCard />
-              <MarketPlaceCard />
-            </Box>
+              <Grid container className="market__container">
+                <Grid lg={4} className="marketplace__container">
+                  <MarketPlaceCard />
+                </Grid>
+                <Grid lg={4} className="marketplace__container">
+                  <MarketPlaceCard />
+                </Grid>
+                <Grid lg={4} className="marketplace__container">
+                  <MarketPlaceCard />
+                </Grid>
+              </Grid>
           )}
 
           {/* <Typography component="div" className="card__content-outline">
