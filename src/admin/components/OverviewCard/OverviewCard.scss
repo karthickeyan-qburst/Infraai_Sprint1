@@ -3,7 +3,7 @@
 .overview-main__body {
   flex-grow: 1;
   width: 100%;
-  height: 27rem !important;
+  height: 100% !important;
 
   @include xs {
     /*  margin-left: 10px; */
@@ -21,7 +21,7 @@
 .overview__content {
   padding-left: 1.7rem !important;
   padding-right: 1rem !important;
-  background: #ffffff;
+  background-color: #ffffff;
   border: 1px solid #e5e5e5;
   box-sizing: border-box;
   border-radius: 10px;
@@ -38,8 +38,54 @@
   color: #131e27 !important;
 }
 
-.overview__table{
-    border-radius: 10px;
-    margin-left: 0.5rem !important;
-    margin-right: 1rem !important;
+.overview__table {
+  margin-left: 0.1rem !important;
+  margin-right: 1rem !important;
+}
+
+.overview__table .MuiTableContainer-root {
+  box-shadow: none !important;
+}
+
+.overview__table .MuiTable-root {
+  border: 0.001px solid rgba(224, 224, 224, 1) !important;
+  box-shadow: none !important;
+  border-radius: 10px !important;
+}
+
+.overview__table-row {
+  height: .8rem !important;
+  border-color: gray;
+}
+
+.overview__table-key {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+  color: rgba($color: #000000, $alpha: 0.6);
+}
+
+.overview__table-value {
+  width: 45% !important;
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.overview__table-value button {
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 125%;
+  color: #131e27;
+  padding: 7px 10px;
+  background-color: #f9f8f4;
+  border: 1px solid #131e27;
+  box-sizing: border-box;
+  border-radius: 5px;
 }

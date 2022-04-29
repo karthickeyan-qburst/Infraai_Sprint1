@@ -3,7 +3,7 @@
 .projectcard-main__body {
   flex-grow: 1;
   width: 100%;
-  height: 27rem !important;
+  height: 100% !important;
 
   @include xs {
     /*  margin-left: 10px; */
@@ -21,14 +21,14 @@
 .projectcard__content {
   padding-left: 1.7rem !important;
   padding-right: 1rem !important;
-  background: #ffffff;
+  background-color: #ffffff;
   border: 1px solid #e5e5e5;
   box-sizing: border-box;
   border-radius: 10px;
 }
 
 .projectcard__content-heading {
-  margin-top: 0.4rem !important;
+  margin-top: 0.6rem !important;
   font-family: "Work Sans", sans-serif !important;
   font-style: normal !important;
   font-weight: 600 !important;
@@ -38,7 +38,7 @@
 }
 
 .projectcard__content-details {
-  margin-top: 1rem;
+  margin-top: 1.25rem;
 }
 
 .details {

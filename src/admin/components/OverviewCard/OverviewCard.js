@@ -14,8 +14,8 @@ import {
 
 import "./OverviewCard.scss";
 
-function createData(name, protein) {
-  return { name, protein };
+function createData(name, value) {
+  return { name, value };
 }
 
 const rows = [
@@ -27,7 +27,7 @@ const rows = [
   createData("RFP Date", "03/15/2024"),
   createData("Incumbent", "T1"),
   createData("Miles", "11"),
-  createData("Attachment", <button>Select</button>),
+  createData("Attachment", <button>View Attachment</button>),
 ];
 
 function OverViewCard() {
@@ -45,14 +45,14 @@ function OverViewCard() {
                 {rows.map((row) => (
                   <TableRow
                     key={row.name}
-                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                    className="overview__table-row"
                   >
-                    <TableCell component="th" scope="row">
+                    <TableCell className="overview__table-key" component="th" scope="row">
                       {row.name}
                     </TableCell>
 
-                    <TableCell sx={{ width: "45%" }} align="right">
-                      {row.protein}
+                    <TableCell className="overview__table-value" align="right">
+                      {row.value}
                     </TableCell>
                   </TableRow>
                 ))}
