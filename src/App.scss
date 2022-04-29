@@ -8,7 +8,7 @@ body {
 .parent-container {
   display: flex;
   background-color: #e5e5e5;
-  height: 100vh !important;
+  /*   height: 100vh !important; */
 
   //for mobile device below 600px
   @include xs-max-width {
@@ -17,11 +17,6 @@ body {
     overflow: auto;
     height: calc(100vh);
     height: 1500px !important;
-  }
-
-  @include xl-max-width{
-    width: 100vh;
-    height: 2200px !important;
   }
 }
 

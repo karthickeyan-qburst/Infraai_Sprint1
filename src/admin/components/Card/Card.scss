@@ -5,11 +5,11 @@
   width: 100%;
 
   @include xs {
-    margin-left: 10px !important; 
+    margin-left: 10px !important;
   }
 
   @include sm {
-      margin-left: 115px !important; 
+    margin-left: 115px !important;
   }
 }
 
@@ -23,16 +23,14 @@
   }
   //for devices above 600px
   @include sm {
-    margin-left: -1.4rem; 
+    margin-left: -1.4rem;
     margin-right: -1.6rem;
   }
   //for mobile device below 600px
-  @include xs-max-width{
+  @include xs-max-width {
     margin-left: -1.2rem;
     margin-right: -1.4rem;
   }
-
- 
 }
 
 .MuiCardContent-root {
@@ -53,7 +51,7 @@
   font-family: "Work Sans", sans-serif !important;
   font-size: 24px;
   line-height: 28px;
-  color:#222834;
+  color: #222834;
   padding-bottom: 0.5rem;
 }
 
@@ -65,42 +63,45 @@
   font-size: 18px;
 }
 
-.card__content-outline{
-    padding-bottom: 5px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+.card__content-outline {
+  padding-bottom: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
-.card__content-minicard{
-    height: 14rem;
-    top: 35rem;
-    left: 9rem;
-    border: 0.66px solid lightgrey!important; 
-    box-sizing: border-box;
-    border-radius: 6.6px;
-    margin: 20px auto !important;
-    max-width: 95%;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
+.card__content-minicard {
+  height: 14rem;
+  top: 35rem;
+  left: 9rem;
+  border: 0.66px solid lightgrey !important;
+  box-sizing: border-box;
+  border-radius: 6.6px;
+  margin: 20px auto !important;
+  max-width: 95%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
-.card__content-minicard-data-1{
+.card__content-minicard-data-1 {
   display: flex !important;
   flex-direction: row !important;
   justify-content: space-between;
-  color: #00A1DF !important;
+  color: #00a1df !important;
   margin-left: 10px;
   margin-right: 10px;
 }
 
-.year1{
+.year1 {
   font-weight: 600 !important;
   font-size: 18px !important;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
 
-
-.card__content-minicard-data{
+.card__content-minicard-data {
   display: flex !important;
   flex-direction: row !important;
+}
+
+.infai_marketplace {
+  display: inline-flex;
 }

@@ -1,6 +1,6 @@
 import { Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import WestIcon from '@mui/icons-material/West';
+import WestIcon from "@mui/icons-material/West";
 import React from "react";
 
 import Summary from "./summary/Summary";
@@ -12,7 +12,7 @@ import Contact from "./contacts/Contact";
 import Marketplace from "./../maketplace/Marketplace";
 import TabNav from "./../../components/Tabs/TabNav";
 
-import './Intel.scss';
+import "./Intel.scss";
 
 export default function Intel() {
   const data = [
@@ -43,8 +43,8 @@ export default function Intel() {
           Search Icon
         </Grid> */}
         <Grid item xs={12} md={12}>
-          <Box className="intel__tab-container" >
-            <TabNav  tabData={data} />
+          <Box className="intel__tab-container">
+            <TabNav tabData={data} />
           </Box>
         </Grid>
       </Grid>
