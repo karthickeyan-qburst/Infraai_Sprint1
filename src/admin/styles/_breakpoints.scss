@@ -43,7 +43,7 @@ $breakpoints: (
 };
 
 @mixin  xl-max-width {
-    @media (max-width: map-get($breakpoints, "xl")){
+    @media (max-width: map-get($breakpoints, "lg")){
         @content
     }
 };

@@ -1,4 +1,15 @@
 import React, { useState } from "react";
+import { ReactComponent as HomeSvg } from '../../../assets/home.svg';
+import { ReactComponent as HomeSelectedSvg } from '../../../assets/home-selected.svg';
+import { ReactComponent as IntelSvg } from '../../../assets/intel.svg';
+import { ReactComponent as IntelSelectedSvg } from '../../../assets/intel-selected.svg';
+import { ReactComponent as MarketSvg } from '../../../assets/market.svg';
+import { ReactComponent as MarketSelectedSvg } from '../../../assets/market-selected.svg';
+import { ReactComponent as MyProjectsSvg } from '../../../assets/projects.svg';
+import { ReactComponent as MyProjectsSelectedSvg } from '../../../assets/projects-selected.svg';
+import { ReactComponent as VisionSvg } from '../../../assets/vision.svg';
+import { ReactComponent as VisionSelectedSvg } from '../../../assets/vision-selected.svg';
+
 import {
   Drawer,
   Toolbar,
@@ -9,14 +20,13 @@ import {
   MenuItem,
   Box,
 } from "@mui/material";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import { useNavigate, useLocation } from "react-router-dom";
 
 import "./NavBar.scss";
 import routes from "./../../../route/route";
 
 function NavBar({ mobileOpen, handleDrawerToggle, ...props }) {
-  const [ selected, setSelected ] = useState(null);
+  const [ selected, setSelected ] = useState({});
   const { window } = props;
   let navigate = useNavigate();
   let location = useLocation();
@@ -31,8 +41,9 @@ function NavBar({ mobileOpen, handleDrawerToggle, ...props }) {
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
-  const routeChange = (routeName, index) => {
-    setSelected(index);
+  const routeChange = (routeName, index, name) => {
+    setSelected({name, index});
+    console.log(selected);
     navigate(routeName);
   };
 
@@ -53,11 +64,25 @@ function NavBar({ mobileOpen, handleDrawerToggle, ...props }) {
                   key={index}
                   button
                   className="navbar__listitem"
-                  onClick={routeChange.bind(this, route.path, index)}
+                  onClick={routeChange.bind(this, route.path, index, route.name)}
                 >
-                  <MenuItem button  selected={selected === index}>
+                  <MenuItem button  selected={selected.index === index}>
                   <ListItemIcon className = {`navbar__listitem-icon `}>
-                    <InboxIcon />
+                    {
+                      route.name === 'Home' ? (selected.name ==='Home' ? <HomeSelectedSvg /> : <HomeSvg />) : null
+                    }
+                    {
+                      route.name === 'Intel' ? (selected.name ==='Intel' ? <IntelSelectedSvg /> : <IntelSvg />) : null
+                    }
+                    {
+                      route.name === 'My Projects' ? (selected.name ==='My Projects' ? <MyProjectsSelectedSvg /> : <MyProjectsSvg />) : null
+                    }
+                    {
+                      route.name === 'Vision' ? (selected.name ==='Vision' ? <VisionSelectedSvg /> : <VisionSvg />) : null
+                    }
+                    {
+                      route.name === 'Marketplace' ? (selected.name ==='Marketplace' ? <MarketSelectedSvg /> : <MarketSvg />) : null
+                    }
                   </ListItemIcon>
                   </MenuItem>
                     <ListItemText

@@ -1,5 +1,4 @@
 @import "./admin/styles/breakpoints";
-
 body {
   margin: 0px;
 }
@@ -11,12 +10,17 @@ body {
   /*   height: 100vh !important; */
 
   //for mobile device below 600px
-  @include xs-max-width {
+  /* @include xs-max-width {
     width: 100vh;
     padding-right: 2.5rem !important;
     overflow: auto;
-    height: calc(100vh);
     height: 1500px !important;
+  } */
+
+  @include xl-max-width {
+    width: 2000px;
+    height: 4000px !important;
+    padding-right: 2rem !important;
   }
 }
 
