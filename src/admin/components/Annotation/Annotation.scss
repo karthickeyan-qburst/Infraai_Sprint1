@@ -1,0 +1,20 @@
+.draw {
+  &__container {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+// Package Scss
+
+.ReactCrop__child-wrapper {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  display: flex;
+}

@@ -7,7 +7,7 @@ import Pannellum from '../../../components/Pannellum/Pannellum';
 import Annotation from '../../../components/Annotation/Annotation';
 
 export default function ProjectFootage() {
-  const [currentView, setCurrentView] = useState('videoPlayer');
+  const [currentView, setCurrentView] = useState('annotation');
   return (
     <Grid container columns={{ xs: 4, sm: 8, md: 12 }} spacing={0.5} alignContent="flex-start">
       <Grid className="infai_inner_content" item xs={6} md={8}>
@@ -16,7 +16,7 @@ export default function ProjectFootage() {
         </Typography>
       </Grid>
       <Grid className="infai_inner_content" item xs={6} md={4}>
-        <Button onClick={() => setCurrentView('videoPlayer')}>Object Classes</Button>
+        <Button onClick={() => setCurrentView('objectClasses')}>Object Classes</Button>
         <Button onClick={() => setCurrentView('pannellum')}>Penullum</Button>
         <Button onClick={() => setCurrentView('annotation')}>Draw</Button>
       </Grid>
@@ -32,8 +32,8 @@ export default function ProjectFootage() {
             justifyContent: 'center'
           }}
           sx={{ width: '100%', typography: 'body1' }}>
-          {currentView === 'videoPlayer' && <VideoPlayer height="80vh" />}
-          {currentView === 'pannellum' && <Pannellum />}
+          {(!currentView || currentView === 'objectClasses') && <VideoPlayer height="80vh" />}
+          {currentView === 'pannellum' && <Pannellum width="100%" height="75vh" />}
           {currentView === 'annotation' && <Annotation />}
         </Box>
       </Grid>

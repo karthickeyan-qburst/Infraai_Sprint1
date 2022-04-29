@@ -1,27 +1,30 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-filename-extension */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Pannellum.scss';
-import ReactPannellum, {
-  getConfig,
-  loadScene,
-  getViewer,
-  getCurrentScene,
-  addScene,
-  // getAllScenes,
-  addHotSpot
-  // toggleFullscreen,
-} from 'react-pannellum';
+import ReactPannellum from 'react-pannellum'; // toggleFullscreen, //   addHotSpot // getAllScenes, //   addScene, //   getCurrentScene, //   getViewer, //   loadScene, //   getConfig,
+import { Card } from '@material-ui/core';
 
-export default function Pannellum({ sceneId, imageSource, hotSpots }) {
+export default function Pannellum({ sceneId, imageSource, height, width }) {
   const [config, setConfig] = useState({
     uiText: { loadingLabel: '' },
     autoLoad: true,
     hotSpotDebug: true,
-    mouseZoom: false
+    mouseZoom: true
   });
 
+  useEffect(() => {
+    const pannellumContainer = document.getElementsByClassName('pannellum__container')[0];
+    if (pannellumContainer) {
+      pannellumContainer.style = `width: ${width || '100%'} !important; height: ${
+        height || '75vh'
+      } !important `;
+    }
+  }, []);
+
   return (
-    <div>
+    <Card className="pannellum__container">
       <ReactPannellum
         id="pannellumId"
         sceneId={sceneId || 'scene1'}
@@ -32,6 +35,6 @@ export default function Pannellum({ sceneId, imageSource, hotSpots }) {
         config={config}
         className="custom-panell"
       />
-    </div>
+    </Card>
   );
 }
