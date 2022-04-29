@@ -1,5 +1,7 @@
 import React from "react";
 import CardComponent from "../../../components/Card/CardComponent";
+import InventoryReportTable from "../../../components/InventoryReportTable/InventoryReportTable";
+import InventorySubTable from "../../../components/InventorySubTable/InventorySubTable";
 
 export default function Analysis() {
   const title = "Analysis";
@@ -7,6 +9,8 @@ export default function Analysis() {
   return (
     <>
       <CardComponent title={title} subTitle={subTitle} />
+      {/* <InventoryReportTable /> */}
+      <InventorySubTable />
     </>
   );
 }

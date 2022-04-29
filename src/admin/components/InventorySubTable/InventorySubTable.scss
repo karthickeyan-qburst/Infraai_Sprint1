@@ -1,0 +1,28 @@
+.inventorytable__container {
+  width: 75% !important;
+  border: 0.001px solid rgba(224, 224, 224, 1);
+  border-radius: 10px !important;
+}
+
+.inventorytable__container .MuiTableContainer {
+  box-shadow: none !important;
+}
+
+.report__data {
+  font-family: "Work Sans", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  color: #222834 !important;
+  border-left-color: white;
+  border-left-style: solid;
+  border-left-width: 20px;
+  border-right-color: white;
+  border-right-style: solid;
+  border-right-width: 20px;
+}
+
+.data1__inventory{
+    padding-left: 3px !important;
+}
