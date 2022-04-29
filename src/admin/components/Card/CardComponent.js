@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
+import { Box, Card, CardContent, Typography } from "@mui/material";
 
 import Content from "../CardContents/Content";
 import MiniCard from "../MiniCard/MiniCard";
