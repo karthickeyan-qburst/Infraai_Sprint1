@@ -1,20 +1,20 @@
 @import "../../styles/breakpoints";
 
-.main__body {
+.projectcard-main__body {
   flex-grow: 1;
-  width: 48%;
-  height: 26rem !important;
+  width: 100%;
+  height: 27rem !important;
 
   @include xs {
     /*  margin-left: 10px; */
   }
   //for devices above 600px
   @include sm {
-    margin-left: -1.4rem;
+    margin-left: -.5rem;
   }
   //for mobile device below 600px
   @include xs-max-width {
-    margin-left: -1.2rem;
+    margin-left: -0.3rem;
   }
 }
 

@@ -1,0 +1,45 @@
+@import "../../styles/breakpoints";
+
+.overview-main__body {
+  flex-grow: 1;
+  width: 100%;
+  height: 27rem !important;
+
+  @include xs {
+    /*  margin-left: 10px; */
+  }
+  //for devices above 600px
+  @include sm {
+    margin-left: 1.6rem;
+  }
+  //for mobile device below 600px
+  @include xs-max-width {
+    margin-left: 1.4rem;
+  }
+}
+
+.overview__content {
+  padding-left: 1.7rem !important;
+  padding-right: 1rem !important;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.overview-heading {
+  margin-top: 0.4rem !important;
+  margin-bottom: 1.15rem !important;
+  font-family: "Work Sans", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 24px !important;
+  line-height: 28px !important;
+  color: #131e27 !important;
+}
+
+.overview__table{
+    border-radius: 10px;
+    margin-left: 0.5rem !important;
+    margin-right: 1rem !important;
+}

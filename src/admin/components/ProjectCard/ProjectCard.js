@@ -12,7 +12,7 @@ import "./ProjectCard.scss";
 
 function ProjectCard() {
   return (
-    <Box component="main" className="main__body">
+    <Box component="main" className="projectcard-main__body">
       <Card className="projectcard__content">
         <CardContent>
           <Typography component="div" className="projectcard__content-heading">
