@@ -4,24 +4,10 @@ import { Button, Grid, Typography } from '@mui/material';
 import React from 'react';
 import Map from '../../../components/Map/Map';
 import './ProjectMap.scss';
+import { visionMapRoutes } from '../../../constants/Constants';
 
 export default function ProjectMap() {
   const position = [51.505, -0.09];
-
-  const popUpRoutes = [
-    {
-      path: '/footage/:id',
-      name: 'View Footage'
-    },
-    {
-      path: '/',
-      name: 'View Inventory Report'
-    },
-    {
-      path: '/',
-      name: 'View Condition Report'
-    }
-  ];
 
   return (
     <Grid
@@ -37,11 +23,15 @@ export default function ProjectMap() {
           </Typography>
         </Grid>
         <Grid className="infai_inner_content">
-          <Button variant="outlined">Return To Overview</Button>
+          <Button
+            variant="outlined"
+            style={{ textTransform: 'initial', borderColor: 'black', color: 'black' }}>
+            Return To Overview
+          </Button>
         </Grid>
       </Grid>
       <Grid item xs={12} md={12}>
-        <Map popUpRoutes={popUpRoutes} style={{ height: '75vh' }} />
+        <Map popUpRoutes={visionMapRoutes} style={{ height: '75vh' }} />
       </Grid>
     </Grid>
   );
