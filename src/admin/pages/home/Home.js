@@ -8,12 +8,14 @@ import Myprojects from "../myprojects/Myprojects";
 import ConditionalReport from "../order/conditionalReport/ConditionalReport";
 import ReportTable from "../../components/ReportTable/ReportTable";
 
+import "./Home.scss";
+
 function Home() {
   const data = [
     { name: "Project", value: "1", element: <Myprojects /> },
     { name: "My Project", value: "2", element: <Myprojects /> },
-    { name: "My Data  ", value: "3", element: <ReportTable /> },
-    { name: "Messages", value: "4", element: <ConditionalReport /> },
+    { name: "My Data  ", value: "3", element: <Marketplace /> },
+    { name: "Messages", value: "4", element: "Skipped" },
   ];
   return (
     <>
@@ -28,11 +30,8 @@ function Home() {
             Home
           </Typography>
         </Grid>
-        <Grid className={"infai_inner_content"} item xs={6} md={4}>
-          Search
-        </Grid>
         <Grid item xs={12} md={12}>
-          <Box sx={{ width: "100%", typography: "body1" }}>
+          <Box className="intel__tab-container">
             <TabNav tabData={data} />
           </Box>
         </Grid>
