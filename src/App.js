@@ -24,8 +24,8 @@ function App() {
             <Box className="infai_fill_width_grid ">
               <Routes>
                 <Route exact path="/home" element={<Home />} />
-                <Route exact path="/myprojects" element={<Myprojects />} />
-                <Route exact path="/marketplace" element={<Marketplace />} />
+                <Route exact path="/myprojects" element={<Home />} />
+                <Route exact path="/marketplace" element={<Home />} />
                 <Route exact path="/intel/:id" element={<Intel />} />
                 <Route exact path="/vision/:id" element={<ProjectMap />} />
               </Routes>

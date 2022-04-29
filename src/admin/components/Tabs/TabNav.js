@@ -6,8 +6,8 @@ import React from "react";
 import "./TabNav.scss";
 
 export default function TabNav(props) {
-  const { tabData } = props;
-  const [value, setValue] = React.useState("1");
+  const { tabData, tabSelected = "1" } = props;
+  const [value, setValue] = React.useState(tabSelected);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };

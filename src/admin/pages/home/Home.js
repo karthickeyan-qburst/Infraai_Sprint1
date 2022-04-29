@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
+import { useLocation } from "react-router-dom";
 
 import TabNav from "../../components/Tabs/TabNav";
 import Marketplace from "../maketplace/Marketplace";
@@ -17,6 +18,19 @@ function Home() {
     { name: "My Data  ", value: "3", element: <Marketplace /> },
     { name: "Messages", value: "4", element: "Skipped" },
   ];
+  const location = useLocation();
+  const [tabSelected, setTabSelected] = useState("1");
+
+  useEffect(() => {
+    if (location.pathname.includes("/myprojects")) {
+      setTabSelected("2");
+    } else if (location.pathname.includes("/marketplace")) {
+      setTabSelected("3");
+    } else if (location.pathname.includes("/home")) {
+      setTabSelected("1");
+    }
+  }, [location]);
+
   return (
     <>
       <Grid
@@ -31,8 +45,8 @@ function Home() {
           </Typography>
         </Grid>
         <Grid item xs={12} md={12}>
-          <Box className="intel__tab-container">
-            <TabNav tabData={data} />
+          <Box className="intel__tab-container" key={tabSelected}>
+            <TabNav tabData={data} tabSelected={tabSelected} />
           </Box>
         </Grid>
       </Grid>
