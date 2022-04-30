@@ -9,6 +9,114 @@
   }
 }
 
+.popoverButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__left,
+  &__right {
+    border: none;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    background: #fff !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    cursor: pointer !important;
+  }
+
+  &__left,
+  &__right {
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__left {
+    margin-right: 10px !important;
+  }
+
+  &__icon {
+    font-size: 1rem !important;
+  }
+}
+
+.popover {
+  padding: 15px;
+  border-radius: 15px !important;
+
+  &__top {
+    > div {
+      &:first-child {
+        display: flex !important;
+        max-width: 380px;
+        height: 50px;
+        background: #f5f5f5;
+        border-radius: 10px;
+        > input {
+          flex: 1;
+          margin: 5px;
+          border: none;
+          background: #f5f5f5;
+          outline: none;
+          font-size: 16px;
+        }
+        > button {
+          text-transform: none;
+          color: black;
+          margin: 5px;
+          font-size: 16px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          padding: 8px 15px;
+          width: 100px;
+          background: #ffda6a;
+          border-radius: 5px;
+          border: none;
+        }
+      }
+      &:nth-child(2) {
+        font-size: 12px;
+        padding: 10px 0;
+        border-bottom: 0.5px solid lightgray;
+        > span {
+          color: #1498fa;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    > div {
+      &:first-child {
+        margin-top: 10px;
+      }
+      &:nth-child(2) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 10px;
+        overflow: auto;
+        max-height: 150px;
+      }
+    }
+  }
+  .chip {
+    border-radius: 5px !important;
+    margin-bottom: 5px !important;
+    color: gray !important;
+
+    &__active {
+      color: black !important;
+      border-color: black;
+    }
+  }
+}
+
 // Package Scss
 
 .ReactCrop__child-wrapper {
