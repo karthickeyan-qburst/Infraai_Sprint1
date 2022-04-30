@@ -18,3 +18,13 @@
   overflow: hidden;
   display: flex;
 }
+
+.ReactCrop__drag-handle {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+.ReactCrop__drag-elements {
+  display: none !important;
+  pointer-events: none !important;
+}
