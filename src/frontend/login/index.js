@@ -52,7 +52,7 @@ export default function Login(){
                         </Grid>
                         <Grid item  className="iai_margin">
                         <FormControlLabel control={<Checkbox defaultChecked />} label="Remember Me" />
-                        <Typography className="iai_span" component="span">Forgot Password?</Typography> 
+                        <Typography className="iai_span;" component="span">Forgot Password?</Typography> 
                         </Grid>
                         
                         <Grid item className="iai_margin">
