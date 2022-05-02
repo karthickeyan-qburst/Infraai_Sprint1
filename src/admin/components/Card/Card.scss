@@ -115,3 +115,7 @@
 .contact__container{
   margin:0
 }
+
+.contactcard_container:nth-child(even){
+  margin-left: 60px;
+}

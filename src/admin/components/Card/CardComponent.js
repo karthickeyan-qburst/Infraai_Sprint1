@@ -70,7 +70,7 @@ function CardComponent(props) {
           {contacts && (
               <Grid container  rowSpacing={5} columnSpacing={5} className="contact__container">
                 { contactData.map((contact) => (
-                  <Grid item md={5} key={contact.id} >
+                  <Grid item md={5} key={contact.id} className="contactcard_container">
                       <ContactCard data={contact}/>
                   </Grid>
                   ))
