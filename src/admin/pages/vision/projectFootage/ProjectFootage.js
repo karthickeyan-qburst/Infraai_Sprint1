@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 /* eslint-disable react/jsx-filename-extension */
 import { Button, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
@@ -7,7 +8,7 @@ import Pannellum from '../../../components/Pannellum/Pannellum';
 import Annotation from '../../../components/Annotation/Annotation';
 
 export default function ProjectFootage() {
-  const [currentView, setCurrentView] = useState('annotation');
+  const [currentView, setCurrentView] = useState('');
   return (
     <Grid container columns={{ xs: 4, sm: 8, md: 12 }} spacing={0.5} alignContent="flex-start">
       <Grid className="infai_inner_content" item xs={6} md={8}>
@@ -16,7 +17,12 @@ export default function ProjectFootage() {
         </Typography>
       </Grid>
       <Grid className="infai_inner_content" item xs={6} md={4}>
-        <Button onClick={() => setCurrentView('objectClasses')}>Object Classes</Button>
+        <Button
+          onClick={() =>
+            setCurrentView((view) => (view === 'objectClasses' ? '' : 'objectClasses'))
+          }>
+          Object Classes
+        </Button>
         <Button onClick={() => setCurrentView('pannellum')}>Penullum</Button>
         <Button onClick={() => setCurrentView('annotation')}>Draw</Button>
       </Grid>
@@ -32,9 +38,22 @@ export default function ProjectFootage() {
             justifyContent: 'center'
           }}
           sx={{ width: '100%', typography: 'body1' }}>
-          {(!currentView || currentView === 'objectClasses') && <VideoPlayer height="80vh" />}
+          {(!currentView || currentView === 'objectClasses') && (
+            <VideoPlayer
+              showClasses={currentView}
+              height="80vh"
+              drawWidth={1200}
+              drawHeight={600}
+            />
+          )}
           {currentView === 'pannellum' && <Pannellum width="100%" height="75vh" />}
-          {currentView === 'annotation' && <Annotation />}
+          {currentView === 'annotation' && (
+            <Annotation
+              setCurrentView={() => setCurrentView('objectClasses')}
+              drawWidth={1200}
+              drawHeight={600}
+            />
+          )}
         </Box>
       </Grid>
     </Grid>

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-unreachable */
 /* eslint-disable consistent-return */
@@ -16,9 +17,16 @@ import { Stage, Layer, Rect, Image } from 'react-konva';
 import { Popper, Button, Card, Chip } from '@mui/material';
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import { useNavigate } from 'react-router-dom';
 
 let startCoordinate = {};
-export default function Annotation({ imageSource, objectClasses }) {
+export default function Annotation({
+  imageSource,
+  objectClasses,
+  drawWidth,
+  drawHeight,
+  setCurrentView
+}) {
   const [annotationClasses, setAnnotationClasses] = useState(
     objectClasses || [
       'Car',
@@ -39,8 +47,9 @@ export default function Annotation({ imageSource, objectClasses }) {
     endX: 0,
     endY: 0
   });
+  console.log(coordinates);
   const [color, setColor] = useState('green');
-  const [image, setImage] = useState(new window.Image());
+  const [image, setImage] = useState('');
   const [anchorButtonEl, setAnchorButtonEl] = useState(null);
   const [openButton, setButtonOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -55,14 +64,18 @@ export default function Annotation({ imageSource, objectClasses }) {
   const [drawEnabled, setDrawEnabled] = useState(true);
 
   useEffect(() => {
-    const img = new window.Image();
-    img.src = imageSource || 'https://telanganatoday.com/wp-content/uploads/2020/11/Link-road.jpg';
-    setImage(img);
+    const img = document.createElement('img');
+    img.src = imageSource || '/132.jpg';
+    img.onload = () => {
+      setImage(img);
+    };
 
     const reactCrop = document.getElementsByClassName('ReactCrop__child-wrapper')[0];
 
     if (reactCrop) {
-      reactCrop.style = `height: ${img.naturalHeight}px !important; width: ${img.naturalWidth}px !important;`;
+      reactCrop.style = `height: ${drawHeight || img.naturalHeight}px !important; width: ${
+        drawWidth || img.naturalWidth
+      }px !important;`;
     }
   }, []);
 
@@ -131,6 +144,7 @@ export default function Annotation({ imageSource, objectClasses }) {
       endX: 0,
       endY: 0
     });
+    setCurrentView();
   };
 
   function PolygonElement(coordinates) {
@@ -166,10 +180,10 @@ export default function Annotation({ imageSource, objectClasses }) {
         onDragStart={(e) => dragStartHandler(e)}
         onDragEnd={(e) => dragEndHandler(e)}>
         <Stage
-          width={imageSource?.offsetWidth || window.innerWidth}
-          height={image.offsetLeft || window.innerHeight}>
+          width={drawWidth || image.offsetWidth || window.innerWidth}
+          height={drawHeight || image.offsetLeft || window.innerHeight}>
           <Layer>
-            <Image x={0} y={0} image={image} />
+            <Image x={0} y={0} image={image} width={drawWidth} height={drawHeight} />
             {PolygonElement(coordinates)}
           </Layer>
         </Stage>
