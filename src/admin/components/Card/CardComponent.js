@@ -4,6 +4,7 @@ import { Box, Card, CardContent, Typography, Grid } from "@mui/material";
 import Content from "../CardContents/Content";
 import MiniCard from "../MiniCard/MiniCard";
 import MarketPlaceCard from "../MarketPlaceCard/MarketPlaceCard";
+import ContactCard from "../ContactCard/ContactCard"
 import "./Card.scss";
 
 function CardComponent(props) {
@@ -11,9 +12,12 @@ function CardComponent(props) {
     data,
     showMinicard = false,
     marketPlace = false,
+    contacts =false,
     title = "",
     subTitle = "",
+    contactData
   } = props;
+
   return (
     <Box component="main" className="main__body">
       <Card className="card">
@@ -60,6 +64,17 @@ function CardComponent(props) {
                 <Grid lg={4} className="marketplace__container">
                   <MarketPlaceCard />
                 </Grid>
+              </Grid>
+          )}
+
+          {contacts && (
+              <Grid container  rowSpacing={5} columnSpacing={5} className="contact__container">
+                { contactData.map((contact) => (
+                  <Grid item md={5} key={contact.id} >
+                      <ContactCard data={contact}/>
+                  </Grid>
+                  ))
+                }
               </Grid>
           )}
 
