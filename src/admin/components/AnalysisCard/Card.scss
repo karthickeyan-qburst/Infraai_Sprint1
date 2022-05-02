@@ -1,0 +1,97 @@
+@import "../../styles/breakpoints";
+
+.infai_fill_width_grid {
+  margin-top: 60px !important;
+  width: 100%;
+
+  @include xs {
+    margin-left: 10px !important;
+  }
+
+  @include sm {
+    margin-left: 115px !important;
+  }
+}
+
+.main__body {
+  flex-grow: 1;
+  /* padding: 3px;
+  margin-top: 65px; */
+
+  @include xs {
+    /*  margin-left: 10px; */
+  }
+  //for devices above 600px
+  @include sm {
+    margin-left: -1.4rem;
+    margin-right: -1.6rem;
+  }
+  //for mobile device below 600px
+  @include xs-max-width {
+    margin-left: -1.2rem;
+    margin-right: -1.4rem;
+  }
+}
+
+.MuiCardContent-root {
+  padding: 0px !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.card {
+  box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 10px !important;
+  margin: 10px auto;
+}
+
+.card__heading {
+  padding-left: 2rem !important;
+  font-weight: 600 !important;
+  font-family: "Work Sans", sans-serif !important;
+  font-size: 24px;
+  line-height: 28px;
+  color: #222834;
+  padding-bottom: 0.5rem;
+}
+
+.card__analysis_content{
+  padding: 2rem !important;
+  font-family: "Work Sans", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 23px !important;
+  letter-spacing: 0.01rem !important;
+  color: #222834 !important;
+}
+
+.card__subheading-outline {
+  padding: 0.5rem 2rem !important;
+  background-color: #f0f0f0;
+  font-weight: 600 !important;
+  font-family: "Work Sans", sans-serif !important;
+  font-size: 18px;
+}
+
+.card__content-outline {
+  padding-bottom: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+.card__analysis_email{
+  font-size: 0.8rem;
+  font-family: "Work Sans", sans-serif !important;
+  color: #0B0326
+}
+.card__analysis_author{
+ 
+  font-family: "Work Sans", sans-serif !important;
+  color: #0B0326;
+  font-weight: 600;
+}
+
+
+
+
+
+
