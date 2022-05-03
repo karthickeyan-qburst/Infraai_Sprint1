@@ -2,10 +2,21 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Box } from "@mui/material";
 import { Authenticator, useTheme,Heading, useAuthenticator } from '@aws-amplify/ui-react';
+import { I18n } from 'aws-amplify';
+import { translations } from '@aws-amplify/ui-react';
+
 import Header from '../src/frontend/layout/header'
 import Footer from '../src/frontend/layout/footer'
 import '@aws-amplify/ui-react/styles.css';
 import './App.scss';
+I18n.putVocabularies(translations);
+I18n.setLanguage('en');
+
+I18n.putVocabularies({
+  en: {
+    'Sign in': 'Login',
+  }
+});
 
 const Home = lazy(() => import("./admin/pages/home/Home"));
 const Marketplace = lazy(() => import("./admin/pages/maketplace/Marketplace"));

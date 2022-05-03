@@ -1,12 +1,13 @@
 
 .iai_login_header_main {
     background-color: #0B0326!important;
-    height: 80px;
+    
+    .iai_login_header_topbar {
+        height: 80px;
+    }
 }
 
-.iai_login_header_topbar {
-    margin-top: 5px
-}
+
 
 .iai_login_header_title {
     margin-left: 100px!important

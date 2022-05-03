@@ -8,7 +8,7 @@ body {
    
     [data-amplify-router]{
       margin: 25vh 60vh;
-      border-radius: 10px;
+      border-radius: 15px;
       .amplify-textfield{
         margin:  10px 0;
         background:#F5F5F5;
@@ -20,7 +20,7 @@ body {
     [data-amplify-authenticator-signin]{
 
       .amplify-button{
-        background-color: #FFDA6A;
+        background-color: #FFDA6A!important;
         border-radius: 5px;
         color: #000;
         font-weight: 400;
