@@ -19,10 +19,12 @@ function createData(name, value) {
 }
 
 const rows = [
-  createData("Status", <button>Available</button>),
-  createData("Assign Inventory Project:", "Dan ASSIGNED"),
-  createData("", "Patrick (Internal)"),
-  createData("", "Jim (Internal)"),
+  createData("Status:", "Pre-RFP Release"),
+  createData("Value:", "$80,183,156.50 Total Contract Value / $16,037,558.86 Total Annual"),
+  createData("RFP Date(est.).", "23/01/2022"),
+  createData("Incumbent:", "DBI"),
+  createData("Miles", "11"),
+  createData("Attachments:", <button>View Attachment</button>)
 ];
 
 function OverViewCard() {
