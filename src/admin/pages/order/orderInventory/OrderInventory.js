@@ -13,25 +13,23 @@ export default function OrderInventory() {
   }
 
   const rows = [
-    createData("Status:", "Pre-RFP Release"),
+    //createData("Status:", "Purchase"),
     createData(
-      "Value:",
-      "$80,183,156.50 Total Contract Value / $16,037,558.86 Total Annual"
+      "Assign Inventory Project:",
+      "DAN ASSIGNED"
     ),
-    createData("RFP Date(est.).", "23/01/2022"),
-    createData("Incumbent:", "DBI"),
-    createData("Miles", "11"),
-    createData("Attachments:", <button>View Attachment</button>),
+    createData("", "Patrick (Internal)"),
+    createData("", "Jim (Internal)")
   ];
   return (
     <div>
       <Grid container spacing={2} className="orderinventory__container">
         <Grid xs={6} md={6} lg={6} xl={6}>
-          <ProjectCard />
+          <ProjectCard order = {true}/>
         </Grid>
 
         <Grid xs={6} md={6} lg={6} xl={6}>
-          <OverViewCard rows={rows} title="Inventory Options" />
+          <OverViewCard rows={rows} order={true} title="Inventory Options" />
         </Grid>
       </Grid>
     </div>

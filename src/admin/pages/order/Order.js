@@ -10,6 +10,8 @@ import OrderInventory from "./../order/orderInventory/OrderInventory";
 import Analysis from "./../order/orderConditionalReport/OrderConditionalReport";
 import TabNav from "./../../components/Tabs/TabNav";
 
+import { ReactComponent as BackSvg } from '../../../assets/back.svg';
+
 import "./Order.scss";
 
 export default function Order() {
@@ -29,7 +31,7 @@ export default function Order() {
         alignContent="flex-start"
       >
         <Grid className="infai_inner_content_order" item xs={6} md={8}>
-          <WestIcon />
+        <BackSvg className="back-btn" />
           <Typography
             variant="h5"
             component="div"

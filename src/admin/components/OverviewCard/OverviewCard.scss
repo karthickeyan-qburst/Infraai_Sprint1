@@ -47,6 +47,10 @@
   box-shadow: none !important;
 }
 
+.bottom{
+  margin-bottom: 2rem;
+}
+
 .overview__table .MuiTable-root {
   border: 0.001px solid rgba(224, 224, 224, 1) !important;
   box-shadow: none !important;
@@ -54,7 +58,7 @@
 }
 
 .overview__table-row {
-  height: .8rem !important;
+  height: 0.8rem !important;
   border-color: gray;
 }
 
@@ -74,6 +78,48 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
+}
+
+.order__overview__table-value {
+  width: 45% !important;
+  font-family: "Work Sans", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 125%;
+
+  text-align: left;
+  color: #5a5a5a !important;
+}
+
+.value {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  margin-right: 2rem !important;
+  padding: 10px !important;
+  margin-top: -8px !important;
+  margin-bottom: -8px !important;
+}
+
+.value-status {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  margin-right: 2rem !important;
+  padding: 10px !important;
+  padding-right: 5.5rem !important;
+  margin-top: -8px !important;
+  margin-bottom: -8px !important;
+  margin-left: 0.4rem;
+}
+
+.sts__order {
+  display: block !important;
+  font-family: "Work Sans", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 19px !important;
+  color: #b09854;
 }
 
 .overview__table-value button {

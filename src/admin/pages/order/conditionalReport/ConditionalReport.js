@@ -32,7 +32,7 @@ function ConditionalReport() {
             Draining Asset Group Rating
           </Typography>
 
-          <Typography component="div" className="card__content-outline">
+          <Typography component="div" className="card__content-outline-order">
             <ReportTable />
           </Typography>
         </Card>
