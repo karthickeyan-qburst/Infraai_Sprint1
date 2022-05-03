@@ -10,13 +10,20 @@ import {
 
 import "./ProjectCard.scss";
 
-function ProjectCard() {
+function ProjectCard(props) {
+  const { showStatus = false } = props;
   return (
     <Box component="main" className="projectcard-main__body">
       <Card className="projectcard__content">
         <CardContent>
           <Typography component="div" className="projectcard__content-heading">
             Woodrow Wilson Bridge
+            {showStatus && (
+              <span className="status_container">
+                Status:
+                <button className="status_button">Available</button>
+              </span>
+            )}
           </Typography>
           <Grid
             container

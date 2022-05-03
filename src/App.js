@@ -12,6 +12,7 @@ const Intel = lazy(() => import("./admin/pages/intel/Intel"));
 const ProjectMap = lazy(() =>
   import("./admin/pages/vision/projectMap/ProjectMap")
 );
+const Order = lazy(() => import("./admin/pages/order/Order"));
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
                 <Route exact path="/marketplace" element={<Home />} />
                 <Route exact path="/intel/:id" element={<Intel />} />
                 <Route exact path="/vision/:id" element={<ProjectMap />} />
+                <Route exact path="/order/:id" element={<Order />} />
               </Routes>
             </Box>
           </Box>

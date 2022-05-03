@@ -40,7 +40,11 @@ function Home() {
         alignContent="flex-start"
       >
         <Grid className={"infai_inner_content"} item xs={6} md={8}>
-          <Typography variant="h5" component="div" className="card__heading">
+          <Typography
+            variant="h5"
+            component="div"
+            className="card__heading_home"
+          >
             Home
           </Typography>
         </Grid>

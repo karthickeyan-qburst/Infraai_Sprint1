@@ -94,3 +94,32 @@
   letter-spacing: 0.01rem !important;
   color: #222834 !important;
 }
+
+.status_button {
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 125%;
+  color: #131e27;
+  padding: 7px 10px;
+  background-color: #f9f8f4;
+  border: unset;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.status_container{
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  float: right;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  font-size: 14px !important;
+  border: 1px solid #E5E5E5;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 2%;
+}

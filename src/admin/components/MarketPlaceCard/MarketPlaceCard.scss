@@ -4,6 +4,12 @@
   box-sizing: border-box;
   width: 23rem;
   height: 25rem;
+
+  margin-left: 5%;
+}
+
+.market__container {
+  margin-left: unset !important;
 }
 
 .marketplacecard__date {
@@ -36,7 +42,7 @@
   right: 73.33% !important;
   top: 72.05% !important;
   bottom: 22.56% !important;
-  color: #0B0326;
+  color: #0b0326;
   margin-top: 6px !important;
   margin-left: 1rem !important;
 }

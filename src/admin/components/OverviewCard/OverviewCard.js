@@ -19,15 +19,10 @@ function createData(name, value) {
 }
 
 const rows = [
-  createData("Status", "Pre-RFP Release"),
-  createData(
-    "Value",
-    "$80,183,156.50 Total Contract Value / $16,037,558.86 Total Annual"
-  ),
-  createData("RFP Date", "03/15/2024"),
-  createData("Incumbent", "T1"),
-  createData("Miles", "11"),
-  createData("Attachment", <button>View Attachment</button>),
+  createData("Status", <button>Available</button>),
+  createData("Assign Inventory Project:", "Dan ASSIGNED"),
+  createData("", "Patrick (Internal)"),
+  createData("", "Jim (Internal)"),
 ];
 
 function OverViewCard() {
@@ -36,31 +31,34 @@ function OverViewCard() {
       <Card className="overview__content">
         <CardContent>
           <Typography component="div" className="overview-heading">
-            Overview
+            Inventory Options
           </Typography>
           <Box className="overview__table">
-          <TableContainer component={Paper} >
-            <Table>
-              <TableBody>
-                {rows.map((row) => (
-                  <TableRow
-                    key={row.name}
-                    className="overview__table-row"
-                  >
-                    <TableCell className="overview__table-key" component="th" scope="row">
-                      {row.name}
-                    </TableCell>
+            <TableContainer component={Paper}>
+              <Table>
+                <TableBody>
+                  {rows.map((row) => (
+                    <TableRow key={row.name} className="overview__table-row">
+                      <TableCell
+                        className="overview__table-key"
+                        component="th"
+                        scope="row"
+                      >
+                        {row.name}
+                      </TableCell>
 
-                    <TableCell className="overview__table-value" align="right">
-                      {row.value}
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
+                      <TableCell
+                        className="overview__table-value"
+                        align="right"
+                      >
+                        {row.value}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
           </Box>
-          
         </CardContent>
       </Card>
     </Box>
