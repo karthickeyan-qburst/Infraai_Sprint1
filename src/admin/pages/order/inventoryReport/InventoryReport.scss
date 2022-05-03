@@ -1,35 +1,32 @@
 @import "../../../styles/breakpoints";
 
-.card {
+.icard {
   box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.1) !important;
   border-radius: 10px !important;
   margin: 10px auto;
 }
 
-.card__heading {
+.icard__heading {
   padding-left: 2rem !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-weight: 600 !important;
   font-family: "Work Sans", sans-serif !important;
   font-size: 24px;
-  line-height: 28px;
   color: #222834;
-  padding-bottom: 0.5rem;
 }
 
-.card__subheading-outline {
-  padding: 0.5rem 2rem !important;
+.icard__subheading-outline {
   background-color: #f0f0f0;
-  font-weight: 600 !important;
-  font-family: "Work Sans", sans-serif !important;
-  font-size: 18px;
 }
 
-.card__content-outline {
+.icard__content-outline {
   padding-bottom: 5px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
-.main__body {
+.imain__body {
   flex-grow: 1;
   /* padding: 3px;
     margin-top: 65px; */
@@ -49,8 +46,7 @@
   }
 }
 
-
-.infai_inner_content{
+.infai_inner_content {
   display: flex;
   flex-direction: row;
   //justify-content: center;
@@ -60,15 +56,15 @@
 }
 
 .card__heading {
-font-family: "Work Sans", sans-serif !important;
-font-style: normal;
-font-weight: 600 !important;
-font-size: 24px !important;
-color: #131e27 !important;
-left: 10rem!important;
+  font-family: "Work Sans", sans-serif !important;
+  font-style: normal;
+  font-weight: 600 !important;
+  font-size: 24px !important;
+  color: #131e27 !important;
+  left: 10rem !important;
 }
 
-.intel__tab-container{
+.intel__tab-container {
   width: 93%;
   margin-left: 3rem;
 }
@@ -79,6 +75,39 @@ left: 10rem!important;
   margin-bottom: 1.5rem;
 }
 
-.inventoryreporttable__container{
+.inventoryreporttable__container {
   padding: 20px !important;
+}
+
+.inventoryreport__table-container {
+  box-shadow: none !important;
+  border-radius: 0px !important;
+}
+
+.inventoryreport__header {
+  padding-left: 3rem;
+}
+
+.inventoryreport__table-row {
+  background-color: #f0f0f0 !important;
+}
+
+.irow-data {
+  font-family: "Work Sans", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  line-height: 14px !important;
+  color: rgba($color: black, $alpha: 0.75);
+}
+
+.irow-data-left {
+  padding-left: 22rem !important;
+}
+
+.inventoryreport__download {
+  float: right;
+  cursor: pointer;
+  margin-right: 3.5rem !important;
+  margin-top: 10px ;
 }

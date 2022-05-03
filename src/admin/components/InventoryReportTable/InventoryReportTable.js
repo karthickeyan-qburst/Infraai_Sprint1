@@ -5,9 +5,10 @@ import {
   TableContainer,
   Paper,
   TableHead,
-  TableRow,
-  TableCell,
+  TableRow
 } from "@mui/material";
+
+import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 
 import "./InventoryReportTable.scss";
 import InventorySubTable from "../InventorySubTable/InventorySubTable";
@@ -23,7 +24,11 @@ function InventoryReportTable() {
           border: "0.001px solid rgba(224, 224, 224, 1)",
         }}
       >
-        <Table>
+        <Table sx={{
+          [`.${tableCellClasses.root}`]: {
+            borderBottom: "none"
+          }
+        }}>
           <TableHead
             className="reporttable__header"
             sx={{ "&:first-child td, &:first-child th": { border: 0 } }}
@@ -69,7 +74,7 @@ function InventoryReportTable() {
               </TableCell>
             </TableRow>
 
-            <TableRow className="ireporttable__data" key="{row.name}">
+            <TableRow className="sub-table" key="{row.name}" >
               <TableCell
                 component="th"
                 scope="row"

@@ -7,7 +7,8 @@ body {
 .parent-container {
   display: flex;
   background-color: #e5e5e5;
-  height: 100vh !important; 
+  height:max-content !important; 
+  min-height: 100vh !important;
 
   //for mobile device below 600px
   @include xs-max-width {
