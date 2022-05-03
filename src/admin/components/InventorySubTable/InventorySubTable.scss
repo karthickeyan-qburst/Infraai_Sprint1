@@ -1,7 +1,10 @@
 .inventorytable__container {
-  width: 75% !important;
+  width: 103% !important;
   border: 0.001px solid rgba(224, 224, 224, 1);
   border-radius: 10px !important;
+  float: right !important;
+  margin-right: -1rem !important;
+  margin-left: -1rem !important;
 }
 
 .inventorytable__container .MuiTableContainer {

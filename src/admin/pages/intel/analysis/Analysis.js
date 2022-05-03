@@ -9,8 +9,7 @@ export default function Analysis() {
   return (
     <>
       <CardComponent title={title} subTitle={subTitle} />
-      {/* <InventoryReportTable /> */}
-      <InventorySubTable />
+      <InventoryReportTable />
     </>
   );
 }

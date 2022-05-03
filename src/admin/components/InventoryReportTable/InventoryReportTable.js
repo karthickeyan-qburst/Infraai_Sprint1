@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 
 import "./InventoryReportTable.scss";
+import InventorySubTable from "../InventorySubTable/InventorySubTable";
 
 function InventoryReportTable() {
   return (
@@ -49,6 +50,14 @@ function InventoryReportTable() {
               <TableCell align="left" className="data1" >Overall Project Data</TableCell>
               <TableCell align="center" className="data1">{null}</TableCell>
               <TableCell align="center" className="data2">80.20</TableCell>
+            </TableRow>
+
+            <TableRow className="ireporttable__data" key="{row.name}">
+              <TableCell component="th" scope="row" sx={{width:'20%'}}>
+               
+              </TableCell>
+              <TableCell align="left" className="data1" colSpan={3} ><InventorySubTable/></TableCell>
+              
             </TableRow>
           </TableBody>
         </Table>
