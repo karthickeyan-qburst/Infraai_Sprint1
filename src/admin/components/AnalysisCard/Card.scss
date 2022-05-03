@@ -9,7 +9,7 @@
   }
 
   @include sm {
-    margin-left: 115px !important;
+    margin-left: 87px !important;
   }
 }
 
@@ -64,6 +64,7 @@
   line-height: 23px !important;
   letter-spacing: 0.01rem !important;
   color: #222834 !important;
+  margin-right: 4rem !important;
 }
 
 .card__subheading-outline {
@@ -90,6 +91,9 @@
   font-weight: 600;
 }
 
+.analysis__header{
+  margin-left: 50px !important;
+}
 
 
 
