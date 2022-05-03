@@ -30,7 +30,7 @@ function InventoryReportTable() {
                
               </TableCell>
               <TableCell align="left" className="data1" >Overall Project Data</TableCell>
-              <TableCell align="center" className="data1">mi</TableCell>
+              <TableCell align="right" className="data1">mi</TableCell>
               <TableCell align="center" className="data2">80.20</TableCell>
             </TableRow>
 

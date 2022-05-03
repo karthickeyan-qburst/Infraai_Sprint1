@@ -18,20 +18,20 @@ function InventorySubTable() {
         <TableBody >
           <TableRow className="report__data" key="{row.name}" >
             <TableCell align="left" className='data1__inventory' >Lane 1 Distance</TableCell>
-            <TableCell align="center" >SY</TableCell>
-            <TableCell align="center">0.00</TableCell>
+            <TableCell align="right" className="right" >SY</TableCell>
+            <TableCell align="right" className="left">0.00</TableCell>
           </TableRow>
 
           <TableRow className="report__data" key="{row.name}">
             <TableCell align="left" className='data1__inventory' >Lane 2 Distance</TableCell>
-            <TableCell align="center" >SY</TableCell>
-            <TableCell align="center">0.00</TableCell>
+            <TableCell align="right" className="right">SY</TableCell>
+            <TableCell align="right" className="left">0.00</TableCell>
           </TableRow>
 
           <TableRow className="report__data" key="{row.name}">
             <TableCell align="left" className='data1__inventory' >Lane 3 Distance</TableCell>
-            <TableCell align="center" >SY</TableCell>
-            <TableCell align="center">0.00</TableCell>
+            <TableCell align="right" className="right">SY</TableCell>
+            <TableCell align="right" className="left">0.00</TableCell>
           </TableRow>
         </TableBody>
       </Table>

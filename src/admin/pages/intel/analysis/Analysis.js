@@ -1,5 +1,6 @@
 import React from "react";
 import CardComponent from "../../../components/Card/CardComponent";
+import FooterIconMenu from "../../../components/FooterIconMenu/FooterIconMenu";
 import InventoryReportTable from "../../../components/InventoryReportTable/InventoryReportTable";
 import InventorySubTable from "../../../components/InventorySubTable/InventorySubTable";
 
@@ -10,6 +11,8 @@ export default function Analysis() {
     <>
       <CardComponent title={title} subTitle={subTitle} />
       <InventoryReportTable />
+
+      <FooterIconMenu />
     </>
   );
 }

@@ -4,7 +4,6 @@
   border-radius: 10px !important;
   float: right !important;
   margin-right: -1rem !important;
-  margin-left: -1rem !important;
 }
 
 .inventorytable__container .MuiTableContainer {
@@ -28,4 +27,12 @@
 
 .data1__inventory{
     padding-left: 3px !important;
+}
+
+.right{
+  padding-left: 20rem !important;
+}
+
+.left{
+  padding-right: 7rem !important;
 }
