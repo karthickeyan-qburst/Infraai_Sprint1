@@ -25,7 +25,10 @@ export default function InventoryReport() {
         <Card className="icard">
           <Typography gutterBottom component="div" className="icard__heading">
             <span>Inventory</span>
-            <DownloadSvg className="inventoryreport__download"/> 
+            <Button className="inventoryreport__download">
+              <span> Download &nbsp;</span> <DownloadSvg />
+            </Button>
+            {/* <DownloadSvg className="inventoryreport__download"/>  */}
 
           </Typography>
           <Typography component="div" className="icard__subheading-outline">
