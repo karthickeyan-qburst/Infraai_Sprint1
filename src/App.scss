@@ -5,6 +5,8 @@ body {
     width:100%;
     min-height: 100vh;
     background-image: url('./frontend/login/images/bg.png');
+
+    
    
     [data-amplify-router]{
       margin: 25vh auto;
@@ -26,6 +28,10 @@ body {
         color: #000;
         font-weight: 400;
       }
+      .amplify-alert__dismiss{
+        background: none!important;
+      }
+
     }
 
     [data-amplify-authenticator-resetpassword],[data-amplify-authenticator-confirmresetpassword]{
