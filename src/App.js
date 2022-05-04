@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Box } from "@mui/material";
-import { Authenticator, useTheme,Heading, useAuthenticator } from '@aws-amplify/ui-react';
+import { Authenticator, useTheme,Heading, useAuthenticator, View , Button } from '@aws-amplify/ui-react';
 import { I18n } from 'aws-amplify';
 import { translations } from '@aws-amplify/ui-react';
 
@@ -18,6 +18,7 @@ I18n.setLanguage('en');
 I18n.putVocabularies({
   en: {
     'Sign in': 'Login',
+    'Back to Sign In': 'Back to Login',
   }
 });
 
@@ -50,6 +51,22 @@ const components = {
     );
     },
     
+  },
+  ConfirmResetPassword:{
+    Footer(){
+      const { toSignIn } = useAuthenticator();
+      return ( <View textAlign="center">
+      <Button
+        fontWeight="normal"
+        onClick={toSignIn}
+        size="small"
+        variation="link"
+        className="signinback"
+      >
+       Back to Login
+      </Button>
+    </View>)
+    }
   }
 }
 
@@ -71,7 +88,7 @@ function App() {
   return ( <Authenticator 
               components={components} 
               formFields={formFields}  
-            hideSignUp
+              hideSignUp
            >
            <Router>
            <Suspense fallback={<div>Loading...</div>}>
