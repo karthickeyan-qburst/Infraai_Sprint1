@@ -1,0 +1,27 @@
+.footericonmenu__container{
+    display: inline-block ; 
+    padding-left: .6rem !important;
+    padding-right: .6rem !important; 
+    border: 1px solid #131E27 ; 
+    box-sizing: border-box ; 
+    border-radius:5px;
+    height: 2.7 rem;
+}
+
+.footericonmenu__icon-button{
+    cursor: pointer;
+}
+
+.footericonmenu__icon-button :hover{
+    background-color: #FFDA6A;
+}
+
+.footericonmenu_icon{
+    height: 100%;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-right: 9px;
+    padding-left: 9px;
+    margin-bottom: -3px !important;
+    margin-top: 0px;
+}

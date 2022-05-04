@@ -1,0 +1,129 @@
+@import "../../../styles/breakpoints";
+
+.icard {
+  box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 10px !important;
+  margin: 10px auto;
+}
+
+.icard__heading {
+  padding-left: 2rem !important;
+  display: flex;
+  justify-content: space-between;
+  height: 5rem !important;
+  align-items: center;
+  font-weight: 600 !important;
+  font-family: "Work Sans", sans-serif !important;
+  font-size: 24px;
+  color: #222834;
+}
+
+.icard__subheading-outline {
+  background-color: #f0f0f0;
+}
+
+.icard__content-outline {
+  padding-bottom: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.imain__body {
+  flex-grow: 1;
+  /* padding: 3px;
+    margin-top: 65px; */
+
+  @include xs {
+    /*  margin-left: 10px; */
+  }
+  //for devices above 600px
+  @include sm {
+    margin-left: -1.4rem;
+    margin-right: -1.6rem;
+  }
+  //for mobile device below 600px
+  @include xs-max-width {
+    margin-left: -1.2rem;
+    margin-right: -1.4rem;
+  }
+}
+
+.infai_inner_content {
+  display: flex;
+  flex-direction: row;
+  //justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem !important;
+  margin-left: 3rem !important;
+}
+
+.card__heading {
+  font-family: "Work Sans", sans-serif !important;
+  font-style: normal;
+  font-weight: 600 !important;
+  font-size: 24px !important;
+  color: #131e27 !important;
+  left: 10rem !important;
+}
+
+.intel__tab-container {
+  width: 93%;
+  margin-left: 3rem;
+}
+
+.market__container {
+  margin-right: 4rem;
+  margin-left: 5rem;
+  margin-bottom: 1.5rem;
+}
+
+.inventoryreporttable__container {
+  padding: 20px !important;
+}
+
+.inventoryreport__table-container {
+  box-shadow: none !important;
+  border-radius: 0px !important;
+}
+
+.inventoryreport__header {
+  padding-left: 3rem;
+}
+
+.inventoryreport__table-row {
+  background-color: #f0f0f0 !important;
+}
+
+.irow-data {
+  font-family: "Work Sans", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  line-height: 14px !important;
+  color: rgba($color: black, $alpha: 0.75);
+}
+
+.irow-data-left {
+  padding-left: 22rem !important;
+}
+
+.inventoryreport__download {
+  float: right;
+  cursor: pointer;
+  margin-right: 4rem !important;
+  margin-top: 7px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #ffda6a;
+  box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  font-family: "Work Sans", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  text-transform: capitalize !important;
+  color: #131e27 !important;
+}
+
