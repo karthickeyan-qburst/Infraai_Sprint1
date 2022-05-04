@@ -1,6 +1,57 @@
 @import "./admin/styles/breakpoints";
 body {
   margin: 0px;
+  [data-amplify-authenticator] [data-amplify-container]{
+    width:100%;
+    min-height: 100vh;
+    background-image: url('./frontend/login/images/bg.png');
+   
+    [data-amplify-router]{
+      margin: 25vh auto;
+      width: 550px;
+      border-radius: 15px;
+      .amplify-textfield{
+        margin:  10px 0;
+        background:#F5F5F5;
+        border-radius: 10px;
+      }
+      
+    }
+    
+    [data-amplify-authenticator-signin]{
+
+      .amplify-button{
+        background-color: #FFDA6A!important;
+        border-radius: 5px;
+        color: #000;
+        font-weight: 400;
+      }
+    }
+
+    [data-amplify-authenticator-resetpassword]{
+      .amplify-button:first-child{
+        background-color: #FFDA6A;
+        border-radius: 5px;
+        color: #000;
+        
+      }
+      .amplify-button:nth-child(2){
+        background-color: #FFF;
+        border-radius: 5px;
+        color: #000
+      }
+    }
+
+    
+    [data-amplify-footer]{
+      button{
+        background-color: #fff;
+        border:none;
+        color:#000;
+       
+      }
+    }
+  }
 }
 
 /* Style for container */

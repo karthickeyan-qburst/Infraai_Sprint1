@@ -91,10 +91,31 @@
   font-weight: 600;
 }
 
-/* .analysis__header{
-  margin-left: 50px !important;
+.card__analysis_price{
+  min-height: 30px;
+    background: #F7F7F7;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    padding: -5px;
+    padding: 7px 0 0 10px;
+    width: 293px;
+    margin:10px 0;
+    .award_price{
+      font-family: 'Work Sans';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 19px;
+      /* identical to box height */
+
+
+      /* dark blue */
+
+      color: #131E27;
+    }
 }
- */
+
+
 
 
 
