@@ -1,24 +1,25 @@
-
-.card__content{
-    padding-left:  1rem !important;
-    padding-right: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 2rem;
-    border-bottom: 0.5 px solid lightgrey !important;
-    border-bottom: 1px solid lightgrey;
-    width: 100%;
+.card__content {
+  padding-left: 2rem !important;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 0.5 px solid lightgrey !important;
+  border-bottom: 1px solid lightgrey;
+  width: 100%;
+  font-family: inherit;
+  font-size: 20px !important;
+  line-height: 27px !important;
 }
 
-.card__content-key{
-    float: left;
-    width: 50%;
-    color: gray;
-    font-weight: 400;
+.card__content-key {
+  float: left;
+  width: 50%;
+  color: gray;
+  font-weight: 400;
 }
 
-.card__content-value{
-    float: right;
-    width: 50%;
-    font-weight: 600;
+.card__content-value {
+  float: right;
+  width: 50%;
+  font-weight: 600;
 }
-

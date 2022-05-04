@@ -1,0 +1,129 @@
+@import "../../styles/breakpoints";
+
+.projectcard-main__body {
+  flex-grow: 1;
+  width: 100%;
+  height: 100% !important;
+
+  @include xs {
+    /*  margin-left: 10px; */
+  }
+  //for devices above 600px
+  @include sm {
+    margin-left: -.5rem;
+  }
+  //for mobile device below 600px
+  @include xs-max-width {
+    margin-left: -0.3rem;
+  }
+}
+
+.projectcard__content {
+  padding-left: 1.7rem !important;
+  padding-right: 1rem !important;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.projectcard__content-heading {
+  margin-top: 0.6rem !important;
+  font-family: "Work Sans", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 24px !important;
+  line-height: 28px !important;
+  color: #131e27 !important;
+}
+
+.projectcard__content-details {
+  margin-top: 1.25rem;
+}
+
+.details {
+  margin-top: 0.9rem !important;
+}
+
+.projectcard__content-subheading {
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba($color: #000000, $alpha: 0.6);
+}
+
+.projectcard__content-value {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 21px !important;
+  color: #131e27;
+}
+
+.projectcard__divider {
+  margin-top: 1rem !important;
+  margin-bottom: 0.7rem !important;
+  margin-right: 0.7rem !important;
+  margin-left: 0rem !important;
+}
+
+.projectcard__content-summary {
+  margin-bottom: 4rem !important;
+}
+
+.projectcard__content-summary-order {
+  margin-bottom: 4.5px !important;
+}
+
+.projectcard__content-summary-heading {
+  font-family: "Work Sans", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 24px !important;
+  line-height: 28px !important;
+  color: #131e27 !important;
+  margin-top: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.projectcard__content-summary-content {
+  font-family: "Work Sans", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 23px !important;
+  letter-spacing: 0.01rem !important;
+  color: #222834 !important;
+}
+
+.status_button {
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 125%;
+  color: #131e27;
+  padding: 7px 10px;
+  background-color: #f9f8f4;
+  border: unset;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.status_container{
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  float: right;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  font-size: 14px !important;
+  border: 1px solid #E5E5E5;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 2%;
+}

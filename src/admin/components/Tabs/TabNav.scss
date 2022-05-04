@@ -1,0 +1,29 @@
+@import '../../styles/breakpoints';
+
+.tab-heading {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  color: rgba($color: #0b0326, $alpha: 0.7);
+  line-height: 19px !important;
+}
+
+.intel__tab-container .tab-heading {
+  padding-left: 0px !important;
+  padding-right: 16px !important;
+  margin-left: -4px !important;
+}
+
+.intel__tab-container .MuiTab-root.Mui-selected {
+  font-weight: 700 !important;
+}
+
+.intel__tab-container span.MuiTabs-indicator.css-1aquho2-MuiTabs-indicator {
+  width: 5% !important;
+  height: 1px !important;
+ 
+  //for mobile device below 600px
+  @include xs-max-width{
+    width: 12% !important;
+  }
+}

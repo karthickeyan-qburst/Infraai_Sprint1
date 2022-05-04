@@ -3,10 +3,11 @@ import { Tab } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 
+import "./TabNav.scss";
+
 export default function TabNav(props) {
-  console.log("props", props);
-  const { tabData } = props;
-  const [value, setValue] = React.useState("1");
+  const { tabData, tabSelected = "1" } = props;
+  const [value, setValue] = React.useState(tabSelected);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -23,10 +24,17 @@ export default function TabNav(props) {
 
   return (
     <TabContext value={value}>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+      <Box sx={{ borderBottom: 1, borderColor: "lightgrey" }}>
         <TabList onChange={handleChange} aria-label="lab API tabs example">
           {tabData.map((data, index) => {
-            return <Tab key={index} label={data.name} value={data.value} />;
+            return (
+              <Tab
+                key={index}
+                className="tab-heading"
+                label={data.name}
+                value={data.value}
+              />
+            );
           })}
         </TabList>
       </Box>

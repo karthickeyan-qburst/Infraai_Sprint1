@@ -1,14 +1,90 @@
 @import "./admin/styles/breakpoints";
-
 body {
   margin: 0px;
+  [data-amplify-authenticator] [data-amplify-container]{
+    width:100%;
+    min-height: 100vh;
+    background-image: url('./frontend/login/images/bg.png');
+   
+    [data-amplify-router]{
+      margin: 25vh auto;
+      width: 550px;
+      border-radius: 15px;
+      .amplify-textfield{
+        margin:  10px 0;
+        background:#F5F5F5;
+        border-radius: 10px;
+      }
+      
+    }
+    
+    [data-amplify-authenticator-signin]{
+
+      .amplify-button{
+        background-color: #FFDA6A!important;
+        border-radius: 5px;
+        color: #000;
+        font-weight: 400;
+      }
+    }
+
+    [data-amplify-authenticator-resetpassword],[data-amplify-authenticator-confirmresetpassword]{
+      .amplify-button:first-child{
+        background-color: #FFDA6A;
+        border-radius: 5px;
+        color: #000;
+        
+      }
+      .amplify-button:nth-child(2){
+        background-color: #FFF;
+        border-radius: 5px;
+        color: #000
+      }
+      .signinback{
+        background-color: #FFF!important;
+        border-radius: 5px;
+        color: #000
+      }
+
+      .amplify-textfield{
+        margin: 5px 0;
+        background:#F5F5F5;
+        border-radius: 10px;
+      }
+      
+    }
+
+    
+    [data-amplify-footer]{
+      button{
+        background-color: #fff;
+        border:none;
+        color:#000;
+       
+      }
+    }
+  }
 }
 
 /* Style for container */
 .parent-container {
   display: flex;
   background-color: #e5e5e5;
-  height: 100vh !important;
+  height:max-content !important; 
+  min-height: 100vh !important;
+
+  //for mobile device below 600px
+  @include xs-max-width {
+    width: 100vh;
+    padding-right: 2.5rem !important;
+    overflow: auto;
+  } 
+
+  @include xl-max-width {
+    width: 2000px;
+    height: 4000px !important;
+    padding-right: 2rem !important;
+  }
 }
 
 .infai_fill_width {
@@ -21,13 +97,16 @@ body {
 .infai_fill_width_grid {
   margin-top: 62px !important;
   width: 100%;
+  margin-left: 87px;
 
+  //for devices till 600px
   @include xs {
-    margin-left: 10px !important; 
+    margin-left: 10px !important;
   }
 
+  //for devices above 600px
   @include sm {
-      margin-left: 115px !important; 
+    margin-left: 87px !important;
   }
 }
 /* Style for tab */

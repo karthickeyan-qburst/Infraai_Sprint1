@@ -1,15 +1,15 @@
-@import "../../styles/_breakpoints";
+@import "../../styles/breakpoints";
 
 .infai_fill_width_grid {
   margin-top: 60px !important;
   width: 100%;
 
-  @include xs {
-    margin-left: 10px !important; 
+  @include xs { 
+    margin-left: 10px !important;
   }
 
   @include sm {
-      margin-left: 115px !important; 
+    margin-left: 87px !important;
   }
 }
 
@@ -21,9 +21,15 @@
   @include xs {
     /*  margin-left: 10px; */
   }
-
+  //for devices above 600px
   @include sm {
-    /*  margin-left: 118px; */
+    margin-left: -1.4rem;
+    margin-right: -1.6rem;
+  }
+  //for mobile device below 600px
+  @include xs-max-width {
+    margin-left: -1.2rem;
+    margin-right: -1.4rem;
   }
 }
 
@@ -40,56 +46,79 @@
 }
 
 .card__heading {
-  padding-left: 1rem;
-  font-weight: bold !important;
+  padding-left: 2rem !important;
+  font-weight: 600 !important;
   font-family: "Work Sans", sans-serif !important;
   font-size: 24px;
+  line-height: 28px;
+  color: #222834;
+  padding-bottom: 0.5rem;
 }
 
 .card__subheading-outline {
-  padding: 0.5rem 1rem !important;
+  padding: 0.5rem 2rem !important;
   background-color: #f0f0f0;
   font-weight: 600 !important;
   font-family: "Work Sans", sans-serif !important;
   font-size: 18px;
 }
 
-.card__content-outline{
-    padding-bottom: 5px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+.card__content-outline {
+  padding-bottom: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
-.card__content-minicard{
-    height: 14rem;
-    top: 35rem;
-    left: 9rem;
-    border: 0.66px solid lightgrey!important; 
-    box-sizing: border-box;
-    border-radius: 6.6px;
-    margin: 20px auto !important;
-    max-width: 95%;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
+.card__content-minicard {
+  height: 14rem;
+  top: 35rem;
+  left: 7rem;
+  border: 0.66px solid lightgrey !important;
+  box-sizing: border-box;
+  border-radius: 6.6px;
+  margin: 20px 30px !important;
+  max-width: 96%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
-.card__content-minicard-data-1{
+.card__content-minicard-data-1 {
   display: flex !important;
   flex-direction: row !important;
   justify-content: space-between;
-  color: #00A1DF !important;
+  color: #00a1df !important;
   margin-left: 10px;
   margin-right: 10px;
 }
 
-.year1{
+.year1 {
   font-weight: 600 !important;
   font-size: 18px !important;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
+}
+
+.card__content-minicard-data {
+  display: flex !important;
+  flex-direction: row !important;
 }
 
 
-.card__content-minicard-data{
-  display: flex !important;
-  flex-direction: row !important;
+.market__container {
+  display: flex;
+  flex-direction: row;
+  margin-right: 5rem !important;
+  margin-left: 3.7rem !important;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.marketplace__container {
+  margin-top: 2rem !important;
+}
+.contact__container{
+  margin:0
+}
+
+.contactcard_container:nth-child(even){
+  margin-left: 60px;
 }
