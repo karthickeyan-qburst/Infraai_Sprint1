@@ -1,0 +1,55 @@
+.inventoryreporttable__container {
+  width: 95% !important;
+}
+
+.reporttable__header {
+  background-color: #f0f0f0 !important;
+  margin-left: -2px;
+}
+
+.reporttable__header-heading {
+  font-family: "Work Sans", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 550 !important;
+  font-size: 16px !important;
+  line-height: 19px !important;
+  color: #222834 !important;
+}
+
+.ireporttable__data {
+  border-left-color: white;
+  border-left-style: solid;
+  border-left-width: 20px;
+  border-right-color: white;
+  border-right-style: solid;
+  border-right-width: 20px;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.8);
+}
+
+.sub-table{
+  border-left-color: white;
+  border-left-style: solid;
+  border-left-width: 20px;
+  border-right-color: white;
+  border-right-style: solid;
+  border-right-width: 20px;
+  margin-bottom: -1px !important;
+}
+
+.data1 {
+  font-family: "Work Sans", sans-serif !important;
+  font-style: normal;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  color: #222834 !important;
+}
+
+.data2 {
+  font-family: "Work Sans", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  color: #222834 !important;
+}

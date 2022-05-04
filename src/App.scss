@@ -1,3 +1,52 @@
+@import "./admin/styles/breakpoints";
 body {
   margin: 0px;
+}
+
+/* Style for container */
+.parent-container {
+  display: flex;
+  background-color: #e5e5e5;
+  height:max-content !important; 
+  min-height: 100vh !important;
+
+  //for mobile device below 600px
+  @include xs-max-width {
+    width: 100vh;
+    padding-right: 2.5rem !important;
+    overflow: auto;
+  } 
+
+  @include xl-max-width {
+    width: 2000px;
+    height: 4000px !important;
+    padding-right: 2rem !important;
+  }
+}
+
+.infai_fill_width {
+  /* background: red; */
+  margin-left: 115px;
+  margin-top: 65px;
+  width: 100%;
+}
+
+.infai_fill_width_grid {
+  margin-top: 62px !important;
+  width: 100%;
+  margin-left: 87px;
+
+  //for devices till 600px
+  @include xs {
+    margin-left: 10px !important;
+  }
+
+  //for devices above 600px
+  @include sm {
+    margin-left: 87px !important;
+  }
+}
+/* Style for tab */
+.MuiTab-root {
+  text-transform: unset !important;
 }
