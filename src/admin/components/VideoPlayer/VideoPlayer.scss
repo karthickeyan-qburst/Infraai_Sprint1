@@ -13,8 +13,21 @@
 
   &__chip {
     border-radius: 5px !important;
+    border: 1px solid gray !important;
     margin-bottom: 5px !important;
     color: gray !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 5px 10px !important;
+
+    & > div:first-child {
+      width: 7px !important;
+      height: 7px !important;
+      border-radius: 50% !important;
+      background-color: red;
+      margin-right: 5px !important;
+    }
   }
 }
 

@@ -7,7 +7,7 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { Player } from 'video-react';
 import 'video-react/dist/video-react.css';
-import { Popper, Button, Card, Chip, Grid } from '@mui/material';
+import { Card, Grid } from '@mui/material';
 import SnapAnnotation from '../SnapAnnotation/SnapAnnottation';
 import './VideoPlayer.scss';
 
@@ -54,7 +54,7 @@ export default function VideoPlayer({
   );
 
   const takeSnapshotHandler = () => {
-    console.log(playerObject.getState().player.paused);
+    console.log(playerObject.getState());
     setPaused(playerObject.getState().player.paused);
   };
 
@@ -78,8 +78,17 @@ export default function VideoPlayer({
               <Grid item container spacing={2} marginTop="5px">
                 {annotationClasses &&
                   annotationClasses.map((el, i) => (
-                    <Grid item>
-                      <Chip className="object__chip" key={el + i} label={el} variant="outlined" />
+                    <Grid item key={el + i}>
+                      <div className="object__chip">
+                        <div
+                          style={{
+                            background: `${`#${Math.floor(Math.random() * 0x1000000).toString(
+                              16
+                            )}`}`
+                          }}
+                        />
+                        <div>{el}</div>
+                      </div>
                     </Grid>
                   ))}
               </Grid>

@@ -4,7 +4,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/jsx-filename-extension */
 import { useState, useEffect } from 'react';
-import { Stage, Layer, Rect, Text, Image } from 'react-konva';
+import { Stage, Layer, Rect, Text, Image, Label, Tag } from 'react-konva';
 import { Card } from '@mui/material';
 import './SnapAnnotation.scss';
 
@@ -12,10 +12,10 @@ function SnapAnnotation({ imageSource, playerObject, setPaused, drawHeight, draw
   const [color, setColor] = useState('green');
   const [image, setImage] = useState('');
   const [coordinates, setCoordinate] = useState({
-    endX: 295.5,
-    endY: 277,
-    startX: 273.5,
-    startY: 247
+    endX: 489,
+    endY: 344,
+    startX: 441,
+    startY: 306
   });
 
   useEffect(() => {
@@ -38,7 +38,6 @@ function SnapAnnotation({ imageSource, playerObject, setPaused, drawHeight, draw
 
   const playerhandler = () => {
     playerObject.play();
-    console.log('hello');
     setPaused(false);
   };
 
@@ -47,6 +46,22 @@ function SnapAnnotation({ imageSource, playerObject, setPaused, drawHeight, draw
       <Stage width={drawWidth || window.innerWidth} height={drawHeight || window.innerHeight}>
         <Layer>
           <Image x={0} y={0} image={image} width={drawWidth} height={drawHeight} />
+          <Label x={coordinates.startX} y={coordinates.startY} opacity={0.75}>
+            <Tag
+              fill="black"
+              lineJoin="round"
+              // pointerDirection="down"
+              // pointerWidth={10}
+              // pointerHeight={10}
+              // shadowColor="black"
+              // shadowBlur={10}
+              // shadowOffsetX={10}
+              // shadowOffsetY={10}
+              // shadowOpacity={0.5}
+            />
+            <Text text="Car" fontFamily="Calibri" fontSize={18} padding={5} fill="white" />
+          </Label>
+
           <Rect
             x={coordinates.startX}
             y={coordinates.startY}
