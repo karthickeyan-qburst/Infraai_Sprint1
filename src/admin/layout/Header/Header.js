@@ -15,8 +15,11 @@ import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
 import NavBar from "../NavBar/NavBar";
 
 import "./Header.scss";
+import { useNavigate} from "react-router-dom";
+import { Auth } from 'aws-amplify';
 
-function Header({ drawerWidth }) {
+function Header({ drawerWidth , ...rest }) {
+  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -24,6 +27,10 @@ function Header({ drawerWidth }) {
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
+  const handleSignout = () => {
+    Auth.signOut().then(res => navigate('/')).catch(err => console.log(err))
+  }
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -84,7 +91,7 @@ function Header({ drawerWidth }) {
             onClose={handleClose}
           >
             <MenuItem onClick={handleClose}>My account</MenuItem>
-            <MenuItem onClick={handleClose}>Logout</MenuItem>
+            <MenuItem onClick={handleSignout}>Logout</MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>

@@ -6,6 +6,9 @@ import { I18n } from 'aws-amplify';
 import { translations } from '@aws-amplify/ui-react';
 
 import Header from '../src/frontend/layout/header'
+
+import AdminHeader from "./admin/layout/Header/Header";
+
 import Footer from '../src/frontend/layout/footer'
 import '@aws-amplify/ui-react/styles.css';
 import './App.scss';
@@ -64,18 +67,19 @@ const formFields = {
   }
 }
 
-function App(props) {
+function App() {
   return ( <Authenticator 
-            components={components} 
-            formFields={formFields}  
+              components={components} 
+              formFields={formFields}  
             hideSignUp
-           ><Router>
+           >
+           <Router>
            <Suspense fallback={<div>Loading...</div>}>
              <Box className="parent-container">
-               <Header />
-               {/*  <CardComponent /> */}
+               <AdminHeader/>
                <Box className="infai_fill_width_grid ">
                  <Routes>
+                 <Route exact path="/" element={<Home />} />
                    <Route exact path="/home" element={<Home />} />
                    <Route exact path="/myprojects" element={<Home />} />
                    <Route exact path="/marketplace" element={<Home />} />
@@ -86,7 +90,8 @@ function App(props) {
                </Box>
              </Box>
            </Suspense>
-         </Router></Authenticator>);
+         </Router>
+         </Authenticator>);
 }
 
 export default App;
