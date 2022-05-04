@@ -1,16 +1,13 @@
 import React from "react";
 //import CardComponent from "../../../components/Card/CardComponent";
 import CardComponent from "../../../components/AnalysisCard/CardComponent";
-import InventoryReportTable from "../../../components/InventoryReportTable/InventoryReportTable";
-import InventorySubTable from "../../../components/InventorySubTable/InventorySubTable";
+import { analyst } from './data'
 
 export default function Analysis() {
-  const title = "Analysis";
   const subTitle = "Analyst Detail";
   return (
     <>
-      <CardComponent title={title} subTitle={subTitle} />
-
+      <CardComponent analyst={analyst} subTitle={subTitle} />
       {/* <InventoryReportTable /> */}
     </>
   );
