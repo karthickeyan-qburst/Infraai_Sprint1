@@ -12,13 +12,8 @@ import "./Card.scss";
 
 function CardComponent(props) {
   const {
-    data,
-    showMinicard = false,
-    marketPlace = false,
-    contacts =false,
-    title = "",
+    analyst,
     subTitle = "",
-    contactData
   } = props;
 
   return (
@@ -27,21 +22,23 @@ function CardComponent(props) {
         <CardContent>
           <Grid container>
             <Grid container alignItems="center" sx={{pl:4,pb:2}} item md="1">
-              <Avatar  sx={{ width: 56, height: 56 }}>JD</Avatar>
+              { analyst.image && 
+              <Avatar  sx={{ width: 56, height: 56 }} src={analyst.image}>JD</Avatar>
+              }
             </Grid>
             <Grid container item md={8} alignItems="center" sx={{display: 'inline-block',ml: -3 }}  >
               <Typography component="div"  sx={{mt: 1}}  className="card__analysis_author">
-                John Doe
+                {analyst.name}
             </Typography>
             <Typography component="div"  className="card__analysis_email">
-                Analyst@gmail.com
+            {analyst.email}
             </Typography> 
             </Grid>
             <Grid item container alignItems="center" md={3} className="analysis__header" >
               <Grid item md={6} sx={{display: 'flex'}}>
                 <QueryBuilderIcon fontSize="small" sx={{mr: 1}}/>
                  <Typography component="div"  className="card__analysis_email">
-                Jan 12 2022, 04:00 pm
+                 {analyst.date}
                 </Typography> 
               </Grid>
               <Grid container item md={2} justifyContent="center" style={{transform : 'scale(-1,1)'}}>
@@ -55,11 +52,13 @@ function CardComponent(props) {
           <Typography component="div" className="card__subheading-outline">
             {subTitle}
           </Typography >
-          <Typography component="div" className="card__analysis_content">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          <Typography component="div" className="card__analysis_content">{analyst.main_content}
+          {analyst.award_price && <Card class="card__analysis_price" >Predicted Award Value: <span class="award_price">{analyst.award_price}</span></Card>}
+          {analyst.sub_content} 
           </Typography>
           
+         
+         
         </CardContent>
       </Card>
     </Box>
