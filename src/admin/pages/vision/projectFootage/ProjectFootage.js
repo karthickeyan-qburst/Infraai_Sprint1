@@ -42,16 +42,16 @@ export default function ProjectFootage() {
             <VideoPlayer
               showClasses={currentView}
               height="80vh"
-              drawWidth={1200}
-              drawHeight={600}
+              // drawWidth={1200}
+              // drawHeight={600}
             />
           )}
           {currentView === 'pannellum' && <Pannellum width="100%" height="75vh" />}
           {currentView === 'annotation' && (
             <Annotation
               setCurrentView={() => setCurrentView('objectClasses')}
-              drawWidth={1200}
-              drawHeight={600}
+              // drawWidth={1200}
+              // drawHeight={600}
             />
           )}
         </Box>

@@ -17,7 +17,6 @@ import { Stage, Layer, Rect, Image } from 'react-konva';
 import { Popper, Button, Card, Chip } from '@mui/material';
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
-import { useNavigate } from 'react-router-dom';
 
 let startCoordinate = {};
 export default function Annotation({
@@ -47,7 +46,7 @@ export default function Annotation({
     endX: 0,
     endY: 0
   });
-  console.log(coordinates);
+  // console.log(coordinates);
   const [color, setColor] = useState('green');
   const [image, setImage] = useState('');
   const [anchorButtonEl, setAnchorButtonEl] = useState(null);
@@ -212,6 +211,7 @@ export default function Annotation({
         </Popper>
 
         <Popper
+          id="objectClass__poppover"
           open={open}
           anchorEl={anchorEl}
           onClose={handleClose}

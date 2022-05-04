@@ -6,6 +6,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .konvajs-content {
+      canvas {
+        filter: brightness(0.7);
+      }
+    }
   }
 }
 

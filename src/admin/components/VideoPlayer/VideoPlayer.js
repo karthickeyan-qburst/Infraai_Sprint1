@@ -4,13 +4,14 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable import/no-self-import */
-import React, { useEffect, useState, useRef, useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Player } from 'video-react';
 import 'video-react/dist/video-react.css';
 import { Card, Grid } from '@mui/material';
 import SnapAnnotation from '../SnapAnnotation/SnapAnnottation';
 import './VideoPlayer.scss';
 
+let curretPlayTime;
 export default function VideoPlayer({
   videoSource,
   videoPoster,
@@ -20,13 +21,6 @@ export default function VideoPlayer({
   drawWidth,
   drawHeight
 }) {
-  useEffect(() => {
-    const videoReact = document.getElementsByClassName('video-react')[0];
-    if (videoReact) {
-      videoReact.style = `height: ${height || '75vh'} !important `;
-    }
-  }, []);
-
   const [paused, setPaused] = useState('');
   const [playerObject, setPlayerObject] = useState('');
 
@@ -53,8 +47,25 @@ export default function VideoPlayer({
     ]
   );
 
+  useEffect(() => {
+    const videoReact = document.getElementsByClassName('video-react')[0];
+    if (videoReact) {
+      videoReact.style = `height: ${height || '75vh'} !important `;
+    }
+  }, []);
+
+  useEffect(
+    () => () => {
+      if (playerObject) {
+        curretPlayTime = playerObject.getState().player.currentTime;
+      }
+    },
+    [playerObject]
+  );
+
   const takeSnapshotHandler = () => {
-    console.log(playerObject.getState());
+    // console.log(playerObject.getState());
+    curretPlayTime = playerObject.getState().player.currentTime;
     setPaused(playerObject.getState().player.paused);
   };
 
@@ -96,6 +107,7 @@ export default function VideoPlayer({
           </Card>
         )}
         <Player
+          startTime={curretPlayTime || 0}
           ref={playerRef}
           onPlay={() => {}}
           onPause={() => takeSnapshotHandler()}

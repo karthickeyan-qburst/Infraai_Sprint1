@@ -7,15 +7,16 @@ import { useState, useEffect } from 'react';
 import { Stage, Layer, Rect, Text, Image, Label, Tag } from 'react-konva';
 import { Card } from '@mui/material';
 import './SnapAnnotation.scss';
+import { Cookie } from '@mui/icons-material';
 
 function SnapAnnotation({ imageSource, playerObject, setPaused, drawHeight, drawWidth, paused }) {
   const [color, setColor] = useState('green');
   const [image, setImage] = useState('');
   const [coordinates, setCoordinate] = useState({
-    endX: 489,
-    endY: 344,
-    startX: 441,
-    startY: 306
+    endX: 0,
+    endY: 0,
+    startX: 0,
+    startY: 0
   });
 
   useEffect(() => {
@@ -46,21 +47,25 @@ function SnapAnnotation({ imageSource, playerObject, setPaused, drawHeight, draw
       <Stage width={drawWidth || window.innerWidth} height={drawHeight || window.innerHeight}>
         <Layer>
           <Image x={0} y={0} image={image} width={drawWidth} height={drawHeight} />
-          <Label x={coordinates.startX} y={coordinates.startY} opacity={0.75}>
-            <Tag
-              fill="black"
-              lineJoin="round"
-              // pointerDirection="down"
-              // pointerWidth={10}
-              // pointerHeight={10}
-              // shadowColor="black"
-              // shadowBlur={10}
-              // shadowOffsetX={10}
-              // shadowOffsetY={10}
-              // shadowOpacity={0.5}
-            />
-            <Text text="Car" fontFamily="Calibri" fontSize={18} padding={5} fill="white" />
-          </Label>
+          {coordinates.endx &&
+            coordinates.endX !==
+              coordinates.startX(
+                <Label x={coordinates.startX} y={coordinates.startY} opacity={0.75}>
+                  <Tag
+                    fill="black"
+                    lineJoin="round"
+                    // pointerDirection="down"
+                    // pointerWidth={10}
+                    // pointerHeight={10}
+                    // shadowColor="black"
+                    // shadowBlur={10}
+                    // shadowOffsetX={10}
+                    // shadowOffsetY={10}
+                    // shadowOpacity={0.5}
+                  />
+                  <Text text="Car" fontFamily="Calibri" fontSize={18} padding={5} fill="white" />
+                </Label>
+              )}
 
           <Rect
             x={coordinates.startX}
