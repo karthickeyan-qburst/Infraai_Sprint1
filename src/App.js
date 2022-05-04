@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Box } from '@mui/material';
 import {
@@ -9,24 +9,21 @@ import {
   View,
   Button
 } from '@aws-amplify/ui-react';
+import { onAuthUIStateChange } from '@aws-amplify/ui-components';
 import { I18n } from 'aws-amplify';
 import { translations } from '@aws-amplify/ui-react';
-
 import Header from '../src/frontend/layout/header';
-
 import AdminHeader from './admin/layout/Header/Header';
-
 import Footer from '../src/frontend/layout/footer';
+import { translatedData } from './utils/i18n';
 import '@aws-amplify/ui-react/styles.css';
 import './App.scss';
+
 I18n.putVocabularies(translations);
 I18n.setLanguage('en');
 
 I18n.putVocabularies({
-  en: {
-    'Sign in': 'Login',
-    'Back to Sign In': 'Back to Login'
-  }
+  en: translatedData
 });
 
 const Home = lazy(() => import('./admin/pages/home/Home'));
@@ -85,6 +82,14 @@ const formFields = {
 };
 
 function App() {
+  useEffect(() => {
+    return onAuthUIStateChange((state, data) => {
+      console.log(state);
+      console.log(data);
+      //add your logic
+    });
+  }, []);
+
   return (
     <Authenticator components={components} formFields={formFields} hideSignUp>
       <Router>
