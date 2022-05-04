@@ -5,3 +5,22 @@ th:first-child {
 tr > td:first-child {
   text-align: center;
 }
+
+.table__header-homemarket {
+  font-family: "Work Sans", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  line-height: 14px !important;
+  color: #666666 !important;
+}
+
+.table__body-homemarket {
+  font-family: "Work Sans", sans-serif;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  color: #222834 !important;
+  height: 60px !important;
+}
