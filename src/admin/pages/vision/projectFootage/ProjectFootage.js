@@ -36,7 +36,7 @@ export default function ProjectFootage() {
                 onClick={() =>
                   setCurrentView((view) => (view === 'objectClasses' ? '' : 'objectClasses'))
                 }
-                className="footericonmenu_icon"
+                className={`footericonmenu__icon footericonmenu__icon__active`}
               />
             </span>
             <span className="footericonmenu__icon-button">
