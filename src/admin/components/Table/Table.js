@@ -496,7 +496,7 @@ export default function EnhancedTable({
                             onClick={(e) => {
                               e.stopPropagation();
                               handleClose(e);
-                              navigation('/inventory/1');
+                              navigation('/order-inventory/1');
                             }}>
                             Order Inventory
                           </MenuItem>
@@ -504,7 +504,7 @@ export default function EnhancedTable({
                             onClick={(e) => {
                               e.stopPropagation();
                               handleClose(e);
-                              navigation('/order-inventory/1');
+                              navigation('/inventory/1');
                             }}>
                             View Inventory
                           </MenuItem>

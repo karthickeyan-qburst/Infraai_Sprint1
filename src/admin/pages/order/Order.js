@@ -10,6 +10,7 @@ import OrderInventory from './../order/orderInventory/OrderInventory';
 import Analysis from './../order/orderConditionalReport/OrderConditionalReport';
 import TabNav from './../../components/Tabs/TabNav';
 import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { ReactComponent as BackSvg } from '../../../assets/back.svg';
 
@@ -24,18 +25,18 @@ export default function Order() {
     { name: 'Order Conditional Report', value: '5', element: <Analysis /> }
   ];
   const location = useLocation();
+  const navigate = useNavigate();
   const [tabSelected, setTabSelected] = useState('1');
 
   useEffect(() => {
-    if (location.pathname.includes('/inventory')) {
-      setTabSelected('3');
+    if (location.pathname.includes('/order-condition')) {
+      setTabSelected('5');
     } else if (location.pathname.includes('/condition')) {
       setTabSelected('4');
+    } else if (location.pathname.includes('/inventory')) {
+      setTabSelected('3');
     } else if (location.pathname.includes('/order-inventory')) {
-      console.log(location);
       setTabSelected('2');
-    } else if (location.pathname.includes('/order-condition')) {
-      setTabSelected('5');
     } else if (location.pathname.includes('/order')) {
       setTabSelected('1');
     }
@@ -44,7 +45,7 @@ export default function Order() {
   return (
     <>
       <Grid container columns={{ xs: 4, sm: 8, md: 12 }} spacing={0.5} alignContent="flex-start">
-        <Grid className="infai_inner_content_order" item xs={6} md={8}>
+        <Grid onClick={() => navigate(-1)} className="infai_inner_content_order" item xs={6} md={8}>
           <BackSvg className="back-btn" />
           <Typography variant="h5" component="div" className="card__heading__order">
             Order

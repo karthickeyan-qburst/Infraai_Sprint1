@@ -11,6 +11,7 @@ import Contact from './contacts/Contact';
 import Marketplace from './../maketplace/Marketplace';
 import TabNav from './../../components/Tabs/TabNav';
 import { ReactComponent as BackSvg } from '../../../assets/back.svg';
+import { useNavigate } from 'react-router-dom';
 
 import './Intel.scss';
 
@@ -24,10 +25,11 @@ export default function Intel() {
     { name: 'Contacts', value: '6', element: <Contact /> },
     { name: 'Marketplace', value: '7', element: <Marketplace /> }
   ];
+  const navigate = useNavigate();
   return (
     <>
       <Grid container columns={{ xs: 4, sm: 8, md: 12 }} spacing={0.5} alignContent="flex-start">
-        <Grid className="infai_inner_content-intel" item xs={6} md={8}>
+        <Grid onClick={() => navigate(-1)} className="infai_inner_content-intel" item xs={6} md={8}>
           <BackSvg className="back-btn" />
           <Typography variant="h5" component="div" className="card__heading-intel">
             INTEL

@@ -4,7 +4,6 @@ import React from 'react';
 import OverViewCard from '../../../components/OverviewCard/OverviewCard';
 import ProjectCard from '../../../components/ProjectCard/ProjectCard';
 import Map from '../../../components/Map/Map';
-import { visionMapRoutes } from '../../../constants/Constants';
 
 import './Summary.scss';
 
@@ -22,7 +21,7 @@ export default function Summary() {
     createData('Attachments:', <button>View Attachment</button>)
   ];
   return (
-    <Grid container direction={"column"}>
+    <Grid container direction={'column'}>
       <Grid container spacing={2} className="summary__container">
         <Grid xs={6} md={6} lg={6} xl={6}>
           <ProjectCard />
@@ -32,8 +31,8 @@ export default function Summary() {
           <OverViewCard rows={rows} title="Overview" />
         </Grid>
       </Grid>
-      <Grid className='map__container'>
-        <Map popUpRoutes={visionMapRoutes} style={{ height: '55vh' }} />
+      <Grid className="map__container">
+        <Map style={{ height: '55vh' }} />
       </Grid>
     </Grid>
   );
