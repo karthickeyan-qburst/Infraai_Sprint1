@@ -19,12 +19,12 @@ export default function ProjectMap() {
       spacing={0.5}
       alignContent="flex-start">
       <Grid className="visionMap__header">
-        <Grid className="infai_inner_content">
+        <Grid >
           <Typography variant="h5" component="div" className="card__heading-vision-projectmap">
             PROJECT MAP
           </Typography>
         </Grid>
-        <Grid onClick={() => navigate('/intel/id')} className="infai_inner_content">
+        <Grid onClick={() => navigate('/intel/id')} >
           <Button variant="outlined" className="projectmap__btn-overview">
             Return To Overview
           </Button>

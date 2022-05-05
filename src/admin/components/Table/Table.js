@@ -21,11 +21,19 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { visuallyHidden } from '@mui/utils';
+import { Grid, InputAdornment } from '@mui/material';
+
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 import NearMeIcon from '@mui/icons-material/NearMe';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { Card } from '@mui/material';
+import { Card, FormControlLabel, FormGroup } from '@mui/material';
+
+import { ReactComponent as SearchSvg } from '../../../assets/search.svg';
+import { ReactComponent as StateSvg } from '../../../assets/state.svg';
 import { useNavigate } from 'react-router-dom';
 
 // import 'react-date-range/dist/styles.css'; // main css file
@@ -74,7 +82,7 @@ function EnhancedTableHead(props) {
 
   return (
     <TableHead>
-      <TableRow style={{ background: '#F0F0F0' }}>
+      <TableRow style={{ background: '#F0F0F0' }} className='hometable__tr'>
         {/* <TableCell padding="checkbox">
           <Checkbox
             color="primary"
@@ -133,6 +141,7 @@ const EnhancedTableToolbar = (props) => {
   const [age2, setAge2] = React.useState('');
   const [age3, setAge3] = React.useState('');
 
+  const [expiresValue, setExpiresValue] = React.useState('12/12/2021');
   const [state, setState] = React.useState([
     {
       startDate: null,
@@ -204,60 +213,91 @@ const EnhancedTableToolbar = (props) => {
             <MenuItem value={'Virginia'}>Virginia</MenuItem>
           </Select>
         </FormControl> */}
+        <TextField
+              placeholder="Search"
+              className="search-box"
+            />
           <FormControl sx={{ m: 2, minWidth: 120 }} size="small">
-            <InputLabel id="demo-select-small">
-              <Box sx={{ display: 'flex', gap: 1 }}>
-                <LocationOnIcon />
-                State
-              </Box>
-            </InputLabel>
             <Select
+              className="state-dropdown"
               labelId="demo-select-small"
               id="demo-select-small"
               value={tableController.filters.state}
-              label={
-                <Box sx={{ display: 'flex', gap: 1 }}>
-                  <LocationOnIcon />
-                  State
-                </Box>
-              }
+              displayEmpty
               onChange={(e) =>
                 handleTableControllerChange('filters', {
                   state: e.target.value
                 })
               }>
-              <MenuItem value={'Florida'}>Florida</MenuItem>
-              <MenuItem value={'New York'}>New York</MenuItem>
-              <MenuItem value={'Texas'}>Texas</MenuItem>
-              <MenuItem value={'Virginia'}>Virginia</MenuItem>
+              <MenuItem value="" sx={{ display: 'none' }}>
+                <Box sx={{ display: 'flex', gap: 1 }}>
+                  <StateSvg style={{ marginTop: '2px' }} />
+                  State
+                </Box>
+              </MenuItem>
+              <TextField
+                className="table__filter-search"
+                placeholder="Search"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <SearchSvg className="placeholder__icon" />
+                    </InputAdornment>
+                  )
+                }}
+              />
+              <Grid container className="table__filter__container-actions">
+                <Grid className="table__filter-actions">Select all</Grid>
+                <Grid className="table__filter-actions">Reset</Grid>
+              </Grid>
+              <FormGroup className="table__filter__options">
+                <FormControlLabel value={'Florida'} control={<Checkbox />} label="Florida" />
+                <FormControlLabel value={'New York'} control={<Checkbox />} label="New York" />
+                <FormControlLabel value={'Texas'} control={<Checkbox />} label="Texas" />
+                <FormControlLabel value={'Virginia'} control={<Checkbox />} label="Virginia" />
+              </FormGroup>
             </Select>
           </FormControl>
-          <FormControl sx={{ m: 2, minWidth: 130 }} size="small">
-            <InputLabel id="demo-select-small">
-              <Box sx={{ display: 'flex', gap: 1 }}>
-                <NearMeIcon />
-                District
-              </Box>
-            </InputLabel>
+
+          <FormControl sx={{ m: 2, minWidth: 120 }} size="small">
             <Select
+              className="state-dropdown"
               labelId="demo-select-small"
               id="demo-select-small"
-              value={tableController.filters.district}
-              label={
-                <Box sx={{ display: 'flex', gap: 1 }}>
-                  <NearMeIcon />
-                  District
-                </Box>
-              }
+              value={tableController.filters.state}
+              displayEmpty
               onChange={(e) =>
                 handleTableControllerChange('filters', {
-                  district: e.target.value
+                  state: e.target.value
                 })
               }>
-              <MenuItem value={'Florida'}>Florida</MenuItem>
-              <MenuItem value={'New York'}>New York</MenuItem>
-              <MenuItem value={'Texas'}>Texas</MenuItem>
-              <MenuItem value={'Virginia'}>Virginia</MenuItem>
+              <MenuItem value="" sx={{ display: 'none' }}>
+                <Box sx={{ display: 'flex', gap: 1 }}>
+                  <StateSvg style={{ marginTop: '2px' }} />
+                  District
+                </Box>
+              </MenuItem>
+              <TextField
+                className="table__filter-search"
+                placeholder="Search"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <SearchSvg className="placeholder__icon" />
+                    </InputAdornment>
+                  )
+                }}
+              />
+              <Grid container className="table__filter__container-actions">
+                <Grid className="table__filter-actions">Select all</Grid>
+                <Grid className="table__filter-actions">Reset</Grid>
+              </Grid>
+              <FormGroup className="table__filter__options">
+                <FormControlLabel value={'Florida'} control={<Checkbox />} label="Florida" />
+                <FormControlLabel value={'New York'} control={<Checkbox />} label="New York" />
+                <FormControlLabel value={'Texas'} control={<Checkbox />} label="Texas" />
+                <FormControlLabel value={'Virginia'} control={<Checkbox />} label="Virginia" />
+              </FormGroup>
             </Select>
           </FormControl>
           {/* <DateRange
@@ -266,14 +306,25 @@ const EnhancedTableToolbar = (props) => {
           moveRangeOnFirstSelection={false}
           ranges={state}
         /> */}
-
-          <TextField
+          <span className="expires-filter-label">Expires:</span>
+          {/* <TextField
             sx={{ m: 2, minWidth: 130 }}
             id="outlined-basic"
-            label="Expires On"
             variant="outlined"
             size="small"
-          />
+          /> */}
+          <div className="expires__datepicker">
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DatePicker
+                size="small"
+                value={expiresValue}
+                onChange={(newValue) => {
+                  setExpiresValue(newValue);
+                }}
+                renderInput={(params) => <TextField {...params} />}
+              />
+            </LocalizationProvider>
+          </div>
         </Box>
       ) : null}
     </Toolbar>
@@ -443,34 +494,18 @@ export default function EnhancedTable({
                       })}
 
                       <TableCell align="left" padding={'none'}>
-                        {marketplace ? (
-                          <IconButton
-                            color="inherit"
-                            id="basic-button"
-                            aria-controls={open ? 'basic-menu' : undefined}
-                            aria-haspopup="true"
-                            aria-expanded={open ? 'true' : undefined}
-                            /* onClick={(e) => {
+                        <IconButton
+                          color="inherit"
+                          id="basic-button"
+                          aria-controls={open ? 'basic-menu' : undefined}
+                          aria-haspopup="true"
+                          aria-expanded={open ? 'true' : undefined}
+                          onClick={(e) => {
                             e.stopPropagation();
                             handleOptionClick(e);
-                          }}*/
-                          >
-                            <MoreVertIcon />
-                          </IconButton>
-                        ) : (
-                          <IconButton
-                            color="inherit"
-                            id="basic-button"
-                            aria-controls={open ? 'basic-menu' : undefined}
-                            aria-haspopup="true"
-                            aria-expanded={open ? 'true' : undefined}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleOptionClick(e);
-                            }}>
-                            <MoreVertIcon />
-                          </IconButton>
-                        )}
+                          }}>
+                          <MoreVertIcon />
+                        </IconButton>
 
                         <Menu
                           className="tablerow__menu"

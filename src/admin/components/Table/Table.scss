@@ -1,4 +1,4 @@
-th:first-child {
+.hometable__tr th:first-child {
   text-align: center !important;
 }
 
@@ -27,9 +27,100 @@ tr > td:first-child {
 
 .tablerow__menu .MuiPaper-root {
   background-color: #ffffff !important;
-  box-shadow:  0px 0.05px 1.5px rgba(0,0,0,0.1) !important;
+  box-shadow: 0px 0.05px 1.5px rgba(0, 0, 0, 0.1) !important;
   border-radius: 10px !important;
   left: 97rem !important;
   position: absolute;
   right: 6rem !important;
+}
+
+.table__filter-search {
+  box-sizing: border-box !important;
+  margin: 8px 15px;
+}
+
+.state-dropdown .MuiPaper-root {
+  width: 12%;
+  left: 1192px !important;
+}
+
+.table__filter-search .MuiInputAdornment-root {
+  margin-right: 0px !important;
+}
+
+.table__filter-search .MuiOutlinedInput-root {
+  border-radius: 18px !important;
+  background-color: #ffffff !important;
+  border: 1px solid #cccccc !important;
+}
+
+.placeholder__icon {
+  height: 4rem;
+  width: 2rem;
+}
+
+input:placeholder {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  line-height: 16px !important;
+  color: #222834 !important;
+}
+
+.table__filter__container-actions {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding: 7px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.table__filter-actions {
+  font-family: 'Work Sans', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 10px !important;
+  line-height: 12px !important;
+  color: #00a1df !important;
+}
+
+.table__filter__options {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 19px;
+  font-family: 'Work Sans', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  color: #222834 !important;
+}
+
+.expires-filter-label {
+  font-family: 'Work Sans', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  color: rgba($color: black, $alpha: 0.7) !important;
+  margin-top: 28px;
+}
+
+.expires__datepicker{
+  margin-top: 16px !important;
+  margin-left: 9px;
+  margin-right: 10px;
+}
+
+.expires__datepicker .MuiInputBase-input{
+  padding: 9px 11px !important;
+}
+
+.search-box{
+  margin-top: 16px !important;
+}
+
+.search-box .MuiInputBase-input{
+  padding: 8.3px 14px !important;
 }

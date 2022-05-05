@@ -22,7 +22,7 @@ function ReportTable() {
       <Table>
         <TableHead className="reporttable__header" sx={{ '&:first-child td, &:first-child th': { border:0 }}}>
           <TableRow>
-            <TableCell className="reporttable__header-heading">
+            <TableCell className="reporttable__header-heading" sx={{pl:'25px'}}>
               Asset Item
             </TableCell>
             <TableCell className="reporttable__header-heading" align="center">
@@ -47,7 +47,7 @@ function ReportTable() {
         </TableHead>
         <TableBody >
           <TableRow className="reporttable__data" key="{row.name}"  >
-            <TableCell component="th" scope="row">
+            <TableCell component="th" scope="row" align="left">
               Pipers & Culvert &#60;36 sq ft
             </TableCell>
             <TableCell align="center">114</TableCell>
@@ -59,7 +59,7 @@ function ReportTable() {
           </TableRow>
 
           <TableRow key="{row.name}" className="reporttable__data" >
-            <TableCell component="th" scope="row">
+            <TableCell component="th" scope="row" align="left">
               Pipers & Culvert &#62;36 sq ft
             </TableCell>
             <TableCell align="center">6</TableCell>
@@ -71,7 +71,7 @@ function ReportTable() {
           </TableRow>
 
           <TableRow key="{row.name}" className="reporttable__data" >
-            <TableCell component="th" scope="row">
+            <TableCell component="th" scope="row" align="left">
               Paved Ditches
             </TableCell>
             <TableCell align="center">114</TableCell>
@@ -83,7 +83,7 @@ function ReportTable() {
           </TableRow>
 
           <TableRow key="{row.name}" className="reporttable__data">
-            <TableCell component="th" scope="row">
+            <TableCell component="th" scope="row" align="left">
               Pipers & Culvert &#62;36 sq ft
             </TableCell>
             <TableCell align="center">6</TableCell>
