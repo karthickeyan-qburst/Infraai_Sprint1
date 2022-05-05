@@ -17,22 +17,23 @@ function InventorySubTable() {
       <Table>
         <TableBody >
           <TableRow className="report__data" key="{row.name}" >
-            <TableCell align="left" className='data1__inventory' >Lane 1 Distance</TableCell>
-            <TableCell align="right" className="right" >SY</TableCell>
-            <TableCell align="right" className="left">0.00</TableCell>
+            <TableCell align="left" className='data1__inventory' sx={{width:'55%'}}>Lane 1 Distance</TableCell>
+            <TableCell align="center"  sx={{width:'22.5%', pr:'2.5%'}}>SY</TableCell>
+            <TableCell align="center" sx={{width:'22.5%', pl:'3%'}}>0.00</TableCell>
           </TableRow>
+          <TableRow className="report__data" key="{row.name}" >
+            <TableCell align="left" className='data1__inventory' sx={{width:'55%'}}>Lane 2 Distance</TableCell>
+            <TableCell align="center"  sx={{width:'22.5%', pr:'2.5%'}}>SY</TableCell>
+            <TableCell align="center" sx={{width:'22.5%', pl:'3%'}}>0.00</TableCell>
+          </TableRow>
+          <TableRow className="report__data" key="{row.name}" >
+            <TableCell align="left" className='data1__inventory' sx={{width:'55%'}}>Lane 3 Distance</TableCell>
+            <TableCell align="center"  sx={{width:'22.5%', pr:'2.5%'}}>SY</TableCell>
+            <TableCell align="center" sx={{width:'22.5%', pl:'3%'}}>0.00</TableCell>
+          </TableRow>
+         
 
-          <TableRow className="report__data" key="{row.name}">
-            <TableCell align="left" className='data1__inventory' >Lane 2 Distance</TableCell>
-            <TableCell align="right" className="right">SY</TableCell>
-            <TableCell align="right" className="left">0.00</TableCell>
-          </TableRow>
-
-          <TableRow className="report__data" key="{row.name}">
-            <TableCell align="left" className='data1__inventory' >Lane 3 Distance</TableCell>
-            <TableCell align="right" className="right">SY</TableCell>
-            <TableCell align="right" className="left">0.00</TableCell>
-          </TableRow>
+          
         </TableBody>
       </Table>
     </TableContainer>
