@@ -1,0 +1,20 @@
+@import "../../../styles/breakpoints";
+
+.map__container-orderconditionl{
+    flex-grow: 1;
+    width: 103%;
+    height: 100% !important;
+    margin-top: 2.5rem;
+  
+    @include xs {
+      /*  margin-left: 10px; */
+    }
+    //for devices above 600px
+    @include sm {
+      margin-left: -1.3rem;
+    }
+    //for mobile device below 600px
+    @include xs-max-width {
+      margin-left: -0.3rem;
+    }
+}
