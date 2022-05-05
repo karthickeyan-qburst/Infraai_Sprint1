@@ -213,6 +213,10 @@ const EnhancedTableToolbar = (props) => {
             <MenuItem value={'Virginia'}>Virginia</MenuItem>
           </Select>
         </FormControl> */}
+        <TextField
+              placeholder="Search"
+              className="search-box"
+            />
           <FormControl sx={{ m: 2, minWidth: 120 }} size="small">
             <Select
               className="state-dropdown"
@@ -309,19 +313,18 @@ const EnhancedTableToolbar = (props) => {
             variant="outlined"
             size="small"
           /> */}
-  <div className='expires__datepicker'>
-  <LocalizationProvider dateAdapter={AdapterDateFns} >
-            <DatePicker
-            size='small'
-              value={expiresValue}
-              onChange={(newValue) => {
-                setExpiresValue(newValue);
-              }}
-              renderInput={(params) => <TextField {...params} />}
-            />
-          </LocalizationProvider>
-  </div>
-          
+          <div className="expires__datepicker">
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DatePicker
+                size="small"
+                value={expiresValue}
+                onChange={(newValue) => {
+                  setExpiresValue(newValue);
+                }}
+                renderInput={(params) => <TextField {...params} />}
+              />
+            </LocalizationProvider>
+          </div>
         </Box>
       ) : null}
     </Toolbar>
@@ -491,34 +494,18 @@ export default function EnhancedTable({
                       })}
 
                       <TableCell align="left" padding={'none'}>
-                        {marketplace ? (
-                          <IconButton
-                            color="inherit"
-                            id="basic-button"
-                            aria-controls={open ? 'basic-menu' : undefined}
-                            aria-haspopup="true"
-                            aria-expanded={open ? 'true' : undefined}
-                            /* onClick={(e) => {
+                        <IconButton
+                          color="inherit"
+                          id="basic-button"
+                          aria-controls={open ? 'basic-menu' : undefined}
+                          aria-haspopup="true"
+                          aria-expanded={open ? 'true' : undefined}
+                          onClick={(e) => {
                             e.stopPropagation();
                             handleOptionClick(e);
-                          }}*/
-                          >
-                            <MoreVertIcon />
-                          </IconButton>
-                        ) : (
-                          <IconButton
-                            color="inherit"
-                            id="basic-button"
-                            aria-controls={open ? 'basic-menu' : undefined}
-                            aria-haspopup="true"
-                            aria-expanded={open ? 'true' : undefined}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleOptionClick(e);
-                            }}>
-                            <MoreVertIcon />
-                          </IconButton>
-                        )}
+                          }}>
+                          <MoreVertIcon />
+                        </IconButton>
 
                         <Menu
                           className="tablerow__menu"
