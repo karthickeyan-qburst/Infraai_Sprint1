@@ -1,0 +1,93 @@
+.infai_inner_content_projectfootage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2.5rem !important;
+  margin-left: 3rem !important;
+  justify-content: space-between;
+  padding-right: 6rem !important;
+}
+
+.projectfootage_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.projectfootage_header-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card__heading-projectfootage {
+  font-family: 'Work Sans', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 24px !important;
+  line-height: 28px !important;
+  color: #131e27 !important;
+  margin-top: 7px;
+}
+
+.footericonmenu__container {
+  display: inline-block;
+  padding-left: 0.6rem !important;
+  padding-right: 0.6rem !important;
+  border: 1px solid #131e27;
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: 2.7rem !important;
+  width: 12rem !important;
+  background-color: #ffffff;
+}
+
+.footericonmenu__icon-button {
+  cursor: pointer;
+}
+
+.footericonmenu__icon-button :hover {
+  background-color: #ffda6a;
+}
+
+.footericonmenu_icon {
+  height: 100%;
+  width: 20%;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-right: 9px;
+  padding-left: 9px;
+  margin-bottom: -3px !important;
+  margin-top: 0px;
+  size: 24px !important;
+}
+
+.projectfootage__btn-rtnmap {
+  padding: 10px 25px;
+  background-color: #ffda6a;
+  border-radius: 5px;
+  font-family: 'Work Sans', sans-serif !important;
+  //font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  line-height: 125%;
+  text-transform: capitalize;
+  color: #131e27 !important;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.projectfootage__btn-rtnoverview {
+  padding: 10px 10px;
+  background-color: #f9f8f4;
+  border: 1px solid #131e27;
+  border-radius: 5px;
+  font-family: 'Work Sans', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  line-height: 125%;
+  text-transform: capitalize;
+  color: #131e27 !important;
+}

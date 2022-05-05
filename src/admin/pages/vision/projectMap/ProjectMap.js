@@ -18,14 +18,12 @@ export default function ProjectMap() {
       alignContent="flex-start">
       <Grid className="visionMap__header">
         <Grid className="infai_inner_content">
-          <Typography variant="h5" component="div" className="card__heading">
+          <Typography variant="h5" component="div" className="card__heading-vision-projectmap">
             PROJECT MAP
           </Typography>
         </Grid>
         <Grid className="infai_inner_content">
-          <Button
-            variant="outlined"
-            style={{ textTransform: 'initial', borderColor: 'black', color: 'black' }}>
+          <Button variant="outlined" className="projectmap__btn-overview">
             Return To Overview
           </Button>
         </Grid>
