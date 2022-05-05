@@ -5,6 +5,8 @@ body {
     width:100%;
     min-height: 100vh;
     background-image: url('./frontend/login/images/bg.png');
+
+    
    
     [data-amplify-router]{
       margin: 25vh auto;
@@ -26,9 +28,13 @@ body {
         color: #000;
         font-weight: 400;
       }
+      .amplify-alert__dismiss{
+        background: none!important;
+      }
+
     }
 
-    [data-amplify-authenticator-resetpassword]{
+    [data-amplify-authenticator-resetpassword],[data-amplify-authenticator-confirmresetpassword]{
       .amplify-button:first-child{
         background-color: #FFDA6A;
         border-radius: 5px;
@@ -40,6 +46,18 @@ body {
         border-radius: 5px;
         color: #000
       }
+      .signinback{
+        background-color: #FFF!important;
+        border-radius: 5px;
+        color: #000
+      }
+
+      .amplify-textfield{
+        margin: 5px 0;
+        background:#F5F5F5;
+        border-radius: 10px;
+      }
+      
     }
 
     
