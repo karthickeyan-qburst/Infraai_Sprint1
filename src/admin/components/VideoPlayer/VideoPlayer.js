@@ -9,6 +9,8 @@ import { Player } from 'video-react';
 import 'video-react/dist/video-react.css';
 import { Card, Grid } from '@mui/material';
 import SnapAnnotation from '../SnapAnnotation/SnapAnnottation';
+
+import previewImage from '../../../assets/videoPoster.jpg';
 import './VideoPlayer.scss';
 
 let curretPlayTime;
@@ -111,7 +113,7 @@ export default function VideoPlayer({
           ref={playerRef}
           onPlay={() => {}}
           onPause={() => takeSnapshotHandler()}
-          poster={videoPoster || 'https://vistapointe.net/images/sintel-1.jpg'}>
+          poster={videoPoster || previewImage }>
           <source
             src={
               videoSource ||
