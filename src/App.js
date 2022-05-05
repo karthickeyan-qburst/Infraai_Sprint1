@@ -75,6 +75,7 @@ const components = {
 const formFields = {
   signIn: {
     username: {
+      type: 'email',
       placeholder: 'Email Address',
       isRequired: true,
     },
