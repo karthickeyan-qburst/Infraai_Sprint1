@@ -12,6 +12,10 @@ export default function TabNav(props) {
     setValue(newValue);
   };
 
+  useEffect(() => {
+    setValue(tabSelected);
+  }, [tabSelected]);
+
   /* 
    *Tab input props
    *

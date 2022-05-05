@@ -9,6 +9,10 @@ const columns = [
     label: "Add to Project",
   },
   {
+    id:"project_name",
+    label: "Project Name"
+  },
+  {
     id: "state",
     label: "State",
   },
