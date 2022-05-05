@@ -20,7 +20,6 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
 
 import NearMeIcon from "@mui/icons-material/NearMe";
@@ -110,6 +109,7 @@ function EnhancedTableHead(props) {
                   ? tableController.sort.order
                   : "asc"
               }
+              className="table__header-homemarket"
               onClick={createSortHandler(headCell.id)}
             >
               {headCell.label}
@@ -139,7 +139,12 @@ function EnhancedTableHead(props) {
 // };
 
 const EnhancedTableToolbar = (props) => {
-  const { title, tableController, handleTableControllerChange } = props;
+  const {
+    title,
+    tableController,
+    handleTableControllerChange,
+    marketplace = false,
+  } = props;
 
   const [age, setAge] = React.useState("");
   const [age1, setAge1] = React.useState("");
@@ -194,8 +199,9 @@ const EnhancedTableToolbar = (props) => {
         {title}
       </Typography>
 
-      <Box style={{ display: "flex", flexFlow: "row wrap" }}>
-        {/* <FormControl sx={{ m: 2, minWidth: 130 }} size="small">
+      {!marketplace ? (
+        <Box style={{ display: "flex", flexFlow: "row wrap" }}>
+          {/* <FormControl sx={{ m: 2, minWidth: 130 }} size="small">
           <InputLabel id="demo-select-small">
             <Box sx={{ display: "flex", gap: 1 }}>
               <FilterListIcon />
@@ -218,77 +224,80 @@ const EnhancedTableToolbar = (props) => {
             <MenuItem value={'Virginia'}>Virginia</MenuItem>
           </Select>
         </FormControl> */}
-        <FormControl sx={{ m: 2, minWidth: 120 }} size="small">
-          <InputLabel id="demo-select-small">
-            <Box sx={{ display: "flex", gap: 1 }}>
-              <LocationOnIcon />
-              State
-            </Box>
-          </InputLabel>
-          <Select
-            labelId="demo-select-small"
-            id="demo-select-small"
-            value={tableController.filters.state}
-            label={
+          <FormControl sx={{ m: 2, minWidth: 120 }} size="small">
+            <InputLabel id="demo-select-small">
               <Box sx={{ display: "flex", gap: 1 }}>
                 <LocationOnIcon />
                 State
               </Box>
-            }
-            onChange={(e) =>
-              handleTableControllerChange("filters", { state: e.target.value })
-            }
-          >
-            <MenuItem value={"Florida"}>Florida</MenuItem>
-            <MenuItem value={"New York"}>New York</MenuItem>
-            <MenuItem value={"Texas"}>Texas</MenuItem>
-            <MenuItem value={"Virginia"}>Virginia</MenuItem>
-          </Select>
-        </FormControl>
-        <FormControl sx={{ m: 2, minWidth: 130 }} size="small">
-          <InputLabel id="demo-select-small">
-            <Box sx={{ display: "flex", gap: 1 }}>
-              <NearMeIcon />
-              District
-            </Box>
-          </InputLabel>
-          <Select
-            labelId="demo-select-small"
-            id="demo-select-small"
-            value={tableController.filters.district}
-            label={
+            </InputLabel>
+            <Select
+              labelId="demo-select-small"
+              id="demo-select-small"
+              value={tableController.filters.state}
+              label={
+                <Box sx={{ display: "flex", gap: 1 }}>
+                  <LocationOnIcon />
+                  State
+                </Box>
+              }
+              onChange={(e) =>
+                handleTableControllerChange("filters", {
+                  state: e.target.value,
+                })
+              }
+            >
+              <MenuItem value={"Florida"}>Florida</MenuItem>
+              <MenuItem value={"New York"}>New York</MenuItem>
+              <MenuItem value={"Texas"}>Texas</MenuItem>
+              <MenuItem value={"Virginia"}>Virginia</MenuItem>
+            </Select>
+          </FormControl>
+          <FormControl sx={{ m: 2, minWidth: 130 }} size="small">
+            <InputLabel id="demo-select-small">
               <Box sx={{ display: "flex", gap: 1 }}>
                 <NearMeIcon />
                 District
               </Box>
-            }
-            onChange={(e) =>
-              handleTableControllerChange("filters", {
-                district: e.target.value,
-              })
-            }
-          >
-            <MenuItem value={"Florida"}>Florida</MenuItem>
-            <MenuItem value={"New York"}>New York</MenuItem>
-            <MenuItem value={"Texas"}>Texas</MenuItem>
-            <MenuItem value={"Virginia"}>Virginia</MenuItem>
-          </Select>
-        </FormControl>
-        {/* <DateRange
+            </InputLabel>
+            <Select
+              labelId="demo-select-small"
+              id="demo-select-small"
+              value={tableController.filters.district}
+              label={
+                <Box sx={{ display: "flex", gap: 1 }}>
+                  <NearMeIcon />
+                  District
+                </Box>
+              }
+              onChange={(e) =>
+                handleTableControllerChange("filters", {
+                  district: e.target.value,
+                })
+              }
+            >
+              <MenuItem value={"Florida"}>Florida</MenuItem>
+              <MenuItem value={"New York"}>New York</MenuItem>
+              <MenuItem value={"Texas"}>Texas</MenuItem>
+              <MenuItem value={"Virginia"}>Virginia</MenuItem>
+            </Select>
+          </FormControl>
+          {/* <DateRange
           editableDateInputs={false}
           onChange={item => setState([item.selection])}
           moveRangeOnFirstSelection={false}
           ranges={state}
         /> */}
 
-        <TextField
-          sx={{ m: 2, minWidth: 130 }}
-          id="outlined-basic"
-          label="Expires On"
-          variant="outlined"
-          size="small"
-        />
-      </Box>
+          <TextField
+            sx={{ m: 2, minWidth: 130 }}
+            id="outlined-basic"
+            label="Expires On"
+            variant="outlined"
+            size="small"
+          />
+        </Box>
+      ) : null}
     </Toolbar>
   );
 };
@@ -304,6 +313,7 @@ export default function EnhancedTable({
   totalCount,
   tableController,
   handleTableControllerChange,
+  marketplace = false,
 }) {
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("calories");
@@ -378,12 +388,23 @@ export default function EnhancedTable({
   return (
     <Box component="main" className="main__body">
       <Card className="card">
-        <EnhancedTableToolbar
-          title={title}
-          numSelected={selected.length}
-          tableController={tableController}
-          handleTableControllerChange={handleTableControllerChange}
-        />
+        {marketplace ? (
+          <EnhancedTableToolbar
+            title={title}
+            numSelected={selected.length}
+            marketplace={true}
+            //tableController={tableController}
+            //handleTableControllerChange={handleTableControllerChange}
+          />
+        ) : (
+          <EnhancedTableToolbar
+            title={title}
+            numSelected={selected.length}
+            tableController={tableController}
+            handleTableControllerChange={handleTableControllerChange}
+          />
+        )}
+
         <TableContainer>
           <Table
             sx={{ minWidth: 750 }}
@@ -407,6 +428,7 @@ export default function EnhancedTable({
               }}
               rowCount={rows.length}
             />
+
             <TableBody>
               {/* if you don't need to support IE11, you can replace the `stableSort` call with:
                  rows.slice().sort(getComparator(order, orderBy)) */}
@@ -443,27 +465,49 @@ export default function EnhancedTable({
                       {columns.map((m, i) => {
                         if (i === 0) return null;
                         return (
-                          <TableCell align="left" padding={"none"}>
+                          <TableCell
+                            align="left"
+                            padding={"none"}
+                            className="table__body-homemarket"
+                          >
                             {row[m.id]}
                           </TableCell>
                         );
                       })}
 
                       <TableCell align="left" padding={"none"}>
-                        <IconButton
-                          color="inherit"
-                          id="basic-button"
-                          aria-controls={open ? "basic-menu" : undefined}
-                          aria-haspopup="true"
-                          aria-expanded={open ? "true" : undefined}
-                          onClick={(e) => {
+                        {marketplace ? (
+                          <IconButton
+                            color="inherit"
+                            id="basic-button"
+                            aria-controls={open ? "basic-menu" : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open ? "true" : undefined}
+                            /* onClick={(e) => {
                             e.stopPropagation();
                             handleOptionClick(e);
-                          }}
-                        >
-                          <MoreVertIcon />
-                        </IconButton>
+                          }}*/
+                          >
+                            <MoreVertIcon />
+                          </IconButton>
+                        ) : (
+                          <IconButton
+                            color="inherit"
+                            id="basic-button"
+                            aria-controls={open ? "basic-menu" : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open ? "true" : undefined}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleOptionClick(e);
+                            }}
+                          >
+                            <MoreVertIcon />
+                          </IconButton>
+                        )}
+
                         <Menu
+                          className="tablerow__menu"
                           id="basic-menu"
                           anchorEl={anchorEl}
                           open={open}
