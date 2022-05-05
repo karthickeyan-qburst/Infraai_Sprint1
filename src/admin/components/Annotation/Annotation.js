@@ -135,6 +135,8 @@ export default function Annotation({
   };
 
   const saveHotspot = () => {
+    setButtonOpen(false);
+    setDrawEnabled(true);
     setOpen(false);
     setCrop('');
     setCoordinate({
@@ -143,7 +145,7 @@ export default function Annotation({
       endX: 0,
       endY: 0
     });
-    setCurrentView();
+    // setCurrentView();
   };
 
   function PolygonElement(coordinates) {

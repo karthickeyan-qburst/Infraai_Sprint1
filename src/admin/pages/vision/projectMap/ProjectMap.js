@@ -5,9 +5,11 @@ import React from 'react';
 import Map from '../../../components/Map/Map';
 import './ProjectMap.scss';
 import { visionMapRoutes } from '../../../constants/Constants';
+import { useNavigate } from 'react-router-dom';
 
 export default function ProjectMap() {
   const position = [51.505, -0.09];
+  const navigate = useNavigate();
 
   return (
     <Grid
@@ -22,7 +24,7 @@ export default function ProjectMap() {
             PROJECT MAP
           </Typography>
         </Grid>
-        <Grid className="infai_inner_content">
+        <Grid onClick={() => navigate('/intel/id')} className="infai_inner_content">
           <Button variant="outlined" className="projectmap__btn-overview">
             Return To Overview
           </Button>
