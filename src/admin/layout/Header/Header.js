@@ -76,7 +76,9 @@ function Header({ drawerWidth , ...rest }) {
           <IconButton size="large" onClick={handleMenu}>
             <ExpandMoreOutlinedIcon />
           </IconButton>
+          <div className="user-menu">
           <Menu
+            sx={{top:'35px', right:'25px'}}
             anchorEl={anchorEl}
             anchorOrigin={{
               vertical: "top",
@@ -93,6 +95,8 @@ function Header({ drawerWidth , ...rest }) {
             <MenuItem onClick={handleClose}>My account</MenuItem>
             <MenuItem onClick={handleSignout}>Logout</MenuItem>
           </Menu>
+          </div>
+         
         </Toolbar>
       </AppBar>
 

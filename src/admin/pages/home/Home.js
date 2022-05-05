@@ -14,9 +14,9 @@ import "./Home.scss";
 function Home() {
   const data = [
     { name: "Project", value: "1", element: <Myprojects /> },
-    { name: "My Project", value: "2", element: <Myprojects /> },
+    { name: "My Projects", value: "2", element: <Myprojects /> },
     { name: "My Data  ", value: "3", element: <Marketplace /> },
-    { name: "Messages", value: "4", element: "Skipped" },
+   // { name: "Messages", value: "4", element: "Skipped" },
   ];
   const location = useLocation();
   const [tabSelected, setTabSelected] = useState("1");
