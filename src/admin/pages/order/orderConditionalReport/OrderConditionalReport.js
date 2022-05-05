@@ -5,7 +5,6 @@ import { Grid } from '@mui/material';
 import OverViewCard from '../../../components/OverviewCard/OverviewCard';
 import ProjectCard from '../../../components/ProjectCard/ProjectCard';
 import Map from '../../../components/Map/Map';
-import { visionMapRoutes } from '../../../constants/Constants';
 
 import './OrderConditional.scss';
 
@@ -15,12 +14,9 @@ export default function OrderConditionalReport() {
   }
 
   const rows = [
-    createData(
-      "Assign Inventory Project:",
-      "Dan 5 star rating (External $5,000)"
-    ),
-    createData("", "Patrick (Internal)"),
-    createData("", "Jim (Internal)")
+    createData('Assign Inventory Project:', 'Dan 5 star rating (External $5,000)'),
+    createData('', 'Patrick (Internal)'),
+    createData('', 'Jim (Internal)')
   ];
   return (
     <Grid container direction={'column'}>
@@ -34,7 +30,7 @@ export default function OrderConditionalReport() {
         </Grid>
       </Grid>
       <Grid className="map__container-orderconditionl">
-        <Map popUpRoutes={visionMapRoutes} style={{ height: '55vh' }} />
+        <Map style={{ height: '55vh' }} />
       </Grid>
     </Grid>
   );

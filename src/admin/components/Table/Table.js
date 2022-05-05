@@ -34,6 +34,8 @@ import { Card, FormControlLabel, FormGroup } from '@mui/material';
 
 import { ReactComponent as SearchSvg } from '../../../assets/search.svg';
 import { ReactComponent as StateSvg } from '../../../assets/state.svg';
+import { useNavigate } from 'react-router-dom';
+
 // import 'react-date-range/dist/styles.css'; // main css file
 // import 'react-date-range/dist/theme/default.css'; // theme css file
 // import { DateRange } from 'react-date-range';
@@ -344,6 +346,7 @@ export default function EnhancedTable({
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const navigation = useNavigate();
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -533,6 +536,7 @@ export default function EnhancedTable({
                             onClick={(e) => {
                               e.stopPropagation();
                               handleClose(e);
+                              navigation('/intel/1');
                             }}>
                             View Details
                           </MenuItem>
@@ -540,6 +544,7 @@ export default function EnhancedTable({
                             onClick={(e) => {
                               e.stopPropagation();
                               handleClose(e);
+                              navigation('/order-inventory/1');
                             }}>
                             Order Inventory
                           </MenuItem>
@@ -547,6 +552,7 @@ export default function EnhancedTable({
                             onClick={(e) => {
                               e.stopPropagation();
                               handleClose(e);
+                              navigation('/inventory/1');
                             }}>
                             View Inventory
                           </MenuItem>
@@ -554,6 +560,7 @@ export default function EnhancedTable({
                             onClick={(e) => {
                               e.stopPropagation();
                               handleClose(e);
+                              navigation('/order-condition/1');
                             }}>
                             Order Condition Report
                           </MenuItem>
@@ -561,6 +568,7 @@ export default function EnhancedTable({
                             onClick={(e) => {
                               e.stopPropagation();
                               handleClose(e);
+                              navigation('/condition/1');
                             }}>
                             View Condition Report
                           </MenuItem>
