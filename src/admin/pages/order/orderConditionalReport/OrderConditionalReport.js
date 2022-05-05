@@ -34,7 +34,7 @@ export default function OrderConditionalReport() {
         </Grid>
       </Grid>
       <Grid className="map__container-orderconditionl">
-        <Map popUpRoutes={visionMapRoutes} style={{ height: '55vh' }} />
+        <Map style={{ height: '55vh' }} />
       </Grid>
     </Grid>
   );
