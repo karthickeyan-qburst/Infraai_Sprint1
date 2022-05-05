@@ -464,6 +464,7 @@ export default function EnhancedTable({
 
                   return (
                     <TableRow
+                    className='hometable_checkbox'
                       hover
                       onClick={(event) => handleClick(event, row.id)}
                       role="checkbox"
