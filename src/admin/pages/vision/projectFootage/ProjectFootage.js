@@ -36,19 +36,25 @@ export default function ProjectFootage() {
                 onClick={() =>
                   setCurrentView((view) => (view === 'objectClasses' ? '' : 'objectClasses'))
                 }
-                className={`footericonmenu__icon footericonmenu__icon__active`}
+                className={`footericonmenu_icon ${
+                  currentView === 'objectClasses' && 'footericonmenu_icon__active'
+                }`}
               />
             </span>
             <span className="footericonmenu__icon-button">
               <PanellumSvg
                 onClick={() => setCurrentView('pannellum')}
-                className="footericonmenu_icon"
+                className={`footericonmenu_icon ${
+                  currentView === 'pannellum' && 'footericonmenu_icon__active'
+                }`}
               />
             </span>
             <span className="footericonmenu__icon-button">
               <AnnotationSvg
                 onClick={() => setCurrentView('annotation')}
-                className="footericonmenu_icon"
+                className={`footericonmenu_icon ${
+                  currentView === 'annotation' && 'footericonmenu_icon__active'
+                }`}
               />
             </span>
             {/* <span className="footericonmenu__icon-button">
