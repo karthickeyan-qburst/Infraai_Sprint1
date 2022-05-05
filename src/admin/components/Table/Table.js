@@ -82,7 +82,7 @@ function EnhancedTableHead(props) {
 
   return (
     <TableHead>
-      <TableRow style={{ background: '#F0F0F0' }}>
+      <TableRow style={{ background: '#F0F0F0' }} className='hometable__tr'>
         {/* <TableCell padding="checkbox">
           <Checkbox
             color="primary"
