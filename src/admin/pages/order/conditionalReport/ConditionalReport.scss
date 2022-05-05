@@ -1,12 +1,39 @@
 .card__subheading-outline {
-    padding: 0.5rem 2rem !important;
-    background-color: #f0f0f0  ;
-    font-weight: 600 !important;
-    font-family: "Work Sans", sans-serif !important;
-    font-size: 18px  
-  }
+  padding: 0.5rem 2rem !important;
+  background-color: #f0f0f0;
+  font-weight: 600 !important;
+  font-family: 'Work Sans', sans-serif !important;
+  font-size: 18px;
+}
 
-.card__content-outline-order{
+.card__content-outline-order {
   margin-top: -10px !important;
 }
-  
+
+.iheading__container{
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 0;
+}
+
+.crcard__heading{
+  padding-left: 2rem !important;
+  display: flex;
+  justify-content: space-between;
+  height: 6rem !important;
+  align-items: center;
+  font-weight: 600 !important;
+  font-family: "Work Sans", sans-serif !important;
+  font-size: 24px;
+  color: #222834;
+}
+
+.icard__subheading {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 20px !important;
+  line-height: 27px !important;
+  color: rgba($color: #0b0326, $alpha: 0.8);
+  //padding: 3rem 0rem;
+}

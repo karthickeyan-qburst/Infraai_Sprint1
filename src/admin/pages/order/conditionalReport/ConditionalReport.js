@@ -21,8 +21,12 @@ function ConditionalReport() {
     <div>
       <Box component="main" className="imain__body">
         <Card className="icard">
-          <Typography gutterBottom component="div" className="icard__heading">
+          <Typography gutterBottom component="div" className="crcard__heading">
+            <div className="iheading__container">
             <span>Conditional Report</span>
+            <span className="icard__subheading">Florida Interstate and Bridge (I95 and I10)</span>
+            </div>
+            
             <Button className="inventoryreport__download">
               <span> Download &nbsp;</span> <DownloadSvg />
             </Button>

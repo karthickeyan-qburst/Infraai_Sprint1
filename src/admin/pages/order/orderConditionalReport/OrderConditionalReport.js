@@ -1,11 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import { Grid } from "@mui/material";
+import { Grid } from '@mui/material';
 
-import OverViewCard from "../../../components/OverviewCard/OverviewCard";
-import ProjectCard from "../../../components/ProjectCard/ProjectCard";
+import OverViewCard from '../../../components/OverviewCard/OverviewCard';
+import ProjectCard from '../../../components/ProjectCard/ProjectCard';
+import Map from '../../../components/Map/Map';
 
-import "./OrderConditional.scss";
+import './OrderConditional.scss';
 
 export default function OrderConditionalReport() {
   function createData(name, value) {
@@ -13,15 +14,12 @@ export default function OrderConditionalReport() {
   }
 
   const rows = [
-    createData(
-      "Assign Inventory Project:",
-      "Dan 5 star rating (External $5,000)"
-    ),
-    createData("", "Patrick (Internal)"),
-    createData("", "Jim (Internal)")
+    createData('Assign Inventory Project:', 'Dan 5 star rating (External $5,000)'),
+    createData('', 'Patrick (Internal)'),
+    createData('', 'Jim (Internal)')
   ];
   return (
-    <div>
+    <Grid container direction={'column'}>
       <Grid container spacing={2} className="orderinventory__container">
         <Grid xs={6} md={6} lg={6} xl={6}>
           <ProjectCard orderCondition={true} />
@@ -31,6 +29,9 @@ export default function OrderConditionalReport() {
           <OverViewCard rows={rows} orderCondition={true} title="Inventory Options" />
         </Grid>
       </Grid>
-    </div>
+      <Grid className="map__container-orderconditionl">
+        <Map style={{ height: '55vh' }} />
+      </Grid>
+    </Grid>
   );
 }

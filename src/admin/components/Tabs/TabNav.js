@@ -1,16 +1,20 @@
-import { TabContext, TabList, TabPanel } from "@mui/lab";
-import { Tab } from "@mui/material";
-import { Box } from "@mui/system";
-import React from "react";
+import { TabContext, TabList, TabPanel } from '@mui/lab';
+import { Tab } from '@mui/material';
+import { Box } from '@mui/system';
+import React, { useEffect } from 'react';
 
-import "./TabNav.scss";
+import './TabNav.scss';
 
 export default function TabNav(props) {
-  const { tabData, tabSelected = "1" } = props;
+  const { tabData, tabSelected = '1' } = props;
   const [value, setValue] = React.useState(tabSelected);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  useEffect(() => {
+    setValue(tabSelected);
+  }, [tabSelected]);
 
   /* 
    *Tab input props
@@ -24,17 +28,10 @@ export default function TabNav(props) {
 
   return (
     <TabContext value={value}>
-      <Box sx={{ borderBottom: 1, borderColor: "lightgrey" }}>
+      <Box sx={{ borderBottom: 1, borderColor: 'lightgrey' }}>
         <TabList onChange={handleChange} aria-label="lab API tabs example">
           {tabData.map((data, index) => {
-            return (
-              <Tab
-                key={index}
-                className="tab-heading"
-                label={data.name}
-                value={data.value}
-              />
-            );
+            return <Tab key={index} className="tab-heading" label={data.name} value={data.value} />;
           })}
         </TabList>
       </Box>
