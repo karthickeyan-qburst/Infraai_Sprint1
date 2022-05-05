@@ -5,11 +5,11 @@ export const visionMapRoutes = [
     name: 'View Footage'
   },
   {
-    path: '/',
+    path: '/inventory/1',
     name: 'View Inventory Report'
   },
   {
-    path: '/',
+    path: '/condition/1',
     name: 'View Condition Report'
   }
 ];

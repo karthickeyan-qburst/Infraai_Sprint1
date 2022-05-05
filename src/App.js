@@ -104,7 +104,12 @@ function App() {
                 <Route exact path="/marketplace" element={<Home />} />
                 <Route exact path="/intel/:id" element={<Intel />} />
                 <Route exact path="/vision/:id" element={<ProjectMap />} />
-                <Route exact path="/order/:id" element={<Order />} />
+                <Route exact path="/order/1" element={<Order />} />
+                <Route exact path="/order-inventory/1" element={<Order />} />
+                <Route exact path="/order-condition/1" element={<Order />} />
+                <Route exact path="/inventory/1" element={<Order />} />
+                <Route exact path="/condition/1" element={<Order />} />
+
                 <Route exact path="/footage/:id" element={<ProjectFootage />} />
               </Routes>
             </Box>
