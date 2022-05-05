@@ -507,6 +507,7 @@ export default function EnhancedTable({
                         )}
 
                         <Menu
+                          className="tablerow__menu"
                           id="basic-menu"
                           anchorEl={anchorEl}
                           open={open}

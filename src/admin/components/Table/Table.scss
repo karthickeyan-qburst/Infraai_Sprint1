@@ -7,7 +7,7 @@ tr > td:first-child {
 }
 
 .table__header-homemarket {
-  font-family: "Work Sans", sans-serif !important;
+  font-family: 'Work Sans', sans-serif !important;
   font-style: normal !important;
   font-weight: 400 !important;
   font-size: 12px !important;
@@ -16,11 +16,20 @@ tr > td:first-child {
 }
 
 .table__body-homemarket {
-  font-family: "Work Sans", sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-style: normal !important;
   font-weight: 400 !important;
   font-size: 14px !important;
   line-height: 16px !important;
   color: #222834 !important;
   height: 60px !important;
+}
+
+.tablerow__menu .MuiPaper-root {
+  background-color: #ffffff !important;
+  box-shadow:  0px 0.05px 1.5px rgba(0,0,0,0.1) !important;
+  border-radius: 10px !important;
+  left: 97rem !important;
+  position: absolute;
+  right: 6rem !important;
 }
