@@ -1,38 +1,39 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import Box from "@mui/material/Box";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TablePagination from "@mui/material/TablePagination";
-import TableRow from "@mui/material/TableRow";
-import TableSortLabel from "@mui/material/TableSortLabel";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
-import Checkbox from "@mui/material/Checkbox";
-import IconButton from "@mui/material/IconButton";
-import TextField from "@mui/material/TextField";
-import InputLabel from "@mui/material/InputLabel";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import { visuallyHidden } from "@mui/utils";
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import Box from '@mui/material/Box';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TablePagination from '@mui/material/TablePagination';
+import TableRow from '@mui/material/TableRow';
+import TableSortLabel from '@mui/material/TableSortLabel';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Paper from '@mui/material/Paper';
+import Checkbox from '@mui/material/Checkbox';
+import IconButton from '@mui/material/IconButton';
+import TextField from '@mui/material/TextField';
+import InputLabel from '@mui/material/InputLabel';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { visuallyHidden } from '@mui/utils';
 
-import NearMeIcon from "@mui/icons-material/NearMe";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { Card } from "@mui/material";
+import NearMeIcon from '@mui/icons-material/NearMe';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { Card } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 // import 'react-date-range/dist/styles.css'; // main css file
 // import 'react-date-range/dist/theme/default.css'; // theme css file
 // import { DateRange } from 'react-date-range';
 // import { DateRangePicker } from 'rsuite';
 
-import "./Table.scss";
+import './Table.scss';
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -45,7 +46,7 @@ function descendingComparator(a, b, orderBy) {
 }
 
 function getComparator(order, orderBy) {
-  return order === "desc"
+  return order === 'desc'
     ? (a, b) => descendingComparator(a, b, orderBy)
     : (a, b) => -descendingComparator(a, b, orderBy);
 }
@@ -65,21 +66,15 @@ function stableSort(array, comparator) {
 }
 
 function EnhancedTableHead(props) {
-  const {
-    columns,
-    order,
-    orderBy,
-    onRequestSort,
-    tableController,
-    handleTableControllerChange,
-  } = props;
+  const { columns, order, orderBy, onRequestSort, tableController, handleTableControllerChange } =
+    props;
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
   };
 
   return (
     <TableHead>
-      <TableRow style={{ background: "#F0F0F0" }}>
+      <TableRow style={{ background: '#F0F0F0' }}>
         {/* <TableCell padding="checkbox">
           <Checkbox
             color="primary"
@@ -94,30 +89,22 @@ function EnhancedTableHead(props) {
         {columns.map((headCell) => (
           <TableCell
             key={headCell.id}
-            align={"left"}
-            padding={"none"}
+            align={'left'}
+            padding={'none'}
             sortDirection={
-              tableController.sort.orderBy === headCell.id
-                ? tableController.sort.order
-                : false
-            }
-          >
+              tableController.sort.orderBy === headCell.id ? tableController.sort.order : false
+            }>
             <TableSortLabel
               active={tableController.sort.orderBy === headCell.id}
               direction={
-                tableController.sort.orderBy === headCell.id
-                  ? tableController.sort.order
-                  : "asc"
+                tableController.sort.orderBy === headCell.id ? tableController.sort.order : 'asc'
               }
               className="table__header-homemarket"
-              onClick={createSortHandler(headCell.id)}
-            >
+              onClick={createSortHandler(headCell.id)}>
               {headCell.label}
               {tableController.sort.orderBy === headCell.id ? (
                 <Box component="span" sx={visuallyHidden}>
-                  {tableController.sort.order === "desc"
-                    ? "sorted descending"
-                    : "sorted ascending"}
+                  {tableController.sort.order === 'desc' ? 'sorted descending' : 'sorted ascending'}
                 </Box>
               ) : null}
             </TableSortLabel>
@@ -139,24 +126,19 @@ function EnhancedTableHead(props) {
 // };
 
 const EnhancedTableToolbar = (props) => {
-  const {
-    title,
-    tableController,
-    handleTableControllerChange,
-    marketplace = false,
-  } = props;
+  const { title, tableController, handleTableControllerChange, marketplace = false } = props;
 
-  const [age, setAge] = React.useState("");
-  const [age1, setAge1] = React.useState("");
-  const [age2, setAge2] = React.useState("");
-  const [age3, setAge3] = React.useState("");
+  const [age, setAge] = React.useState('');
+  const [age1, setAge1] = React.useState('');
+  const [age2, setAge2] = React.useState('');
+  const [age3, setAge3] = React.useState('');
 
   const [state, setState] = React.useState([
     {
       startDate: null,
       endDate: null,
-      key: "selection",
-    },
+      key: 'selection'
+    }
   ]);
 
   const handleChange = (event) => {
@@ -178,29 +160,27 @@ const EnhancedTableToolbar = (props) => {
       sx={{
         pl: { sm: 2 },
         pr: { xs: 1, sm: 1 },
-        display: "flex",
-        flexFlow: "row wrap",
-        justifyContent: "space-between",
-      }}
-    >
+        display: 'flex',
+        flexFlow: 'row wrap',
+        justifyContent: 'space-between'
+      }}>
       <Typography
         sx={{
-          fontFamily: "Work Sans",
-          fontStyle: "normal",
-          fontWeight: "600",
-          fontSize: "24px",
-          lineHeight: "28px",
-          color: "#222834",
+          fontFamily: 'Work Sans',
+          fontStyle: 'normal',
+          fontWeight: '600',
+          fontSize: '24px',
+          lineHeight: '28px',
+          color: '#222834'
         }}
         variant="h6"
         id="tableTitle"
-        component="div"
-      >
+        component="div">
         {title}
       </Typography>
 
       {!marketplace ? (
-        <Box style={{ display: "flex", flexFlow: "row wrap" }}>
+        <Box style={{ display: 'flex', flexFlow: 'row wrap' }}>
           {/* <FormControl sx={{ m: 2, minWidth: 130 }} size="small">
           <InputLabel id="demo-select-small">
             <Box sx={{ display: "flex", gap: 1 }}>
@@ -226,7 +206,7 @@ const EnhancedTableToolbar = (props) => {
         </FormControl> */}
           <FormControl sx={{ m: 2, minWidth: 120 }} size="small">
             <InputLabel id="demo-select-small">
-              <Box sx={{ display: "flex", gap: 1 }}>
+              <Box sx={{ display: 'flex', gap: 1 }}>
                 <LocationOnIcon />
                 State
               </Box>
@@ -236,26 +216,25 @@ const EnhancedTableToolbar = (props) => {
               id="demo-select-small"
               value={tableController.filters.state}
               label={
-                <Box sx={{ display: "flex", gap: 1 }}>
+                <Box sx={{ display: 'flex', gap: 1 }}>
                   <LocationOnIcon />
                   State
                 </Box>
               }
               onChange={(e) =>
-                handleTableControllerChange("filters", {
-                  state: e.target.value,
+                handleTableControllerChange('filters', {
+                  state: e.target.value
                 })
-              }
-            >
-              <MenuItem value={"Florida"}>Florida</MenuItem>
-              <MenuItem value={"New York"}>New York</MenuItem>
-              <MenuItem value={"Texas"}>Texas</MenuItem>
-              <MenuItem value={"Virginia"}>Virginia</MenuItem>
+              }>
+              <MenuItem value={'Florida'}>Florida</MenuItem>
+              <MenuItem value={'New York'}>New York</MenuItem>
+              <MenuItem value={'Texas'}>Texas</MenuItem>
+              <MenuItem value={'Virginia'}>Virginia</MenuItem>
             </Select>
           </FormControl>
           <FormControl sx={{ m: 2, minWidth: 130 }} size="small">
             <InputLabel id="demo-select-small">
-              <Box sx={{ display: "flex", gap: 1 }}>
+              <Box sx={{ display: 'flex', gap: 1 }}>
                 <NearMeIcon />
                 District
               </Box>
@@ -265,21 +244,20 @@ const EnhancedTableToolbar = (props) => {
               id="demo-select-small"
               value={tableController.filters.district}
               label={
-                <Box sx={{ display: "flex", gap: 1 }}>
+                <Box sx={{ display: 'flex', gap: 1 }}>
                   <NearMeIcon />
                   District
                 </Box>
               }
               onChange={(e) =>
-                handleTableControllerChange("filters", {
-                  district: e.target.value,
+                handleTableControllerChange('filters', {
+                  district: e.target.value
                 })
-              }
-            >
-              <MenuItem value={"Florida"}>Florida</MenuItem>
-              <MenuItem value={"New York"}>New York</MenuItem>
-              <MenuItem value={"Texas"}>Texas</MenuItem>
-              <MenuItem value={"Virginia"}>Virginia</MenuItem>
+              }>
+              <MenuItem value={'Florida'}>Florida</MenuItem>
+              <MenuItem value={'New York'}>New York</MenuItem>
+              <MenuItem value={'Texas'}>Texas</MenuItem>
+              <MenuItem value={'Virginia'}>Virginia</MenuItem>
             </Select>
           </FormControl>
           {/* <DateRange
@@ -303,7 +281,7 @@ const EnhancedTableToolbar = (props) => {
 };
 
 EnhancedTableToolbar.propTypes = {
-  numSelected: PropTypes.number.isRequired,
+  numSelected: PropTypes.number.isRequired
 };
 
 export default function EnhancedTable({
@@ -313,17 +291,18 @@ export default function EnhancedTable({
   totalCount,
   tableController,
   handleTableControllerChange,
-  marketplace = false,
+  marketplace = false
 }) {
-  const [order, setOrder] = React.useState("asc");
-  const [orderBy, setOrderBy] = React.useState("calories");
+  const [order, setOrder] = React.useState('asc');
+  const [orderBy, setOrderBy] = React.useState('calories');
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const navigation = useNavigate();
 
   const handleRequestSort = (event, property) => {
-    const isAsc = orderBy === property && order === "asc";
-    setOrder(isAsc ? "desc" : "asc");
+    const isAsc = orderBy === property && order === 'asc';
+    setOrder(isAsc ? 'desc' : 'asc');
     setOrderBy(property);
   };
 
@@ -378,12 +357,7 @@ export default function EnhancedTable({
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
-    page > 0
-      ? Math.max(
-          0,
-          (1 + page) * tableController.pagination.rowsPerPage - rows.length
-        )
-      : 0;
+    page > 0 ? Math.max(0, (1 + page) * tableController.pagination.rowsPerPage - rows.length) : 0;
 
   return (
     <Box component="main" className="main__body">
@@ -406,11 +380,7 @@ export default function EnhancedTable({
         )}
 
         <TableContainer>
-          <Table
-            sx={{ minWidth: 750 }}
-            aria-labelledby="tableTitle"
-            size={"medium"}
-          >
+          <Table sx={{ minWidth: 750 }} aria-labelledby="tableTitle" size={'medium'}>
             <EnhancedTableHead
               columns={columns}
               numSelected={selected.length}
@@ -420,11 +390,10 @@ export default function EnhancedTable({
               handleTableControllerChange={handleTableControllerChange}
               onRequestSort={(e, p) => {
                 const order =
-                  tableController.sort.orderBy === p &&
-                  tableController.sort.order === "asc"
-                    ? "desc"
-                    : "asc";
-                handleTableControllerChange("sort", { orderBy: p, order });
+                  tableController.sort.orderBy === p && tableController.sort.order === 'asc'
+                    ? 'desc'
+                    : 'asc';
+                handleTableControllerChange('sort', { orderBy: p, order });
               }}
               rowCount={rows.length}
             />
@@ -450,14 +419,13 @@ export default function EnhancedTable({
                       aria-checked={isItemSelected}
                       tabIndex={-1}
                       key={row.id}
-                      selected={isItemSelected}
-                    >
-                      <TableCell align="left" padding={"none"}>
+                      selected={isItemSelected}>
+                      <TableCell align="left" padding={'none'}>
                         <Checkbox
                           color="primary"
                           checked={isItemSelected}
                           inputProps={{
-                            "aria-labelledby": labelId,
+                            'aria-labelledby': labelId
                           }}
                         />
                       </TableCell>
@@ -467,22 +435,21 @@ export default function EnhancedTable({
                         return (
                           <TableCell
                             align="left"
-                            padding={"none"}
-                            className="table__body-homemarket"
-                          >
+                            padding={'none'}
+                            className="table__body-homemarket">
                             {row[m.id]}
                           </TableCell>
                         );
                       })}
 
-                      <TableCell align="left" padding={"none"}>
+                      <TableCell align="left" padding={'none'}>
                         {marketplace ? (
                           <IconButton
                             color="inherit"
                             id="basic-button"
-                            aria-controls={open ? "basic-menu" : undefined}
+                            aria-controls={open ? 'basic-menu' : undefined}
                             aria-haspopup="true"
-                            aria-expanded={open ? "true" : undefined}
+                            aria-expanded={open ? 'true' : undefined}
                             /* onClick={(e) => {
                             e.stopPropagation();
                             handleOptionClick(e);
@@ -494,14 +461,13 @@ export default function EnhancedTable({
                           <IconButton
                             color="inherit"
                             id="basic-button"
-                            aria-controls={open ? "basic-menu" : undefined}
+                            aria-controls={open ? 'basic-menu' : undefined}
                             aria-haspopup="true"
-                            aria-expanded={open ? "true" : undefined}
+                            aria-expanded={open ? 'true' : undefined}
                             onClick={(e) => {
                               e.stopPropagation();
                               handleOptionClick(e);
-                            }}
-                          >
+                            }}>
                             <MoreVertIcon />
                           </IconButton>
                         )}
@@ -516,71 +482,67 @@ export default function EnhancedTable({
                             handleClose(e);
                           }}
                           MenuListProps={{
-                            "aria-labelledby": "basic-button",
-                          }}
-                        >
+                            'aria-labelledby': 'basic-button'
+                          }}>
                           <MenuItem
                             onClick={(e) => {
                               e.stopPropagation();
                               handleClose(e);
-                            }}
-                          >
+                              navigation('/intel/1');
+                            }}>
                             View Details
                           </MenuItem>
                           <MenuItem
                             onClick={(e) => {
                               e.stopPropagation();
                               handleClose(e);
-                            }}
-                          >
+                              navigation('/order-inventory/1');
+                            }}>
                             Order Inventory
                           </MenuItem>
                           <MenuItem
                             onClick={(e) => {
                               e.stopPropagation();
                               handleClose(e);
-                            }}
-                          >
+                              navigation('/inventory/1');
+                            }}>
                             View Inventory
                           </MenuItem>
                           <MenuItem
                             onClick={(e) => {
                               e.stopPropagation();
                               handleClose(e);
-                            }}
-                          >
+                              navigation('/order-condition/1');
+                            }}>
                             Order Condition Report
                           </MenuItem>
                           <MenuItem
                             onClick={(e) => {
                               e.stopPropagation();
                               handleClose(e);
-                            }}
-                          >
+                              navigation('/condition/1');
+                            }}>
                             View Condition Report
                           </MenuItem>
                           <MenuItem
                             onClick={(e) => {
                               e.stopPropagation();
                               handleClose(e);
-                            }}
-                          >
+                            }}>
                             Notifications
                           </MenuItem>
                           <MenuItem
                             onClick={(e) => {
                               e.stopPropagation();
                               handleClose(e);
-                            }}
-                          >
+                            }}>
                             RFP Release
                           </MenuItem>
                           <MenuItem
                             onClick={(e) => {
                               e.stopPropagation();
                               handleClose(e);
-                            }}
-                          >
+                            }}>
                             Award Information
                           </MenuItem>
                         </Menu>
@@ -591,9 +553,8 @@ export default function EnhancedTable({
               {emptyRows > 0 && (
                 <TableRow
                   style={{
-                    height: 53 * emptyRows,
-                  }}
-                >
+                    height: 53 * emptyRows
+                  }}>
                   <TableCell colSpan={6} />
                 </TableRow>
               )}
@@ -607,12 +568,12 @@ export default function EnhancedTable({
           rowsPerPage={tableController.pagination.rowsPerPage}
           page={tableController.pagination.page}
           onPageChange={(e, v) => {
-            handleTableControllerChange("pagination", { page: v });
+            handleTableControllerChange('pagination', { page: v });
           }}
           onRowsPerPageChange={(e) => {
-            handleTableControllerChange("pagination", {
+            handleTableControllerChange('pagination', {
               rowsPerPage: e.target.value,
-              page: 0,
+              page: 0
             });
           }}
         />
