@@ -1,4 +1,27 @@
+@import "../../../styles/breakpoints";
+
+
 .summary__container{
     margin-top: .5rem !important;
     height: 27rem !important;
 }
+
+.map__container{
+    flex-grow: 1;
+    width: 103%;
+    height: 100% !important;
+    margin-top: 2rem;
+  
+    @include xs {
+      /*  margin-left: 10px; */
+    }
+    //for devices above 600px
+    @include sm {
+      margin-left: -1.3rem;
+    }
+    //for mobile device below 600px
+    @include xs-max-width {
+      margin-left: -0.3rem;
+    }
+}
+

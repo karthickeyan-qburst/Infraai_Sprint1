@@ -21,7 +21,7 @@ export default function OrderInventory() {
     createData('', 'Jim (Internal)')
   ];
   return (
-    <div>
+    <Grid container direction={"column"}>
       <Grid container spacing={2} className="orderinventory__container">
         <Grid xs={6} md={6} lg={6} xl={6}>
           <ProjectCard order={true} />
@@ -31,7 +31,10 @@ export default function OrderInventory() {
           <OverViewCard rows={rows} order={true} title="Inventory Options" />
         </Grid>
       </Grid>
-      <Map popUpRoutes={visionMapRoutes} style={{ height: '75vh' }} />
-    </div>
+      <Grid className='map__container-orderinventory'>
+
+      <Map popUpRoutes={visionMapRoutes} style={{ height: '55vh' }} />
+      </Grid>
+    </Grid>
   );
 }

@@ -23,7 +23,7 @@ export default function OrderConditionalReport() {
     createData('Attachments:', <button>View Attachment</button>)
   ];
   return (
-    <div>
+    <Grid container direction={'column'}>
       <Grid container spacing={2} className="orderinventory__container">
         <Grid xs={6} md={6} lg={6} xl={6}>
           <ProjectCard />
@@ -33,7 +33,9 @@ export default function OrderConditionalReport() {
           <OverViewCard rows={rows} title="Inventory Options" />
         </Grid>
       </Grid>
-      <Map popUpRoutes={visionMapRoutes} style={{ height: '75vh' }} />
-    </div>
+      <Grid className="map__container-orderconditionl">
+        <Map popUpRoutes={visionMapRoutes} style={{ height: '55vh' }} />
+      </Grid>
+    </Grid>
   );
 }

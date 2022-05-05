@@ -22,7 +22,7 @@ export default function Summary() {
     createData('Attachments:', <button>View Attachment</button>)
   ];
   return (
-    <div>
+    <Grid container direction={"column"}>
       <Grid container spacing={2} className="summary__container">
         <Grid xs={6} md={6} lg={6} xl={6}>
           <ProjectCard />
@@ -32,7 +32,9 @@ export default function Summary() {
           <OverViewCard rows={rows} title="Overview" />
         </Grid>
       </Grid>
-      <Map popUpRoutes={visionMapRoutes} style={{ height: '75vh' }} />
-    </div>
+      <Grid className='map__container'>
+        <Map popUpRoutes={visionMapRoutes} style={{ height: '55vh' }} />
+      </Grid>
+    </Grid>
   );
 }
