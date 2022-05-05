@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "state": "Virginia",
+    "country": "Alexandria",
+    "proposal_date": "EST 03/15/2024",
+    "expires": "04/11/2025",
+    "contract": "$80,133,964",
+    "summary": "O&M on 20 miles of local roads"
+  },
+  {
+    "id": 2,
+    "state": "Florida11",
+    "country": "Gulf",
+    "proposal_date": "EST 03/15/2024",
+    "expires": "04/11/2025",
+    "contract": "$80,133,964",
+    "summary": "O&M on 20 miles of local roads"
+  },
+  {
+    "id": 3,
+    "state": "Florida1",
+    "country": "Okeechobee",
+    "proposal_date": "EST 03/15/2024",
+    "expires": "04/11/2025",
+    "contract": "$80,133,964",
+    "summary": "O&M on 20 miles of local roads"
+  },
+  {
+    "id": 4,
+    "state": "Florida1",
+    "country": "Gulf5",
+    "proposal_date": "EST 03/15/2024",
+    "expires": "04/11/2025",
+    "contract": "$80,133,964",
+    "summary": "O&M on 20 miles of local roads"
+  },
+  {
+    "id": 5,
+    "state": "Florida15",
+    "country": "Gulf5",
+    "proposal_date": "EST 03/15/2024",
+    "expires": "04/11/2025",
+    "contract": "$80,133,964",
+    "summary": "O&M on 20 miles of local roads"
+  }
+]

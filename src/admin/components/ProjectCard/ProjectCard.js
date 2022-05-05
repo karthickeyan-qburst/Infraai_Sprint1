@@ -11,7 +11,7 @@ import {
 import "./ProjectCard.scss";
 
 function ProjectCard(props) {
-  const { showStatus = false, order = false } = props;
+  const { showStatus = false, order = false, orderCondition = false } = props;
   return (
     <Box component="main" className="projectcard-main__body">
       <Card className="projectcard__content">
@@ -86,7 +86,7 @@ function ProjectCard(props) {
             </Grid>
           </Grid>
           <Divider className="projectcard__divider"> </Divider>
-          <Grid container className={props.order?"projectcard__content-summary-order":"projectcard__content-summary"}>
+          <Grid container className={order?"projectcard__content-summary-order": (orderCondition ? "projectcard__content-summary-orderCondition" : "projectcard__content-summary")}>
             <Typography
               component="div"
               className="projectcard__content-summary-heading"
@@ -97,7 +97,7 @@ function ProjectCard(props) {
               component="div"
               className="projectcard__content-summary-content"
             >
-              {order?
+              {order || orderCondition?
               <>
               O&M on 1,314Lorem ipsum dolor sit amet, consectetur adipiscing
               elit. Mi eros cursus consequat est. Accumsan vulputate laoreet
