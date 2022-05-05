@@ -6,9 +6,9 @@ import React, { useState } from 'react';
 import VideoPlayer from '../../../components/VideoPlayer/VideoPlayer';
 import Pannellum from '../../../components/Pannellum/Pannellum';
 import Annotation from '../../../components/Annotation/Annotation';
-import { ReactComponent as ZoomSvg } from '../../../../assets/zoom.svg';
+import { ReactComponent as PanellumSvg } from '../../../../assets/zoom.svg';
 import { ReactComponent as FileSearchSvg } from '../../../../assets/filesearch.svg';
-import { ReactComponent as SelectSvg } from '../../../../assets/select.svg';
+import { ReactComponent as AnnotationSvg } from '../../../../assets/select.svg';
 import { ReactComponent as RedoSvg } from '../../../../assets/redo.svg';
 import { ReactComponent as UndoSvg } from '../../../../assets/undo.svg';
 
@@ -28,10 +28,10 @@ export default function ProjectFootage() {
               <FileSearchSvg className="footericonmenu_icon" />
             </span>
             <span className="footericonmenu__icon-button">
-              <ZoomSvg onClick={() => setCurrentView('pannellum')} className="footericonmenu_icon" />
+              <PanellumSvg onClick={() => setCurrentView('pannellum')} className="footericonmenu_icon" />
             </span>
             <span className="footericonmenu__icon-button">
-              <SelectSvg onClick={() => setCurrentView('annotation')} className="footericonmenu_icon" />
+              <AnnotationSvg onClick={() => setCurrentView('annotation')} className="footericonmenu_icon" />
             </span>
             {/* <span className="footericonmenu__icon-button">
               <UndoSvg className="footericonmenu_icon" />
@@ -55,11 +55,11 @@ export default function ProjectFootage() {
         <Button onClick={() => setCurrentView('annotation')}>Draw</Button>
       </Grid> */}
 
-      <Grid item xs={12} md={12}>
+      <Grid item xs={12} md={12} >
         <Box
           style={{
             display: 'flex',
-            justifyContent: 'center'
+           // justifyContent: 'center'
           }}
           sx={{ width: '100%', typography: 'body1' }}>
           {(!currentView || currentView === 'objectClasses') && (
@@ -72,7 +72,7 @@ export default function ProjectFootage() {
           )}
           {currentView === 'pannellum' && <Pannellum width="100%" height="75vh" />}
           {currentView === 'annotation' && (
-            <Annotation
+            <Annotation 
               setCurrentView={() => setCurrentView('objectClasses')}
               // drawWidth={1200}
               // drawHeight={600}

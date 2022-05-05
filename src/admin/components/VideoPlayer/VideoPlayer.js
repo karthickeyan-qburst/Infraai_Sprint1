@@ -86,7 +86,7 @@ export default function VideoPlayer({
               <Grid item container>
                 Object Classes
               </Grid>
-              <Grid item container spacing={2} marginTop="5px">
+              <Grid item container spacing={2} marginTop="-5px">
                 {annotationClasses &&
                   annotationClasses.map((el, i) => (
                     <Grid item key={el + i}>
