@@ -1,0 +1,38 @@
+.visionMap {
+  padding-right: 3rem !important;
+  margin-left: 3rem;
+  margin-top: 2.5rem;
+  width: calc(100% - 3rem);
+  max-height: 100%;
+}
+
+.visionMap__header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.6rem;
+}
+
+.card__heading-vision-projectmap {
+  font-family: 'Work Sans', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 24px !important;
+  line-height: 28px !important;
+  color: #131e27 !important;
+}
+
+.projectmap__btn-overview {
+  padding: 10px 15px;
+  background-color: #f9f8f4;
+  border: 1px solid #131e27;
+  border-radius: 5px;
+  font-family: 'Work Sans', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  line-height: 125% !important;
+  text-transform: capitalize;
+  color: #180a37 !important;
+}
