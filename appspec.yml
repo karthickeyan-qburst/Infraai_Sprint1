@@ -5,14 +5,14 @@ files:
     destination: /var/www/build/
 hooks:
   BeforeInstall:
-    - location: scripts/install_dependencies.sh
+    - location: scripts/install_dependencies
       timeout: 300
   ApplicationStart:
-    - location: scripts/start_server.sh
+    - location: scripts/start_server
       timeout: 300
   ValidateService:
-    - location: scripts/validate_server.sh
+    - location: scripts/validate_server
       timeout: 300
   ApplicationStop:
-    - location: scripts/stop_server.sh
+    - location: scripts/stop_server
       timeout: 300
