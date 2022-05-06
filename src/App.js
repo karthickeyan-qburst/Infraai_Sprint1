@@ -7,15 +7,15 @@ import {
   Heading,
   useAuthenticator,
   View,
-  Button
+  Button,
+  translations
 } from '@aws-amplify/ui-react';
 import { onAuthUIStateChange } from '@aws-amplify/ui-components';
 import { I18n } from 'aws-amplify';
-import { translations } from '@aws-amplify/ui-react';
-import Header from '../src/frontend/layout/header';
+import Header from './frontend/layout/header';
 import AdminHeader from './admin/layout/Header/Header';
-import Footer from '../src/frontend/layout/footer';
-import { translatedData } from './utils/i18n';
+import Footer from './frontend/layout/footer';
+import translatedData from './utils/i18n';
 import '@aws-amplify/ui-react/styles.css';
 import './App.scss';
 
@@ -27,8 +27,6 @@ I18n.putVocabularies({
 });
 
 const Home = lazy(() => import('./admin/pages/home/Home'));
-const Marketplace = lazy(() => import('./admin/pages/maketplace/Marketplace'));
-const Myprojects = lazy(() => import('./admin/pages/myprojects/Myprojects'));
 const Intel = lazy(() => import('./admin/pages/intel/Intel'));
 const ProjectMap = lazy(() => import('./admin/pages/vision/projectMap/ProjectMap'));
 const Order = lazy(() => import('./admin/pages/order/Order'));
@@ -83,14 +81,7 @@ const formFields = {
 };
 
 function App() {
-  useEffect(() => {
-    return onAuthUIStateChange((state, data) => {
-      console.log(state);
-      console.log(data);
-      //add your logic
-    });
-  }, []);
-
+  useEffect(() => onAuthUIStateChange(() => {}), []);
   return (
     <Authenticator components={components} formFields={formFields} hideSignUp>
       <Router>
