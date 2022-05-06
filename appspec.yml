@@ -5,7 +5,7 @@ files:
     destination: /var/www/
 hooks:
   BeforeInstall:
-    - location: scripts/install_dependencies
+    - location: /var/www/scripts/install_dependencies
       timeout: 300
   ApplicationStart:
     - location: scripts/start_server
