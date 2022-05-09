@@ -3,17 +3,4 @@ os: linux
 files:
   - source: /
     destination: /home/ubuntu/
-file_exists_behavior: OVERWRITE    
-hooks:
-  BeforeInstall:
-    - location: scripts/install_dependencies.sh
-      timeout: 300
-  ApplicationStart:
-    - location: scripts/start_server.sh
-      timeout: 300
-  ValidateService:
-    - location: scripts/validate_server.sh
-      timeout: 300
-  ApplicationStop:
-    - location: scripts/stop_server.sh
-      timeout: 300
+file_exists_behavior: OVERWRITE
